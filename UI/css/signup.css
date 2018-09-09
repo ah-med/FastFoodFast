@@ -1,0 +1,23 @@
+
+
+/** Header **/
+header {
+    min-height: 20%;
+}
+
+/** Signup **/
+#signup {
+    min-height: 525px;
+}
+#signup .container {
+    max-width: 800px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: #FFFFFF;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.5);
+}
+
+/** Footer **/
+header {
+    min-height: 20%;
+}
