@@ -1,0 +1,31 @@
+ /** Table **/
+table {
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+}
+td:nth-child(2) {
+    text-align: right;
+}
+tr {
+    height: 30px;
+}
+tr:nth-of-type(odd) {
+    background: #efefef;
+    font-size: 14px;
+} 
+table table tr {
+    background: #efefef;
+    border-top: 1px solid #fff;
+}
+
+/** Order History-mobile **/
+#order-history-mobile {
+    background-color: #fff;
+    margin: 10px 10px;
+}
+#order-history-mobile .order-card {
+    border-top: 1px solid #000;
+    padding: 20px 0;
+}
+
