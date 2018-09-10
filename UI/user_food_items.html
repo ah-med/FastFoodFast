@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>DeLite | Food Items</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="./css/main.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="./css/user_food_items.css" />
+    <script src="./js/main.js"></script>
+</head>
+
+<body>
+    <section id="modals">
+        <nav id="navModal" class="mobile modal hide">
+            <ul>
+                <span class="click" onclick="toggleModal('navModal')">X</span>
+                <li>
+                    <a href="./index.html">Home</a>
+                </li>
+                <li>
+                    <a href="./about.html">About Us</a>
+                </li>
+                <li>
+                    <a href="./user_orders.html">My Orders</a>
+                </li>
+                <li>
+                    <a href="./contact.html">Contact Us</a>
+                </li>
+            </ul>
+        </nav>
+    </section>
+    <header>
+        <div class="container">
+            <div class="left">
+                <div id="menu" class="mobile">
+                    <img src="./images/icons/menu.PNG" alt="menu" onclick="toggleModal('navModal')">
+                </div>
+                <div id="brand">
+                    <h1>
+                        <a href="./index.html">DeLite Fast Food</a>
+                    </h1>
+                </div>
+            </div>
+            <div class="right">
+                <nav class="desktop">
+                    <ul>
+                        <li>
+                            <a href="./index.html">Home</a>
+                        </li>
+                        <li>
+                            <a href="./about.html">About Us</a>
+                        </li>
+                        <li>
+                            <a href="./user_orders.html">My Orders</a>
+                        </li>
+                        <li>
+                            <a href="./contact.html">Contact Us</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div id="auth">
+                    <span class="desktop">
+                        <a href="./login.html">Login</a> |
+                        <a href="./signup.html">Signup</a>
+                    </span>
+                    <a href="./signup.html">
+                        <img class="mobile" src="./images/icons/account.png" alt="account">
+                    </a>
+                </div>
+                <div id="cart-menu">
+                    <a href="./checkout.html">
+                        <img src="./images/icons/cart.png" alt="cart">
+                        <span>0</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section id="cart">
+        <div class="container">
+            <h4>Your Cart</h4>
+            <p>Your cart is empty add</p>
+            <button class="btn-action">
+                <a href="#food-menu">Add items</a>
+            </button>
+        </div>
+    </section>
+    <section id="food-menu">
+        <div class="container">
+            <h4>Menu</h4>
+            <nav id="menu-header">
+                <ul>
+                    <li>
+                        <a href="#continental">Continental</a>
+                    </li>
+                    <li>
+                        <a href="#swallow">Swallow</a>
+                    </li>
+                    <li>
+                        <a href="#soup">Soup</a>
+                    </li>
+                    <li>
+                        <a href="#drinks">Drinks</a>
+                    </li>
+                    <li>
+                        <a href="#protein">Protein</a>
+                    </li>
+                    <li>
+                        <a href="#pastries">Pastries</a>
+                    </li>
+                    <li>
+                        <a href="#traditional">Traditional</a>
+                    </li>
+                </ul>
+            </nav>
+            <div id="continental">
+                <h4>Continental</h4>
+            </div>
+            <div id="swallow">
+                <h4>Swallow</h4>
+                <div class="food-item-card" align="center">
+                    <div>
+                        <img src="./images/food/swallow/semo.jpg" alt="item2">
+                        <h4>Semo</h4>
+                        <p>prepared from golden penny semolina powder</p>
+                    </div>
+                    <div>
+                        <span>&#8358;100</span>
+                        <div class="add-cart">
+                            <span id="minus" class="click">-</span>
+                            <span id="item-value">0</span>
+                            <span id="plus" class="click">+</span>
+                        </div>
+                    </div>
+                    <div>
+                        <button>
+                            <a href="#cart">View Cart</a>
+                        </button>
+                        <button>
+                            <a href="./checkout.html">Checkout</a>
+                        </button>
+                    </div>
+                </div>
+                <div class="food-item-card" align="center">
+                    <div>
+                        <img src="./images/food/swallow/eba.jpg" alt="item2">
+                        <h4>Eba</h4>
+                    </div>
+                    <div>
+                        <span>&#8358;100</span>
+                        <div class="add-cart">
+                            <span id="minus" class="click">-</span>
+                            <span id="item-value">0</span>
+                            <span id="plus" class="click">+</span>
+                        </div>
+                    </div>
+                    <div>
+                        <button>
+                            <a href="#cart">View Cart</a>
+                        </button>
+                        <button>
+                            <a href="./checkout.html">Checkout</a>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div id="soup">
+                <h4>Soup</h4>
+                <div class="food-item-card" align="center">
+                    <div>
+                        <img src="./images/food/soups/edikaikong soup.jpg" alt="edikaikong">
+                        <h4>Edikaikong</h4>
+                    </div>
+                    <div>
+                        <span>&#8358;100</span>
+                        <div class="add-cart">
+                            <span id="minus" class="click">-</span>
+                            <span id="item-value">0</span>
+                            <span id="plus" class="click">+</span>
+                        </div>
+                    </div>
+                    <div>
+                        <button>
+                            <a href="#cart">View Cart</a>
+                        </button>
+                        <button>
+                            <a href="./checkout.html">Checkout</a>
+                        </button>
+                    </div>
+                </div>
+                <div class="food-item-card" align="center">
+                    <div>
+                        <img src="./images/food/soups/efororo.jpg" alt="efororo">
+                        <h4>Eforiro</h4>
+                    </div>
+                    <div>
+                        <span>&#8358;70</span>
+                        <div class="add-cart">
+                            <span id="minus" class="click">-</span>
+                            <span id="item-value">0</span>
+                            <span id="plus" class="click">+</span>
+                        </div>
+                    </div>
+                    <div>
+                        <button>
+                            <a href="#cart">View Cart</a>
+                        </button>
+                        <button>
+                            <a href="./checkout.html">Checkout</a>
+                        </button>
+                    </div>
+                </div>
+                <div class="food-item-card" align="center">
+                    <div>
+                        <img src="./images/food/soups/native-soup.jpg" alt="native-soup">
+                        <h4>Native soup</h4>
+                    </div>
+                    <div>
+                        <span>&#8358;80</span>
+                        <div class="add-cart">
+                            <span id="minus" class="click">-</span>
+                            <span id="item-value">0</span>
+                            <span id="plus" class="click">+</span>
+                        </div>
+                    </div>
+                    <div>
+                        <button>
+                            <a href="#cart">View Cart</a>
+                        </button>
+                        <button>
+                            <a href="./checkout.html">Checkout</a>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div id="drinks">
+                <h4>Drinks</h4>
+                <div class="food-item-card" align="center">
+                    <div>
+                        <img src="./images/food/drinks/can-sodas.jpg" alt="can-sodas">
+                        <h4>Fanta</h4>
+                    </div>
+                    <div>
+                        <span>&#8358;150</span>
+                        <div class="add-cart">
+                            <span id="minus" class="click">-</span>
+                            <span id="item-value">0</span>
+                            <span id="plus" class="click">+</span>
+                        </div>
+                    </div>
+                    <div>
+                        <button>
+                            <a href="#cart">View Cart</a>
+                        </button>
+                        <button>
+                            <a href="./checkout.html">Checkout</a>
+                        </button>
+                    </div>
+                </div>
+                <div class="food-item-card" align="center">
+                    <div>
+                        <img src="./images/food/drinks/eva-water.jpg" alt="eva-water">
+                        <h4>Eva Water</h4>
+                    </div>
+                    <div>
+                        <span>&#8358;100</span>
+                        <div class="add-cart">
+                            <span id="minus" class="click">-</span>
+                            <span id="item-value">0</span>
+                            <span id="plus" class="click">+</span>
+                        </div>
+                    </div>
+                    <div>
+                        <button>
+                            <a href="#cart">View Cart</a>
+                        </button>
+                        <button>
+                            <a href="./checkout.html">Checkout</a>
+                        </button>
+                    </div>
+                </div>
+                <div class="food-item-card" align="center">
+                    <div>
+                        <img src="./images/food/drinks/5alive.jpg" alt="edikaikong">
+                        <h4>5alive</h4>
+                    </div>
+                    <div>
+                        <span>&#8358;300</span>
+                        <div class="add-cart">
+                            <span id="minus" class="click">-</span>
+                            <span id="item-value">0</span>
+                            <span id="plus" class="click">+</span>
+                        </div>
+                    </div>
+                    <div>
+                        <button>
+                            <a href="#cart">View Cart</a>
+                        </button>
+                        <button>
+                            <a href="./checkout.html">Checkout</a>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div id="protein">
+                <h4>Protein</h4>
+                <div class="food-item-card" align="center">
+                    <div>
+                        <img src="./images/food/proteins/goat-meat.jpg" alt="goat-meat">
+                        <h4>Goat Meat</h4>
+                    </div>
+                    <div>
+                        <span>&#8358;150</span>
+                        <div class="add-cart">
+                            <span id="minus" class="click">-</span>
+                            <span id="item-value">0</span>
+                            <span id="plus" class="click">+</span>
+                        </div>
+                    </div>
+                    <div>
+                        <button>
+                            <a href="#cart">View Cart</a>
+                        </button>
+                        <button>
+                            <a href="./checkout.html">Checkout</a>
+                        </button>
+                    </div>
+                </div>
+                <div class="food-item-card" align="center">
+                    <div>
+                        <img src="./images/food/proteins/dried-cat-fish.jpg" alt="dried-cat-fish">
+                        <h4>Dried Cat Fish</h4>
+                    </div>
+                    <div>
+                        <span>&#8358;120</span>
+                        <div class="add-cart">
+                            <span id="minus" class="click">-</span>
+                            <span id="item-value">0</span>
+                            <span id="plus" class="click">+</span>
+                        </div>
+                    </div>
+                    <div>
+                        <button>
+                            <a href="#cart">View Cart</a>
+                        </button>
+                        <button>
+                            <a href="./checkout.html">Checkout</a>
+                        </button>
+                    </div>
+                </div>
+                <div class="food-item-card" align="center">
+                    <div>
+                        <img src="./images/food/proteins/beef.jpg" alt="beef">
+                        <h4>Beef</h4>
+                    </div>
+                    <div>
+                        <span>&#8358;50</span>
+                        <div class="add-cart">
+                            <span id="minus" class="click">-</span>
+                            <span id="item-value">0</span>
+                            <span id="plus" class="click">+</span>
+                        </div>
+                    </div>
+                    <div>
+                        <button>
+                            <a href="#cart">View Cart</a>
+                        </button>
+                        <button>
+                            <a href="./checkout.html">Checkout</a>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div id="pastries">
+                <h4>Pastries</h4>
+                <div class="food-item-card" align="center">
+                    <div>
+                        <img src="./images/food/pastries/scotch egg.jpg" alt="scotch-egg">
+                        <h4>Scotch Egg</h4>
+                    </div>
+                    <div>
+                        <span>&#8358;140</span>
+                        <div class="add-cart">
+                            <span id="minus" class="click">-</span>
+                            <span id="item-value">0</span>
+                            <span id="plus" class="click">+</span>
+                        </div>
+                    </div>
+                    <div>
+                        <button>
+                            <a href="#cart">View Cart</a>
+                        </button>
+                        <button>
+                            <a href="./checkout.html">Checkout</a>
+                        </button>
+                    </div>
+                </div>
+                <div class="food-item-card" align="center">
+                    <div>
+                        <img src="./images/food/pastries/springrolls.jpg" alt="springrolls">
+                        <h4>Spring rolls</h4>
+                    </div>
+                    <div>
+                        <span>&#8358;80</span>
+                        <div class="add-cart">
+                            <span id="minus" class="click">-</span>
+                            <span id="item-value">0</span>
+                            <span id="plus" class="click">+</span>
+                        </div>
+                    </div>
+                    <div>
+                        <button>
+                            <a href="#cart">View Cart</a>
+                        </button>
+                        <button>
+                            <a href="./checkout.html">Checkout</a>
+                        </button>
+                    </div>
+                </div>
+                <div class="food-item-card" align="center">
+                    <div>
+                        <img src="./images/food/pastries/meatpie.jpg" alt="meatpie">
+                        <h4>Meat Pie</h4>
+                    </div>
+                    <div>
+                        <span>&#8358;100</span>
+                        <div class="add-cart">
+                            <span id="minus" class="click">-</span>
+                            <span id="item-value">0</span>
+                            <span id="plus" class="click">+</span>
+                        </div>
+                    </div>
+                    <div>
+                        <button>
+                            <a href="#cart">View Cart</a>
+                        </button>
+                        <button>
+                            <a href="./checkout.html">Checkout</a>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div id="traditional">
+                <h4>Traditional</h4>
+                <div class="food-item-card" align="center">
+                    <div>
+                        <img src="./images/food/traditional/egg-sauce.jpg" alt="egg-sauce">
+                        <h4>Egg Sauce</h4>
+                    </div>
+                    <div>
+                        <span>&#8358;100</span>
+                        <div class="add-cart">
+                            <span id="minus" class="click">-</span>
+                            <span id="item-value">0</span>
+                            <span id="plus" class="click">+</span>
+                        </div>
+                    </div>
+                    <div>
+                        <button>
+                            <a href="#cart">View Cart</a>
+                        </button>
+                        <button>
+                            <a href="./checkout.html">Checkout</a>
+                        </button>
+                    </div>
+                </div>
+                <div class="food-item-card" align="center">
+                    <div>
+                        <img src="./images/food/traditional/jollof rice.png" alt="jollof rice">
+                        <h4>Jollof Rice</h4>
+                    </div>
+                    <div>
+                        <span>&#8358;100</span>
+                        <div class="add-cart">
+                            <span id="minus" class="click">-</span>
+                            <span id="item-value">0</span>
+                            <span id="plus" class="click">+</span>
+                        </div>
+                    </div>
+                    <div>
+                        <button>
+                            <a href="#cart">View Cart</a>
+                        </button>
+                        <button>
+                            <a href="./checkout.html">Checkout</a>
+                        </button>
+                    </div>
+                </div>
+                <div class="food-item-card" align="center">
+                    <div>
+                        <img src="./images/food/traditional/white-rice-stew.jpg" alt="white-rice-stew">
+                        <h4>White Rice and Stew</h4>
+                    </div>
+                    <div>
+                        <span>&#8358;100</span>
+                        <div class="add-cart">
+                            <span id="minus" class="click">-</span>
+                            <span id="item-value">0</span>
+                            <span id="plus" class="click">+</span>
+                        </div>
+                    </div>
+                    <div>
+                        <button>
+                            <a href="#cart">View Cart</a>
+                        </button>
+                        <button>
+                            <a href="./checkout.html">Checkout</a>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        DeLite Fast Food copyright &copy; 2018
+    </footer>
+</body>
+
+</html>
