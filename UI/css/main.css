@@ -12,6 +12,13 @@ body {
     margin: auto;
     overflow: hidden;
 }
+.approve, completed {
+    background-color: yellowgreen;
+}
+.decline {
+    background-color: orangered;
+}
+
 a {
     color:inherit;
     text-decoration-line: none;
