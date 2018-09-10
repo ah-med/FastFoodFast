@@ -18,7 +18,9 @@ body {
 .decline {
     background-color: orangered;
 }
-
+.red {
+    color: red;
+}
 a {
     color:inherit;
     text-decoration-line: none;
