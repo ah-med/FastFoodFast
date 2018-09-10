@@ -1,4 +1,25 @@
-
+/** Form **/
+form {
+    margin: 0 auto;
+    padding: 20px;
+    width: 80%;
+}
+.form-item {
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+.form-input, .form-btn {
+    margin-top: 12px;
+    padding: 8px;
+    width: 100%;
+}
+.form-btn {
+    width: 50%;
+    margin:auto;
+}
+.text-center {
+    text-align: center;
+}
 
 /** Header **/
 header {
