@@ -3,9 +3,9 @@
 
 <head>
     <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <title>DeLite</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <link rel="stylesheet" type="text/css" media="screen" href="./css/main.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="./css/index.css" />
     <script src="./js/main.js"></script>
@@ -65,7 +65,9 @@
                         <a href="./login.html">Login</a> |
                         <a href="./signup.html">Signup</a>
                     </span>
-                    <a href="./signup.html"><img class="mobile" src="./images/icons/account.png" alt="account"></a>
+                    <a href="./signup.html">
+                        <img class="mobile" src="./images/icons/account.png" alt="account">
+                    </a>
                 </div>
                 <div id="cart-menu">
                     <a href="./checkout.html">
@@ -91,7 +93,7 @@
     <section id="how-it-works">
         <div class="container">
             <h2>How It Works</h2>
-            <div>
+            <div id="how-it-work-list">
                 <div>
                     <img src="./images/icons/choose.png" alt="Choose">
                     <h3>1. Choose</h3>
@@ -126,7 +128,7 @@
                     <span>&#8358;500</span>
                     <div class="add-cart">
                         <span id="minus" class="click">-</span>
-                        <span id="item-value">450</span>
+                        <span id="item-value">0</span>
                         <span id="plus" class="click">+</span>
                     </div>
                     <button>
@@ -139,7 +141,7 @@
                     <span>&#8358;100</span>
                     <div class="add-cart">
                         <span id="minus" class="click">-</span>
-                        <span id="item-value">450</span>
+                        <span id="item-value">0</span>
                         <span id="plus" class="click">+</span>
                     </div>
                     <button>
@@ -149,12 +151,10 @@
                 <div class="food-item-card" align="center">
                     <img src="./images/food/continental/shawama-chicken.jpg" alt="item3">
                     <h4>Sharwama (chicken)</h4>
-                    <span>tasty sharwama with hotdog and shredded chicken</span>
-                    <br>
-                    <span>&#8358;1,200.00</span>
+                    <span>&#8358;1,200</span>
                     <div class="add-cart">
                         <span id="minus" class="click">-</span>
-                        <span id="item-value">450</span>
+                        <span id="item-value">0</span>
                         <span id="plus" class="click">+</span>
                     </div>
                     <button>
@@ -167,7 +167,7 @@
                     <span>&#8358;400</span>
                     <div class="add-cart">
                         <span id="minus" class="click">-</span>
-                        <span id="item-value">450</span>
+                        <span id="item-value">0</span>
                         <span id="plus" class="click">+</span>
                     </div>
                     <button>
@@ -175,9 +175,11 @@
                     </button>
                 </div>
             </div>
-            <button class="view-order-btn">
-                <a href="./user_food_items.html">View All Food Items</a>
-            </button>
+            <div id="view-order-div">
+                <button>
+                    <a href="./user_food_items.html">View All Food Items</a>
+                </button>
+            </div>
         </div>
     </section>
     <section id="categories">

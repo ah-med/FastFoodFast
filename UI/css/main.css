@@ -126,12 +126,12 @@ header {
     background-color:#fff; 
     color: #000000;
     padding-top: 30px;
-    min-height: 70px;
+    min-height: 50px;
     border-bottom: #b1abab 1px solid;
 }
 header img {
-    max-width: 40px;
-    max-height: 40px;
+    max-width: 30px;
+    max-height: 30px;
 }
 header .left {
     margin-right: auto;
@@ -165,11 +165,12 @@ header #brand h1 a {
 }
 header #cart-menu {
     position: relative;
+    margin-left: 30px;
 }
 header #cart-menu span{
     position: absolute;
     top: 0;
-    left: 20px;
+    left: 12px;
     color: yellow;
     background-color: red;
     border-radius: 50%;
@@ -200,9 +201,17 @@ footer {
     header nav {
         display: block;
     }
+    header #brand h1{
+        margin: 0;
+        padding: 0;
+        font-size: 24px;
+        margin-left: 10px;
+    }
+    header #brand h1 a {
+        font-size: inherit;
+    }
     header a {
         text-transform: capitalize;
-        font-size: 16px;
     }
     header ul {
         margin: 0;
@@ -224,5 +233,13 @@ footer {
     header #brand h1 a {
         font-size: inherit;
     }
-
+    header #cart-menu img{
+        max-width: 30px;
+        max-height: 30px;
+    }
+    header #cart-menu span{
+        top: 0;
+        left: 0px;
+        bottom: 12px;
+    }
 } 
