@@ -1,20 +1,20 @@
 /** Table **/
- table {
+ .mobile table {
     width: 100%;
     table-layout: fixed;
     border-collapse: collapse;
     font-size: 14px;
 }
-td:nth-child(2) {
+.mobile  td:nth-child(2) {
     text-align: right;
 }
-tr {
+.mobile tr {
     height: 30px;
 }
-tr:nth-of-type(odd) {
+.mobile  tr:nth-of-type(odd) {
     background: #efefef;
 } 
-table table tr {
+.mobile table table tr {
     background: #efefef;
     border-top: 1px solid #fff;
 }
@@ -87,4 +87,86 @@ table table tr {
     background-color:#fff;
     color: #555;
     border: 1px solid #555;
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    #orders-desktop button {
+        text-transform: capitalize;
+        padding: 5px 8px;
+        border: 1px solid #555;
+        text-align:center; 
+        color: #fff;
+        cursor: pointer;
+        margin-top: 5px;
+    }
+    
+    #orders-desktop .view-btn {
+        background-color:#555;
+    }
+    
+    #orders-desktop button:hover{
+        background-color:#fff;
+        color: #555;
+        border: 1px solid #555;
+    }
+    #filter {
+        background-color: #efefef;
+        margin: 10px 0;
+        margin-bottom: 0;
+    }
+    .desktop {
+        background-color: #efefef;
+    }
+    h3 {
+        background-color:inherit;
+        color: #555;
+        padding: 0px;
+        text-align: center;
+    }
+    /**  table **/
+    table {
+        width: 100%;
+        table-layout: fixed;
+        border-collapse: collapse;
+        background-color: #fff;
+        color: #000000;
+      }
+      tr .orderid {
+          width: 100px;
+      }
+      tr .orderstat {
+        width: 100px;
+      }
+      tr .name {
+        width: 120px;
+     }
+     tr .date {
+        width: 120px;
+     }
+     tr .total {
+        width: 100px;
+     }  
+     tr .act {
+        width: 150px;
+     }    
+      tr:nth-of-type(odd) {
+        background: #eee;
+        font-size: 14px;
+      }
+      
+      th {
+        background-color:#555;
+        color: white;
+        font-weight: bold;
+        font-size: 14px;
+        height: 40px;
+      }
+      
+      td, th {
+        padding: 10px;
+        border: 1px solid #ccc;
+        text-align: left;
+        font-size: 14px;
+      }
 }
