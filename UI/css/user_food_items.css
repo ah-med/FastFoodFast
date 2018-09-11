@@ -49,3 +49,23 @@
     margin-top: 10px;
     padding:10px;
 }
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    /**  main **/
+    #main {
+        display: grid;
+        grid-template-areas: 'food-menu food-menu food-menu cart cart cart';
+    }
+    #cart {
+        grid-area: cart;
+        max-height: 500px;
+    }
+    #food-menu {
+        grid-area: food-menu;
+    }
+    #menu-body .food-items{
+        display: grid;
+        grid-template-columns: auto auto auto auto;
+    }
+}
