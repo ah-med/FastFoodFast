@@ -9,7 +9,7 @@
     "start": "node ./client/index.js",
     "prestart": "npm run-script build",
     "prod-start": "nodemon server/index.js --exec babel-node",
-    "test": "mocha server/ --recursive --exit"
+    "test": "mocha server/ --recursive --compilers js:babel-register --exit"
   },
   "repository": {
     "type": "git",
@@ -38,6 +38,7 @@
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.7.0",
+    "babel-register": "^6.26.0",
     "chai": "^4.1.2",
     "chai-http": "^4.2.0",
     "eslint": "^5.5.0",
