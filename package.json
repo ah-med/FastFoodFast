@@ -32,6 +32,7 @@
     "body-parser": "^1.18.3",
     "express": "^4.16.3",
     "joi": "^13.6.0",
+    "joi-phone-number": "^2.0.12",
     "trim-request-body": "^1.0.1"
   },
   "devDependencies": {
