@@ -1,0 +1,30 @@
+{
+  "name": "fastfoodfast",
+  "version": "1.0.0",
+  "description": " a food delivery app for a restaurant",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ah-med/FastFoodFast.git"
+  },
+  "keywords": [
+    "node",
+    "express",
+    "food",
+    "delivery",
+    "fastfood"
+  ],
+  "author": "Ahmed Omosanya",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ah-med/FastFoodFast/issues"
+  },
+  "homepage": "https://github.com/ah-med/FastFoodFast#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3"
+  }
+}
