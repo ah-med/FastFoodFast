@@ -4,6 +4,11 @@
   "description": " a food delivery app for a restaurant",
   "main": "index.js",
   "scripts": {
+    "build": "babel server -d client",
+    "prebuild": "rm -rf client/*",
+    "start": "node ./client/index.js",
+    "prestart": "npm run-script build",
+    "prod-start": "nodemon server/index.js --exec babel-node",
     "test": "mocha server/ --recursive --exit"
   },
   "repository": {
@@ -29,6 +34,8 @@
     "trim-request-body": "^1.0.1"
   },
   "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
     "chai": "^4.1.2",
     "chai-http": "^4.2.0",
     "eslint": "^5.5.0",
