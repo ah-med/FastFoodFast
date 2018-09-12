@@ -1,1 +1,23 @@
-node_modules
+## buid folder
+client
+
+## Node modules
+/node_modules
+
+## Coverage
+coverage
+
+## Coveralls
+.coveralls.yml
+
+## Nyc_output
+.nyc_output
+
+## Thumbs.db
+Thumbs.db
+
+## Env variables
+.env
+
+## vscode debuger
+.vscode
