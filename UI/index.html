@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <title>DeLite</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="shortcut icon" href="images/favicon.PNG" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" media="screen" href="./css/main.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="./css/index.css" />
+    <script src="./js/main.js"></script>
+</head>
+
+<body>
+    <section id="modals">
+        <nav id="navModal" class="mobile modal hide">
+            <ul>
+                <span class="click" onclick="toggleModal('navModal')">X</span>
+                <li>
+                    <a href="./index.html">Home</a>
+                </li>
+                <li>
+                    <a href="./about.html">About Us</a>
+                </li>
+                <li>
+                    <a href="./user_orders.html">My Orders</a>
+                </li>
+                <li>
+                    <a href="./contact.html">Contact Us</a>
+                </li>
+            </ul>
+        </nav>
+    </section>
+    <header>
+        <div class="container">
+            <div class="left">
+                <div id="menu" class="mobile">
+                    <img src="./images/icons/menu.PNG" alt="menu" onclick="toggleModal('navModal')">
+                </div>
+                <div id="brand">
+                    <h1>
+                        <a href="./index.html">DeLite Fast Food</a>
+                    </h1>
+                </div>
+            </div>
+            <div class="right">
+                <nav class="desktop">
+                    <ul>
+                        <li>
+                            <a href="./index.html">Home</a>
+                        </li>
+                        <li>
+                            <a href="./about.html">About Us</a>
+                        </li>
+                        <li>
+                            <a href="./user_orders.html">My Orders</a>
+                        </li>
+                        <li>
+                            <a href="./contact.html">Contact Us</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div id="auth">
+                    <span class="desktop">
+                        <a href="./login.html">Login</a> |
+                        <a href="./signup.html">Signup</a>
+                    </span>
+                    <a href="./signup.html">
+                        <img class="mobile" src="./images/icons/account.png" alt="account">
+                    </a>
+                </div>
+                <div id="cart-menu">
+                    <a href="./checkout.html">
+                        <img src="./images/icons/cart.png" alt="cart">
+                        <span>0</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section id="intro">
+        <div class="container">
+            <div class="content">
+                <h1>Delivering Deliciousness</h1>
+                <p>Good Food Health Body
+                </p>
+                <button>
+                    <a href="./user_food_items.html">Order Food</a>
+                </button>
+            </div>
+        </div>
+    </section>
+    <section id="how-it-works">
+        <div class="container">
+            <h2>How It Works</h2>
+            <div id="how-it-work-list">
+                <div>
+                    <img src="./images/icons/choose.png" alt="Choose">
+                    <h3>1. Choose</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                </div>
+                <div>
+                    <img src="./images/icons/deliver.png" alt="find">
+                    <h3>2. We Deliver</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                </div>
+                <div>
+                    <img src="./images/icons/pay.png" alt="Pay">
+                    <h3>3. Pay</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                </div>
+                <div>
+                    <img src="./images/icons/enjoy.png" alt="enjoy">
+                    <h3>4. Enjoy</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="popular">
+        <div class="container">
+            <h2>Popular Food Items</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error ex laboriosam fugiat odio.</p>
+            <div id="food-grid">
+                <div class="food-item-card" align="center">
+                    <img src="./images/food/traditional/fried-plantain.jpg" alt="item1">
+                    <h4>Fried Plantain</h4>
+                    <span>&#8358;500</span>
+                    <div class="add-cart">
+                        <span id="minus" class="click">-</span>
+                        <span id="item-value">0</span>
+                        <span id="plus" class="click">+</span>
+                    </div>
+                    <button>
+                        <a href="#">Order Now</a>
+                    </button>
+                </div>
+                <div class="food-item-card" align="center">
+                    <img src="./images/food/swallow/semo.jpg" alt="item2">
+                    <h4>Semo</h4>
+                    <span>&#8358;100</span>
+                    <div class="add-cart">
+                        <span id="minus" class="click">-</span>
+                        <span id="item-value">0</span>
+                        <span id="plus" class="click">+</span>
+                    </div>
+                    <button>
+                        <a href="#">Order Now</a>
+                    </button>
+                </div>
+                <div class="food-item-card" align="center">
+                    <img src="./images/food/continental/shawama-chicken.jpg" alt="item3">
+                    <h4>Sharwama (chicken)</h4>
+                    <span>&#8358;1,200</span>
+                    <div class="add-cart">
+                        <span id="minus" class="click">-</span>
+                        <span id="item-value">0</span>
+                        <span id="plus" class="click">+</span>
+                    </div>
+                    <button>
+                        <a href="#">Order Now</a>
+                    </button>
+                </div>
+                <div class="food-item-card" align="center">
+                    <img src="./images/food/pastries/family-loaf.jpg" alt="item4">
+                    <h4>Family Loaof</h4>
+                    <span>&#8358;400</span>
+                    <div class="add-cart">
+                        <span id="minus" class="click">-</span>
+                        <span id="item-value">0</span>
+                        <span id="plus" class="click">+</span>
+                    </div>
+                    <button>
+                        <a href="#">Order Now</a>
+                    </button>
+                </div>
+            </div>
+            <div id="view-order-div">
+                <button>
+                    <a href="./user_food_items.html">View All Food Items</a>
+                </button>
+            </div>
+        </div>
+    </section>
+    <section id="categories">
+        <div class="container">
+            <h2>Food Categories</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error ex laboriosam fugiat odio.</p>
+            <div class="grid">
+                <a href="./user_food_items.html#swallow">
+                    <img src="./images/food/swallow-food.jpg" alt="swallow">
+                    <br>
+                    <span>Swallow</span>
+                </a>
+                <a href="./user_food_items.html#continental">
+                    <img src="./images/food/continental-food.png" alt="continental">
+                    <br>
+                    <span>Continental</span>
+                </a>
+                <a href="./user_food_items.html#drinks">
+                    <img src="./images/food/drinks-food.png" alt="Drinks">
+                    <br>
+                    <span>Drinks</span>
+                </a>
+                <a href="./user_food_items.html#pastries">
+                    <img src="./images/food/pastries-food.jpg" alt="Pastries">
+                    <br>
+                    <span>Pastries</span>
+                </a>
+                <a href="./user_food_items.html#protein">
+                    <img src="./images/food/protein-food.jpg" alt="Protein">
+                    <br>
+                    <span>Protein</span>
+                </a>
+                <a href="./user_food_items.html#soup">
+                    <img src="./images/food/soup-food.jpg" alt="Soup">
+                    <br>
+                    <span>Soup</span>
+                </a>
+                <a href="./user_food_items.html#traditional">
+                    <img src="./images/food/traditional-food.jpg" alt="Traditional">
+                    <br>
+                    <span>Traditional</span>
+                </a>
+            </div>
+        </div>
+    </section>
+    <footer>
+        DeLite Fast Food copyright &copy; 2018
+    </footer>
+</body>
+
+</html>

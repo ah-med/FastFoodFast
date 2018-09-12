@@ -1,0 +1,88 @@
+h3 {
+    background-color: #555;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+/** Table **/
+.mobile table {
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+}
+.mobile td:nth-child(2) {
+    text-align: right;
+}
+.mobile tr {
+    height: 30px;
+}
+.mobile tr:nth-of-type(odd) {
+    background: #efefef;
+    font-size: 14px;
+} 
+.mobile table table tr {
+    background: #efefef;
+    border-top: 1px solid #fff;
+}
+
+/** Order History-mobile **/
+#order-history-mobile {
+    background-color: #fff;
+    margin: 10px 10px;
+}
+#order-history-mobile .order-card {
+    border-top: 1px solid #000;
+    padding: 20px 0;
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    h3 {
+        background-color:inherit;
+        color: #555;
+        padding: 0px;
+        text-align: center;
+    }
+    /**  table **/
+    table {
+        width: 100%;
+        table-layout: fixed;
+        border-collapse: collapse;
+        background-color: #fff;
+        color: #000000;
+      }
+      tr .orderid {
+          width: 120px;
+      }
+      tr .orderstat {
+        width: 120px;
+      }
+      tr .fooditem {
+        width: 220px;
+     }
+     tr .date {
+        width: 120px;
+     }
+     tr .total {
+        width: 120px;
+     }    
+      tr:nth-of-type(odd) {
+        background: #eee;
+        font-size: 14px;
+      }
+      
+      th {
+        background-color:#555;
+        color: white;
+        font-weight: bold;
+        font-size: 14px;
+        height: 40px;
+      }
+      
+      td, th {
+        padding: 10px;
+        border: 1px solid #ccc;
+        text-align: left;
+        font-size: 14px;
+      }
+}

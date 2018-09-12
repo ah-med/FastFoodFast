@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>DeLite | Admin</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="./css/main.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="./css/admin.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="./css/view_order.css" />
+    <script src="./js/main.js"></script>
+</head>
+
+<body>
+    <section id="modals">
+        <nav id="navModal" class="mobile modal hide">
+            <ul>
+                <span class="click" onclick="toggleModal('navModal')">X</span>
+                <li>
+                    <a href="./index.html">Home</a>
+                </li>
+            </ul>
+            <button class="btn-action">
+                <a href="./index.html">Logout</a>
+            </button>
+        </nav>
+    </section>
+    <header>
+        <div class="container">
+            <div class="left">
+                <div id="menu" class="mobile">
+                    <img src="./images/icons/menu.PNG" alt="menu" onclick="toggleModal('navModal')">
+                </div>
+                <div id="brand">
+                    <h1>
+                        <a href="./index.html">DeLite Fast Food</a>
+                    </h1>
+                </div>
+            </div>
+            <div class="right">
+                <nav class="desktop">
+                    <ul>
+                        <li>
+                            <a href="./index.html">Home</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div id="auth">
+                    <span class="desktop">
+                        <a href="./index.html">Logout</a>
+                    </span>
+                    <a href="./index.html">
+                        <img class="mobile" src="./images/icons/account.png" alt="account">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section id="order">
+        <div class="container">
+            <h5>
+                <a href="./orders.html">
+                    &#8592; Back to List of Orders </a>
+            </h5>
+            <table>
+                <tbody>
+                    <caption>Order Details</caption>
+                    <tr>
+                        <td>
+                            Order ID
+                        </td>
+                        <td>
+                            JAN2018001
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Order Status
+                        </td>
+                        <td>
+                            Pending Approval
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Date Order Placed
+                        </td>
+                        <td>
+                            12th Jan 2018
+                            <br> 9:00am
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table>
+                <tbody>
+                    <caption>Delivery Details</caption>
+                    <tr>
+                        <td>
+                            Name
+                        </td>
+                        <td>
+                            Iyabo Johnson
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Phone No
+                        </td>
+                        <td>
+                            +234 70 12 34 56 78
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Address
+                        </td>
+                        <td>
+                            12 Ajanlekoko Street, Ilumoka Lagos
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table>
+                <tbody>
+                    <caption>Items Ordered</caption>
+                    <tr>
+                        <td>
+                            Food Items
+                        </td>
+                        <td>
+                            <table>
+                                <tr>
+                                    <td>Goat Meat X 2</td>
+                                    <td>&#8358;300</td>
+                                </tr>
+                                <tr>
+                                    <td>Eforiro X 1</td>
+                                    <td>&#8358;70</td>
+                                </tr>
+                                <tr>
+                                    <td>Semo X 3</td>
+                                    <td>&#8358;300</td>
+                                </tr>
+                                <tr>
+                                    <td>Fanta X 1</td>
+                                    <td>&#8358;150</td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Total Amount Payable
+                        </td>
+                        <td>
+                            &#8358;840
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <button class="btn-order approve">Approve</button>
+            <button class="btn-order decline">Decline</button>
+        </div>
+    </section>
+    <footer>
+        DeLite Fast Food 2018
+    </footer>
+</body>
+
+</html>

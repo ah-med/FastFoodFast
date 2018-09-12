@@ -1,0 +1,34 @@
+body {
+    min-height: 100vh;
+}
+/** Admin Intro **/
+#admin-intro {
+    background-image: url('../images/bg1.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#admin-intro .container {
+    color: #fff;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.6);
+    width: 100%;
+    min-height: 77.3vh;
+}
+#admin-intro .content {
+    margin: 120px auto;
+}
+#admin-intro h1 {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 32px;
+}
+#admin-intro button {
+    background-color: red;
+    border: none;
+    padding: 15px 32px;
+    text-align:center; 
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+}

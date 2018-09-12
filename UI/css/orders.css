@@ -1,0 +1,172 @@
+/** Table **/
+ .mobile table {
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+.mobile  td:nth-child(2) {
+    text-align: right;
+}
+.mobile tr {
+    height: 30px;
+}
+.mobile  tr:nth-of-type(odd) {
+    background: #efefef;
+} 
+.mobile table table tr {
+    background: #efefef;
+    border-top: 1px solid #fff;
+}
+
+/** Orders mobile **/
+#orders-mobile {
+    background-color: #fff;
+    margin: 10px 10px;
+}
+#orders-mobile .order-card {
+    border-top: 1px solid #000;
+    padding: 20px 0;
+}
+
+/** Filter **/
+#filter {
+    background-color: #fff;
+    margin: 10px 10px;
+}
+#filter button {
+    text-transform: capitalize;
+    font-size: 16px;
+    background-color:#555;
+    padding: 5px 8px;
+    border: none;
+    text-align:center; 
+    color: #fff;
+    cursor: pointer;
+}
+#filter button:hover {
+    background-color:#fff;
+    color: #555;
+}
+#filter ul {
+    margin: 0;
+    padding: 0;
+}
+#filter li {
+    margin: 1px;
+    display:inline-block;
+}
+#filter img {
+    border: 1px solid #555;
+    border-radius: 4px;
+    padding: 5px;
+    width: 150px;
+    height: 150px;
+}
+#filter .food-item-card{
+    border-top: 1px solid #efefef;
+    margin-top: 10px;
+    padding:10px;
+}
+/** Order Card **/
+.order-card button {
+    text-transform: capitalize;
+    padding: 5px 8px;
+    border: 1px solid #555;
+    text-align:center; 
+    color: #fff;
+    cursor: pointer;
+    margin-top: 5px;
+}
+
+.order-card .view-btn {
+    background-color:#555;
+}
+
+.order-card button:hover{
+    background-color:#fff;
+    color: #555;
+    border: 1px solid #555;
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    #orders-desktop button {
+        text-transform: capitalize;
+        padding: 5px 8px;
+        border: 1px solid #555;
+        text-align:center; 
+        color: #fff;
+        cursor: pointer;
+        margin-top: 5px;
+    }
+    
+    #orders-desktop .view-btn {
+        background-color:#555;
+    }
+    
+    #orders-desktop button:hover{
+        background-color:#fff;
+        color: #555;
+        border: 1px solid #555;
+    }
+    #filter {
+        background-color: #efefef;
+        margin: 10px 0;
+        margin-bottom: 0;
+    }
+    .desktop {
+        background-color: #efefef;
+    }
+    h3 {
+        background-color:inherit;
+        color: #555;
+        padding: 0px;
+        text-align: center;
+    }
+    /**  table **/
+    table {
+        width: 100%;
+        table-layout: fixed;
+        border-collapse: collapse;
+        background-color: #fff;
+        color: #000000;
+      }
+      tr .orderid {
+          width: 100px;
+      }
+      tr .orderstat {
+        width: 100px;
+      }
+      tr .name {
+        width: 120px;
+     }
+     tr .date {
+        width: 120px;
+     }
+     tr .total {
+        width: 100px;
+     }  
+     tr .act {
+        width: 150px;
+     }    
+      tr:nth-of-type(odd) {
+        background: #eee;
+        font-size: 14px;
+      }
+      
+      th {
+        background-color:#555;
+        color: white;
+        font-weight: bold;
+        font-size: 14px;
+        height: 40px;
+      }
+      
+      td, th {
+        padding: 10px;
+        border: 1px solid #ccc;
+        text-align: left;
+        font-size: 14px;
+      }
+}
