@@ -9,7 +9,8 @@
     "start": "node ./client/index.js",
     "prestart": "npm run-script build",
     "prod-start": "nodemon server/index.js --exec babel-node",
-    "test": "mocha server/ --recursive --compilers js:babel-register --exit"
+    "test": "mocha server/ --recursive --compilers js:babel-register --exit",
+    "coverage": "nyc npm test && nyc report --reporter=text-lcov | coveralls"
   },
   "repository": {
     "type": "git",
@@ -41,9 +42,12 @@
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.7.0",
     "babel-register": "^6.26.0",
+    "coveralls": "^3.0.2",
     "eslint": "^5.5.0",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.14.0",
-    "mocha": "^5.2.0"
+    "mocha": "^5.2.0",
+    "mocha-lcov-reporter": "^1.3.0",
+    "nyc": "^13.0.1"
   }
 }
