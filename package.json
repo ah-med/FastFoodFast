@@ -25,7 +25,8 @@
   "homepage": "https://github.com/ah-med/FastFoodFast#readme",
   "dependencies": {
     "body-parser": "^1.18.3",
-    "express": "^4.16.3"
+    "express": "^4.16.3",
+    "trim-request-body": "^1.0.1"
   },
   "devDependencies": {
     "chai": "^4.1.2",
