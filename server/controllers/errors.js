@@ -1,11 +1,4 @@
 const errors = {
-  serverError: res => res.status(500).json({
-    error: {
-      status: 500,
-      title: 'INTERNAL_SERVER_ERROR',
-      description: 'something unexpected occured. try again later',
-    },
-  }),
   validationError: (res, errObj) => res.status(422).json({
     error: {
       status: 422,
@@ -19,13 +12,6 @@ const errors = {
       status: 404,
       title: 'ERROR_NOT_FOUND',
       description: 'resource does not exist',
-    },
-  }),
-  unauthorizedError: res => res.status(401).json({
-    error: {
-      status: 401,
-      title: 'UNAUTHOURIZED_ACCESS',
-      description: 'an access token or other authorization credential is required',
     },
   }),
   forbidden: (res, description) => res.status(403).json({
