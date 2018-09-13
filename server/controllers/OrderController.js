@@ -73,6 +73,24 @@ class OrderController {
       }
     });
   }
+
+  /**
+    * Get order
+    *@param {object} req The request *.
+    *@param {object} res The response *.
+    *@returns {undefined} returns undefined *
+    */
+  static getOrder(req, res) {
+    const { orderId } = req.params;
+    const order = ordersList.forEach((val) => {
+      if (val.orderId === orderId) return val;
+    });
+
+    res.status(200).json({
+      status: 200,
+      data: [order]
+    });
+  }
 }
 
 export default OrderController;
