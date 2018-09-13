@@ -9,6 +9,9 @@ const router = express.Router();
 const { validateOrder, validateOrderId, validateOrderStatus } = validate;
 const { verifyOrderId } = verify;
 
+// Get an order
+router.get('/orders/:orderId', validateOrderId, verifyOrderId, OrderController.getOrder);
+
 // place an order
 router.post('/orders', validateOrder, assignOrderStatus.newOrder, OrderController.create);
 
