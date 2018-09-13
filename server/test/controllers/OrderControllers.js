@@ -94,3 +94,24 @@ describe('OrderController.getOrder', () => {
       });
   });
 });
+
+describe('OrderController.getAllOrders', () => {
+  it('should accept an order', (done) => {
+    chai.request(app)
+      .post('/orders')
+      .send({
+        name: 'Joe Jackson', phoneNo: '12345678901', address: 'my home town', foodItems: [{ itemId: 1, quantity: 4 }],
+      })
+      .end((err, res) => {
+        expect(res.status).to.equal(201);
+        chai.request(app)
+          .get('/orders')
+          .end((err, res) => {
+            expect(res.body).to.have.property('status');
+            expect(res.body).to.have.property('data');
+            expect(res.status).to.equal(200);
+            done();
+          });
+      });
+  });
+});
