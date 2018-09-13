@@ -12,6 +12,9 @@ const { verifyOrderId } = verify;
 // Get an order
 router.get('/orders/:orderId', validateOrderId, verifyOrderId, OrderController.getOrder);
 
+//  Get all orders
+router.get('/orders', OrderController.getAllOrders);
+
 // place an order
 router.post('/orders', validateOrder, assignOrderStatus.newOrder, OrderController.create);
 
