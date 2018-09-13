@@ -18,7 +18,8 @@ fastfoodApp.use(trimmer);
 
 fastfoodApp.listen(port);
 
-fastfoodApp.use('/', index);
+// create version1 of api
+fastfoodApp.use('/api/v1', index);
 
 fastfoodApp.use('*', (req, res) => {
   res.status(200).json({
