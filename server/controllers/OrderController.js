@@ -91,6 +91,20 @@ class OrderController {
       data: [order]
     });
   }
+
+  /**
+  * Get all orders
+  *@param {object} req The request *.
+  *@param {object} res The response *.
+  *@returns {undefined} returns undefined *
+  */
+  static getAllOrders(req, res) {
+    res.status(200).json({
+      status: 200,
+      data: ordersList
+    });
+  }
+
 }
 
 export default OrderController;
