@@ -9,3 +9,7 @@
 ## Available Endpoints
 
 - POST /orders: Place a new order
+
+## Hosted on heroku
+
+- [Hosted](https://afastfood-app.herokuapp.com/) 
