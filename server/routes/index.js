@@ -19,6 +19,6 @@ router.get('/orders', OrderController.getAllOrders);
 router.post('/orders', validateOrder, assignOrderStatus.newOrder, OrderController.create);
 
 // update order
-router.put('/orders/:orderId', validateOrderId, validateOrderStatus, verifyOrderId, assignOrderStatus.update, OrderController.updateStatus);
+router.put('/orders/:orderId', validateOrderStatus, verifyOrderId, assignOrderStatus.update, OrderController.updateStatus);
 
 export default router;
