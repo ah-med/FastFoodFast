@@ -82,10 +82,7 @@ class OrderController {
     */
   static getOrder(req, res) {
     const { orderId } = req.params;
-    const order = ordersList.forEach((val) => {
-      if (val.orderId === orderId) return val;
-    });
-
+    const order = ordersList.find(val => val.orderId === orderId);
     res.status(200).json({
       status: 200,
       data: [order]
@@ -104,7 +101,6 @@ class OrderController {
       data: ordersList
     });
   }
-
 }
 
 export default OrderController;

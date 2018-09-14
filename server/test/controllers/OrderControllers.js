@@ -88,6 +88,7 @@ describe('OrderController.getOrder', () => {
           .end((err, res) => {
             expect(res.body).to.have.property('status');
             expect(res.body).to.have.property('data');
+            expect(res.body.data[0]).to.have.property('orderId');
             expect(res.status).to.equal(200);
             done();
           });
