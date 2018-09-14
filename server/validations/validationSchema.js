@@ -17,6 +17,10 @@ const Schema = {
     address: Joi.string().min(7).max(50).required(),
     foodItems: Joi.array().items(foodItemObj).required(),
   },
+  updateStatusSchema: {
+    orderId: Joi.number().positive().required(),
+    status: Joi.string().valid('Pending Approval', 'Complete', 'Accept', 'Decline').required()
+  },
 };
 
 export default Schema;
