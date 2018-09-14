@@ -19,9 +19,10 @@ const validateOrderId = (req, res, next) => {
   return (errors !== null) ? validationError(res, errors) : next();
 };
 const validateOrderStatus = (req, res, next) => {
-  const data = ['status'];
+  const data = ['status', 'orderId'];
   const obj = {};
   obj.status = req.body.status;
+  obj.orderId = req.params.orderId;
   const errors = Validator(data, obj, updateStatusSchema);
   return (errors !== null) ? validationError(res, errors) : next();
 };

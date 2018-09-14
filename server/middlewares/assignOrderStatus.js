@@ -6,18 +6,14 @@ const newOrder = (req, res, next) => {
   next();
 };
 
-const update = (req, res, next) => {
-  // get the status from req.body
-  const { status } = req.body;
-  // get the order
-  const order = ordersList.find(val => val.orderId === req.params.orderId);
+const processUpdate = (prevStatus, newStatus) => {
   let errMess;
   let orderStatus;
-  switch (order.orderStatus) {
+  switch (prevStatus) {
     case 'Pending Approval':
       // you can only Accept or Decline an order that is Pending Approval
-      if (status === 'Accept' || status === 'Decline') {
-        orderStatus = (status === 'Accept') ? 'Accepted' : 'Declined';
+      if (newStatus === 'Accept' || newStatus === 'Decline') {
+        orderStatus = (newStatus === 'Accept') ? 'Accepted' : 'Declined';
       } else {
         errMess = 'You can only Accept/Decline an order that is Pending Approval';
       }
@@ -28,8 +24,8 @@ const update = (req, res, next) => {
       break;
     case 'Accepted':
       // you can only Decline or Complete an accepted order
-      if (status === 'Complete' || status === 'Decline') {
-        orderStatus = (status === 'Complete') ? 'Completed' : 'Declined';
+      if (newStatus === 'Complete' || newStatus === 'Decline') {
+        orderStatus = (newStatus === 'Complete') ? 'Completed' : 'Declined';
         break;
       }
       errMess = 'you can only Complete/Decline an Approved order';
@@ -43,8 +39,23 @@ const update = (req, res, next) => {
       errMess = 'This should not be happening';
       break;
   }
+  return { errMess, orderStatus };
+};
+
+const update = (req, res, next) => {
+  // get the status from req.body
+  const { status } = req.body;
+  // get the order
+  const order = ordersList.find(val => val.orderId === req.params.orderId);
+  // process the update
+  const processStatus = processUpdate(order.orderStatus, status);
+  const { errMess, orderStatus } = processStatus;
   req.orderStatus = orderStatus;
-  return (errMess) ? errors.forbidden(res, errMess) : next();
+  if (errMess) {
+    return errors.forbidden(res, errMess);
+  }
+  req.orderStatus = orderStatus;
+  next();
 };
 
 export default { newOrder, update };
