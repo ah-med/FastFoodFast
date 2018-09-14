@@ -8,7 +8,7 @@ const { expect } = chai;
 describe('OrderController.create', () => {
   it('should create an order', (done) => {
     chai.request(app)
-      .post('/orders')
+      .post('/api/v1/orders')
       .send({
         name: 'Joe Jackson', phoneNo: '12345678901', address: 'my home town', foodItems: [{ itemId: 1, quantity: 4 }],
       })
@@ -26,7 +26,7 @@ describe('OrderController.update', () => {
   // create an order first get the Id and use it to update another order
   it('should accept an order', (done) => {
     chai.request(app)
-      .post('/orders')
+      .post('/api/v1/orders')
       .send({
         name: 'Joe Jackson', phoneNo: '12345678901', address: 'my home town', foodItems: [{ itemId: 1, quantity: 4 }],
       })
@@ -34,7 +34,7 @@ describe('OrderController.update', () => {
         expect(res.status).to.equal(201);
         const { orderId } = res.body.data[0];
         chai.request(app)
-          .put(`/orders/${orderId}`)
+          .put(`/api/v1/orders/${orderId}`)
           .send({
             status: 'Accept'
           })
@@ -49,7 +49,7 @@ describe('OrderController.update', () => {
   });
   it('should decline an order', (done) => {
     chai.request(app)
-      .post('/orders')
+      .post('/api/v1/orders')
       .send({
         name: 'Joe Jackson', phoneNo: '12345678901', address: 'my home town', foodItems: [{ itemId: 1, quantity: 4 }],
       })
@@ -57,7 +57,7 @@ describe('OrderController.update', () => {
         expect(res.status).to.equal(201);
         const { orderId } = res.body.data[0];
         chai.request(app)
-          .put(`/orders/${orderId}`)
+          .put(`/api/v1/orders/${orderId}`)
           .send({
             status: 'Decline'
           })
@@ -76,7 +76,7 @@ describe('OrderController.getOrder', () => {
   // create an order first get the Id and use it to update another order
   it('should accept an order', (done) => {
     chai.request(app)
-      .post('/orders')
+      .post('/api/v1/orders')
       .send({
         name: 'Joe Jackson', phoneNo: '12345678901', address: 'my home town', foodItems: [{ itemId: 1, quantity: 4 }],
       })
@@ -84,7 +84,7 @@ describe('OrderController.getOrder', () => {
         expect(res.status).to.equal(201);
         const { orderId } = res.body.data[0];
         chai.request(app)
-          .get(`/orders/${orderId}`)
+          .get(`/api/v1/orders/${orderId}`)
           .end((err, res) => {
             expect(res.body).to.have.property('status');
             expect(res.body).to.have.property('data');
@@ -98,14 +98,14 @@ describe('OrderController.getOrder', () => {
 describe('OrderController.getAllOrders', () => {
   it('should accept an order', (done) => {
     chai.request(app)
-      .post('/orders')
+      .post('/api/v1/orders')
       .send({
         name: 'Joe Jackson', phoneNo: '12345678901', address: 'my home town', foodItems: [{ itemId: 1, quantity: 4 }],
       })
       .end((err, res) => {
         expect(res.status).to.equal(201);
         chai.request(app)
-          .get('/orders')
+          .get('/api/v1/orders')
           .end((err, res) => {
             expect(res.body).to.have.property('status');
             expect(res.body).to.have.property('data');
