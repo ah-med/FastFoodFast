@@ -1,3 +1,8 @@
+/** Global **/
+.container h2 {
+    margin: 60px 0;
+}
+
 /** Intro **/
 #intro {
     background-image: url('../images/bg2.jpg');
@@ -41,7 +46,6 @@
     color: #000;
 }
 #how-it-works img {
-    max-width: 100px;
     max-height: 100px;
 }
 #how-it-works h3 {
@@ -122,19 +126,28 @@
 @media only screen and (min-width: 768px) {
 /** How It Works **/
 #how-it-works {
-    min-height: 320px;
+    min-height: 300px;
     margin: 0 0 30px 0;
+
 }
 #how-it-works img {
-    min-width: 100px;
     height: 100px;
 }
 #how-it-work-list {
     display: flex;
     flex-direction: row;
+    justify-content: space-evenly;
     margin: 30px 0;
 }
+#how-it-works .deliver {
+    min-width: 300px;
+}
 
+#how-it-work-list div {
+    min-width: 200px;
+    padding: 10px;
+    margin-bottom: 60px;
+}
 
 /** Popular **/ 
 #food-grid {
