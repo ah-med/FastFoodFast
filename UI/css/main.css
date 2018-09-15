@@ -119,10 +119,9 @@ input:focus {
   margin: 0;
 }
 .add-cart  {
-    display: flex;
-    margin: auto;
-    
+    display: flex;    
 }
+
 .add-cart input {
     width: 30px;
     text-align: center;
