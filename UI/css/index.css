@@ -77,18 +77,18 @@
 #food-grid {
     margin: 0 auto;
 }
-#popular .food-item-card {
-    border-top: 1px solid #efefef;
-    padding: 10px;
-}
+
 #view-order-div {
     text-align:center; 
+    margin: 5px;
 }
-#view-order-div button {
-    background-color: red;
+#view-order-div a {
+    display: inline-block;
+    border-radius: 3px;
     border: none;
     padding: 12px 32px;
     color: #fff;
+    font-weight: 700;
     font-size: 16px;
     margin: 30px auto;
 }
@@ -162,26 +162,22 @@
 
 /** Popular **/ 
 #food-grid {
-    display: grid;
-    grid-template-columns: auto auto auto auto;
+    display: flex;
+    justify-content: space-evenly;
     padding-top: 20px;
     margin: 30px 0;
 }
-#popular .food-item-card {
-    border-top: none;
-    padding: 0px;
-}
+
 #popular img {
-    border: 1px solid #b8b8b8;
-    border-radius: 4px;
-    padding: 5px;
-    width: 200px;
+    border: none;
+    border-radius: 0;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    padding: 0;
+    width: 100%;
 }
 #popular h4 {
     margin: 0;
-}
-#popular .add-cart {
-    margin: 5px 0;
 }
 
 /** Categories **/
