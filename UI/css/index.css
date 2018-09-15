@@ -2,7 +2,12 @@
 .container h2 {
     margin: 60px 0;
 }
-
+#how-it-works, #popular, #categories {
+    min-height: 600px;
+}
+.grid a {
+    margin-top: 20px;
+}
 /** Intro **/
 #intro {
     background-image: url('../images/bg2.jpg');
@@ -120,7 +125,7 @@
     border-radius: 50%;
 }
 #categories img:hover{
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0px 8px 0 rgba(0, 0, 0, 0.5), 0 0px 20px 0 rgba(0, 0, 0, 0.5);
 }
 #categories span{
     color: #000;
@@ -187,9 +192,7 @@
     border: 5px solid #fff;
     border-radius: 50%;
 }
-#categories img:hover{
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.5);
-}
+
 #categories span{
     color: #000;
 }
