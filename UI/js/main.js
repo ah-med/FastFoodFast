@@ -8,3 +8,25 @@ function toggleModal(id) {
 
     document.getElementById(id).className = modalClassName;
 }
+
+const addToClassList = (id, className) => {
+  const element = document.getElementById(id);
+  element.classList.add(className);
+}
+const removeFromClassList = (id, className) => {
+  const element = document.getElementById(id);
+  element.classList.remove(className);
+}
+
+const fixOnScroll = (id) => {
+  const element = document.getElementById(id);
+  const elementOffsetTop = element.offsetTop;
+
+  if (window.pageYOffset > elementOffsetTop) {
+    addToClassList(id, 'fixed');
+  } else {
+    removeFromClassList(id, 'fixed');
+  }
+}
+
+window.onscroll = () => { fixOnScroll('header') };
