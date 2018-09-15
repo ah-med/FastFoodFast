@@ -8,7 +8,7 @@
 #intro .container {
     color: #fff;
     text-align: center;
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(0, 0, 0, 0.1);
     min-height: 560px;
     width: 100%;
 }
@@ -18,6 +18,7 @@
 #intro h1 {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 50px;
+    margin: 0;
 }
 #intro button {
     background-color: red;
