@@ -70,16 +70,10 @@ input:focus {
 }
 /** Food Item card **/
 .food-item-card {
-    border-top: 1px solid #efefef;
-    padding: 10px;
-}
-
-.food-item-card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.6), 0 0px 0px 0 rgba(0, 0, 0, 0.19);
-    border-top: none;
     border-radius: 5px;
-    padding: 0;
-    width: 250px;
+    width: 100%;
+    margin-top: 20px;
     padding-bottom: 10px;
 }
 
@@ -289,7 +283,9 @@ footer {
         display: flex;
         flex-direction: row;
     }
-
+    .food-item-card {
+        width: 250px;
+    }
     header #brand h1{
         margin: 0;
         padding: 0;
