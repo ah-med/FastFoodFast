@@ -31,7 +31,7 @@
             </ul>
         </nav>
     </section>
-    <header>
+    <header id="header">
         <div class="container">
             <div class="left">
                 <div id="menu" class="mobile">
@@ -79,18 +79,9 @@
         </div>
     </header>
     <section id="main">
-        <section id="cart">
+        <section id="menu">
+                <h4 class="text-center">Menu</h4>
             <div class="container">
-                <h4>Your Cart</h4>
-                <p>Your cart is empty add</p>
-                <button class="btn-action">
-                    <a href="#food-menu">Add items</a>
-                </button>
-            </div>
-        </section>
-        <section id="food-menu">
-            <div class="container">
-                <h4>Menu</h4>
                 <nav id="menu-header">
                     <ul>
                         <li>
@@ -116,9 +107,13 @@
                         </li>
                     </ul>
                 </nav>
+            </div>
+        </section>
+        <section id="food-menu">
+            <div class="container">
                 <div id="menu-body">
-                    <h4>Continental</h4>
-                    <div id="continental" class="food-items">
+                    <h4 id="continental">Continental</h4>
+                    <div class="food-items">
                         <div class="food-item-card" align="center">
                             <img src="./images/food/continental/shawama-chicken.jpg" alt="item3">
                             <h4>Sharwama (chicken)</h4>
@@ -411,18 +406,18 @@
                             </div>
                         </div>
                         <div class="food-item-card" align="center">
-                                <img src="./images/food/traditional/white-rice-stew.jpg" alt="white-rice-stew">
-                                <h4>White Rice and Stew</h4>
-                                <span>&#8358;100</span>
-                                <div class="action">
-                                    <div class="add-cart">
-                                        <button id="minus" class="click">-</button>
-                                        <input type="number" min="0" max="30" step="1" value="0">
-                                        <button id="plus" class="click">+</button>
-                                    </div>
-                                    <a class="action-btn" href="#">Order Now</a>
+                            <img src="./images/food/traditional/white-rice-stew.jpg" alt="white-rice-stew">
+                            <h4>White Rice and Stew</h4>
+                            <span>&#8358;100</span>
+                            <div class="action">
+                                <div class="add-cart">
+                                    <button id="minus" class="click">-</button>
+                                    <input type="number" min="0" max="30" step="1" value="0">
+                                    <button id="plus" class="click">+</button>
                                 </div>
+                                <a class="action-btn" href="#">Order Now</a>
                             </div>
+                        </div>
                     </div>
                 </div>
             </div>
