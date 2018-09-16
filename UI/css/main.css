@@ -31,17 +31,11 @@ a {
     color:inherit;
     text-decoration-line: none;
 }
-.btn-action {
-    background-color: red;
-    border: none;
-    padding: 15px 32px;
-    text-align:center; 
-    color: #fff;
-    font-size: 16px;
-    cursor: pointer;
+.orange {
+    color: #fe8e07;
 }
 input:focus {
-    outline-color: yellow;
+    outline-color: #fe8e07;
 }
 .hide {
     display:none;
