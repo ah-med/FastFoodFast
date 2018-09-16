@@ -51,7 +51,10 @@ footer {
     position: fixed;
     width: 100%;
 }
-
+#signup-footer {
+    position: relative;
+    width: auto;
+}
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
@@ -68,8 +71,5 @@ footer {
     #signup .container {
         margin-top: 20px;
         margin-bottom:  20px;
-    }
-    footer {
-        max-height: auto;
     }
 }
