@@ -1,6 +1,5 @@
 body {
-    font-family: sans-serif;
-    color: #838181; 
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;    color: #838181; 
     padding: 0;
     margin: 0;
     background-color:#efefef;
@@ -18,8 +17,15 @@ body {
 .decline {
     background-color: orangered;
 }
-.red {
-    color: red;
+h1, h2 {
+    font-family: cursive;
+    color: #fe8e07;
+}
+.action-btn {
+    box-shadow: inset 0 64px 40px -40px rgba(255,255,255,.1), inset 0 -2px 0 rgba(0,0,0,.2), 0 1px 2px rgba(0,0,0,.15);
+    background-color: #fe8e07;
+    text-align:center; 
+    color: #fff;
 }
 a {
     color:inherit;
@@ -59,23 +65,70 @@ input:focus {
 .desktop {
     display: none;
 }
+.fixed {
+    position: fixed;
+}
+/** Food Item card **/
+.food-item-card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.6), 0 0px 0px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 5px;
+    width: 100%;
+    margin-top: 20px;
+    padding-bottom: 10px;
+}
 
 .add-cart {
-    width: auto;
+    margin: 5px 0;
 }
-#minus,  #plus {
-    height: 100%;
-    width: 33.33%;
+.food-item-card img {
+    border: none;
+    border-radius: 0;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    padding: 0;
+    width: 100%;
+}
+.food-item-card .action a { 
+    display: inline-block;
+    background-color: yellowgreen;
     color: #fff;
-    border: 1px solid #efefef;
-    background-color: orangered;
-    padding: 0 5px;
+    border-radius: 5px;
+    padding: 7px;
+}
+.food-item-card .action a:hover { 
+    background-color: rgb(52, 141, 52);
 }
 
-.add-cart #item-value {
-    border: 1px solid #efefef;
-    color: #000;
-    width: 40px;
+.food-item-card .action {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10px;
+}
+
+.add-cart input::-webkit-inner-spin-button,
+.add-cart input::-webkit-outer-spin-button
+{
+  -webkit-appearance: none;
+  margin: 0;
+}
+.add-cart  {
+    display: flex;    
+}
+
+.add-cart input {
+    width: 30px;
+    text-align: center;
+    margin:0;
+    height: 20px;
+}
+#minus,  #plus {
+    height: 26px;
+    width: 20px;
+    color: #fff;
+    border: 1px solid  #fe8e07;
+    background-color:  #fe8e07;
+    padding: 0 5px;
 }
 
 .food-item-card button {
@@ -86,6 +139,8 @@ input:focus {
     color: #fff;
     font-size: 16px;
 }
+
+
 
 /** Modals **/
 #modals {
@@ -127,6 +182,7 @@ header {
     color: #000000;
     padding-top: 30px;
     min-height: 50px;
+    width: 100%;
     border-bottom: #b1abab 1px solid;
 }
 header img {
@@ -159,6 +215,8 @@ header #brand h1{
     padding: 0;
     font-size: 14px;
     margin-left: 10px;
+    font-family: cursive;
+    color:#fe8e07;
 }
 header #brand h1 a {
     font-size: inherit;
@@ -225,7 +283,9 @@ footer {
         display: flex;
         flex-direction: row;
     }
-
+    .food-item-card {
+        width: 250px;
+    }
     header #brand h1{
         margin: 0;
         padding: 0;

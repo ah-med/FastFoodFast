@@ -3,9 +3,9 @@
 
 <head>
     <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>DeLite</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="shortcut icon" href="images/favicon.PNG" type="image/x-icon">
     <link rel="stylesheet" type="text/css" media="screen" href="./css/main.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="./css/index.css" />
@@ -32,7 +32,7 @@
             </ul>
         </nav>
     </section>
-    <header>
+    <header id="header">
         <div class="container">
             <div class="left">
                 <div id="menu" class="mobile">
@@ -83,11 +83,9 @@
         <div class="container">
             <div class="content">
                 <h1>Delivering Deliciousness</h1>
-                <p>Good Food Health Body
-                </p>
-                <button>
-                    <a href="./user_food_items.html">Order Food</a>
-                </button>
+                <span>Good Food Healthy Body</span>
+                <br>
+                <a class="action-btn" href="./user_food_items.html">Order Food</a>
             </div>
         </div>
     </section>
@@ -98,22 +96,22 @@
                 <div>
                     <img src="./images/icons/choose.png" alt="Choose">
                     <h3>1. Choose</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    <p>select from a large variety of food declicacies</p>
                 </div>
                 <div>
-                    <img src="./images/icons/deliver.png" alt="find">
+                    <img class="deliver" src="./images/icons/deliver.png" alt="deliver">
                     <h3>2. We Deliver</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    <p>we will deliver your food in a few minutes</p>
                 </div>
                 <div>
                     <img src="./images/icons/pay.png" alt="Pay">
                     <h3>3. Pay</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    <p>pay for your orderd food on delivery</p>
                 </div>
                 <div>
                     <img src="./images/icons/enjoy.png" alt="enjoy">
                     <h3>4. Enjoy</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    <p>enjoy your food</p>
                 </div>
             </div>
         </div>
@@ -121,72 +119,68 @@
     <section id="popular">
         <div class="container">
             <h2>Popular Food Items</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error ex laboriosam fugiat odio.</p>
-            <div id="food-grid">
+            <div id="food-item">
                 <div class="food-item-card" align="center">
                     <img src="./images/food/traditional/fried-plantain.jpg" alt="item1">
                     <h4>Fried Plantain</h4>
                     <span>&#8358;500</span>
-                    <div class="add-cart">
-                        <span id="minus" class="click">-</span>
-                        <span id="item-value">0</span>
-                        <span id="plus" class="click">+</span>
+                    <div class="action">
+                        <div class="add-cart">
+                            <button id="minus" class="click">-</button>
+                            <input type="number" min="0" max="30" step="1" value="0">
+                            <button id="plus" class="click">+</button>
+                        </div>
+                        <a  class="action-btn" href="#">Order Now</a>
                     </div>
-                    <button>
-                        <a href="#">Order Now</a>
-                    </button>
                 </div>
                 <div class="food-item-card" align="center">
                     <img src="./images/food/swallow/semo.jpg" alt="item2">
                     <h4>Semo</h4>
                     <span>&#8358;100</span>
-                    <div class="add-cart">
-                        <span id="minus" class="click">-</span>
-                        <span id="item-value">0</span>
-                        <span id="plus" class="click">+</span>
+                    <div class="action">
+                        <div class="add-cart">
+                            <button id="minus" class="click">-</button>
+                            <input type="number" min="0" max="30" step="1" value="0">
+                            <button id="plus" class="click">+</button>
+                        </div>
+                        <a  class="action-btn" href="#">Order Now</a>
                     </div>
-                    <button>
-                        <a href="#">Order Now</a>
-                    </button>
                 </div>
                 <div class="food-item-card" align="center">
                     <img src="./images/food/continental/shawama-chicken.jpg" alt="item3">
                     <h4>Sharwama (chicken)</h4>
                     <span>&#8358;1,200</span>
-                    <div class="add-cart">
-                        <span id="minus" class="click">-</span>
-                        <span id="item-value">0</span>
-                        <span id="plus" class="click">+</span>
+                    <div class="action">
+                        <div class="add-cart">
+                            <button id="minus" class="click">-</button>
+                            <input type="number" min="0" max="30" step="1" value="0">
+                            <button id="plus" class="click">+</button>
+                        </div>
+                        <a  class="action-btn" href="#">Order Now</a>
                     </div>
-                    <button>
-                        <a href="#">Order Now</a>
-                    </button>
                 </div>
                 <div class="food-item-card" align="center">
                     <img src="./images/food/pastries/family-loaf.jpg" alt="item4">
-                    <h4>Family Loaof</h4>
+                    <h4>Family Loaf</h4>
                     <span>&#8358;400</span>
-                    <div class="add-cart">
-                        <span id="minus" class="click">-</span>
-                        <span id="item-value">0</span>
-                        <span id="plus" class="click">+</span>
+                    <div class="action">
+                        <div class="add-cart">
+                            <button id="minus" class="click">-</button>
+                            <input type="number" min="0" max="30" step="1" value="0">
+                            <button id="plus" class="click">+</button>
+                        </div>
+                        <a  class="action-btn" href="#">Order Now</a>
                     </div>
-                    <button>
-                        <a href="#">Order Now</a>
-                    </button>
                 </div>
             </div>
             <div id="view-order-div">
-                <button>
-                    <a href="./user_food_items.html">View All Food Items</a>
-                </button>
+                <a class="action-btn" href="./user_food_items.html">View All Food Items</a>
             </div>
         </div>
     </section>
     <section id="categories">
         <div class="container">
             <h2>Food Categories</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error ex laboriosam fugiat odio.</p>
             <div class="grid">
                 <a href="./user_food_items.html#swallow">
                     <img src="./images/food/swallow-food.jpg" alt="swallow">
