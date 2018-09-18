@@ -28,7 +28,7 @@ footer {
     margin: 0;
     padding-top: 10px;
 }
-
+/** Status **/
 .status {
     width: 100px;
     height: 100px;
@@ -38,18 +38,29 @@ footer {
    color:green;
 }
 .status-approve {
-    background-color: yellowgreen;
+    color: #c5cd32;
 }
 .status-decline {
-    background-color: #da4848;
+    color: #da4848;
 }
+
+/** Main **/
 #main {
     background-color: #fff;
 }
 #main .container {
     min-height: 100vh;
-    
 }
+#user_orders {
+    display:grid;
+    height: 296px;
+    margin: auto;
+    width: 95%;
+}
+#user_orders .order-card {
+    margin: 40px auto;
+}
+/** Order-card **/
 .order-card img {
     display: block;
 }
@@ -70,6 +81,10 @@ footer {
     width: 0;
     height: 100%;
     transition: .5s ease;
+}
+.order-card .overlay button {
+    padding: 7px 15px;
+    border-radius: 5px;
 }
 .top:hover .overlay {
     width: 100%;
@@ -104,7 +119,7 @@ footer {
 /**======================= MEDIA QUERIES ==========================**/
 
 @media only screen and (max-width: 600px) {
-    #ordered-food-items {
+    #ordered-food-items, #user_orders {
         grid-template-columns: auto;
     }
     #ordered-food-items .food-item-card {
@@ -113,19 +128,19 @@ footer {
 } 
 
 @media only screen and (min-width: 600px) {
-    #ordered-food-items {
+    #ordered-food-items, #user_orders {
         grid-template-columns: auto auto;
     }
 } 
 
 @media only screen and (min-width: 768px) {
-    #ordered-food-items {
+    #ordered-food-items, #user_orders {
         grid-template-columns: auto auto auto;
     }
 }
 
 @media only screen and (min-width: 1200px) {
-    #ordered-food-items {
+    #ordered-food-items, #user_orders {
         grid-template-columns: auto auto auto auto;
     }
 } 

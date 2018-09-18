@@ -129,23 +129,85 @@
     </header>
     <section id="main">
         <div class="container">
-            <div class="order-card food-item-card">
-                <div class="top">
-                    <img src="./images/food/pastries-food.jpg">
-                    <div class="overlay">
-                        <button onclick="toggleModal('itemsModal')">view</button>
+            <div id="user_orders">
+                <div class="order-card food-item-card">
+                    <div class="top">
+                        <img src="./images/food/pastries-food.jpg">
+                        <div class="overlay">
+                            <button class="action click" onclick="toggleModal('itemsModal')">view</button>
+                        </div>
+                    </div>
+                    <div class="bottom">
+                        <div class="section text-left">
+                            <span>&#8358;1,200</span>
+                            <span>3 items</span>
+                        </div>
+                        <div class="section text-right">
+                            <div class "text-right">
+                                <span class="status status-complete">&#9899;</span> Completed
+                            </div>
+                            <span>3 days ago</span>
+                        </div>
                     </div>
                 </div>
-                <div class="bottom">
-                    <div class="section text-left">
-                        <span>&#8358;1,200</span>
-                        <span>3 items</span>
-                    </div>
-                    <div class="section text-right">
-                        <div class "text-right">
-                            <span class="status status-complete">&#9899;</span>Completed
+                <div class="order-card food-item-card">
+                    <div class="top">
+                        <img src="./images/food/drinks-food.PNG">
+                        <div class="overlay">
+                            <button class="action click" onclick="toggleModal('itemsModal')">view</button>
                         </div>
-                        <span>3 days ago</span>
+                    </div>
+                    <div class="bottom">
+                        <div class="section text-left">
+                            <span>&#8358;1,200</span>
+                            <span>3 items</span>
+                        </div>
+                        <div class="section text-right">
+                            <div class "text-right">
+                                <span class="status status-complete">&#9899;</span> Completed
+                            </div>
+                            <span>8 hours ago</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="order-card food-item-card">
+                    <div class="top">
+                        <img src="./images/food/pastries-food.jpg">
+                        <div class="overlay">
+                            <button class="action click" onclick="toggleModal('itemsModal')">view</button>
+                        </div>
+                    </div>
+                    <div class="bottom">
+                        <div class="section text-left">
+                            <span>&#8358;1,200</span>
+                            <span>3 items</span>
+                        </div>
+                        <div class="section text-right">
+                            <div class "text-right">
+                                <span class="status status-decline">&#9899;</span> Declined
+                            </div>
+                            <span>2 days ago</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="order-card food-item-card">
+                    <div class="top">
+                        <img src="./images/food/protein-food.jpg">
+                        <div class="overlay">
+                            <button class="action click" onclick="toggleModal('itemsModal')">view</button>
+                        </div>
+                    </div>
+                    <div class="bottom">
+                        <div class="section text-left">
+                            <span>&#8358;1,200</span>
+                            <span>3 items</span>
+                        </div>
+                        <div class="section text-right">
+                            <div class "text-right">
+                                <span class="status status-approve">&#9899;</span> Approved
+                            </div>
+                            <span>3 days ago</span>
+                        </div>
                     </div>
                 </div>
             </div>
