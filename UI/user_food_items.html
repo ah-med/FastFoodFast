@@ -31,7 +31,7 @@
             </ul>
         </nav>
     </section>
-    <header>
+    <header id="header">
         <div class="container">
             <div class="left">
                 <div id="menu" class="mobile">
@@ -79,18 +79,9 @@
         </div>
     </header>
     <section id="main">
-        <section id="cart">
+        <section id="menu">
+                <h4 class="text-center">Menu</h4>
             <div class="container">
-                <h4>Your Cart</h4>
-                <p>Your cart is empty add</p>
-                <button class="btn-action">
-                    <a href="#food-menu">Add items</a>
-                </button>
-            </div>
-        </section>
-        <section id="food-menu">
-            <div class="container">
-                <h4>Menu</h4>
                 <nav id="menu-header">
                     <ul>
                         <li>
@@ -116,465 +107,315 @@
                         </li>
                     </ul>
                 </nav>
+            </div>
+        </section>
+        <section id="food-menu">
+            <div class="container">
                 <div id="menu-body">
-                    <h4>Continental</h4>
-                    <div id="continental" class="food-items">
+                    <h4 id="continental">Continental</h4>
+                    <div class="food-items">
                         <div class="food-item-card" align="center">
-                            <div>
-                                <img src="./images/food/continental/burger-beef.jpg" alt="burger-beef">
-                                <h4>Burger Beef</h4>
-                            </div>
-                            <div>
-                                <span>&#8358;100</span>
+                            <img src="./images/food/continental/shawama-chicken.jpg" alt="item3">
+                            <h4>Sharwama (chicken)</h4>
+                            <span>&#8358;1,200</span>
+                            <div class="action">
                                 <div class="add-cart">
-                                    <span id="minus" class="click">-</span>
-                                    <span id="item-value">0</span>
-                                    <span id="plus" class="click">+</span>
+                                    <button id="minus" class="click">-</button>
+                                    <input type="number" min="0" max="30" step="1" value="0">
+                                    <button id="plus" class="click">+</button>
                                 </div>
-                            </div>
-                            <div>
-                                <button class="mobile">
-                                    <a href="#cart">View Cart</a>
-                                </button>
-                                <button>
-                                    <a href="./checkout.html">Checkout</a>
-                                </button>
+                                <a class="action-btn" href="#">Order Now</a>
                             </div>
                         </div>
                         <div class="food-item-card" align="center">
-                            <div>
-                                <img src="./images/food/continental/fried-rice.jpg" alt="fried-rice">
-                                <h4>Fried Rice</h4>
-                            </div>
-                            <div>
-                                <span>&#8358;150</span>
+                            <img src="./images/food/continental/burger-beef.jpg" alt="burger-beef">
+                            <h4>Burger Beef</h4>
+                            <span>&#8358;100</span>
+                            <div class="action">
                                 <div class="add-cart">
-                                    <span id="minus" class="click">-</span>
-                                    <span id="item-value">0</span>
-                                    <span id="plus" class="click">+</span>
+                                    <button id="minus" class="click">-</button>
+                                    <input type="number" min="0" max="30" step="1" value="0">
+                                    <button id="plus" class="click">+</button>
                                 </div>
-                            </div>
-                            <div>
-                                <button class="mobile">
-                                    <a href="#cart">View Cart</a>
-                                </button>
-                                <button>
-                                    <a href="./checkout.html">Checkout</a>
-                                </button>
+                                <a class="action-btn" href="#">Order Now</a>
                             </div>
                         </div>
                         <div class="food-item-card" align="center">
-                            <div>
-                                <img src="./images/food/continental/salad.jpg" alt="salad">
-                                <h4>Salad</h4>
-                            </div>
-                            <div>
-                                <span>&#8358;250</span>
+                            <img src="./images/food/continental/fried-rice.jpg" alt="fried-rice">
+                            <h4>Fried Rice</h4>
+                            <span>&#8358;150</span>
+                            <div class="action">
                                 <div class="add-cart">
-                                    <span id="minus" class="click">-</span>
-                                    <span id="item-value">0</span>
-                                    <span id="plus" class="click">+</span>
+                                    <button id="minus" class="click">-</button>
+                                    <input type="number" min="0" max="30" step="1" value="0">
+                                    <button id="plus" class="click">+</button>
                                 </div>
+                                <a class="action-btn" href="#">Order Now</a>
                             </div>
-                            <div>
-                                <button class="mobile">
-                                    <a href="#cart">View Cart</a>
-                                </button>
-                                <button>
-                                    <a href="./checkout.html">Checkout</a>
-                                </button>
+                        </div>
+                        <div class="food-item-card" align="center">
+                            <img src="./images/food/continental/salad.jpg" alt="salad">
+                            <h4>Salad</h4>
+                            <span>&#8358;250</span>
+                            <div class="action">
+                                <div class="add-cart">
+                                    <button id="minus" class="click">-</button>
+                                    <input type="number" min="0" max="30" step="1" value="0">
+                                    <button id="plus" class="click">+</button>
+                                </div>
+                                <a class="action-btn" href="#">Order Now</a>
                             </div>
                         </div>
                     </div>
                     <h4>Swallow</h4>
                     <div id="swallow" class="food-items">
                         <div class="food-item-card" align="center">
-                            <div>
-                                <img src="./images/food/swallow/eba.jpg" alt="eba">
-                                <h4>Eba</h4>
-                            </div>
-                            <div>
-                                <span>&#8358;100</span>
+                            <img src="./images/food/swallow/semo.jpg" alt="semo">
+                            <h4>Semo</h4>
+                            <span>&#8358;70</span>
+                            <div class="action">
                                 <div class="add-cart">
-                                    <span id="minus" class="click">-</span>
-                                    <span id="item-value">0</span>
-                                    <span id="plus" class="click">+</span>
+                                    <button id="minus" class="click">-</button>
+                                    <input type="number" min="0" max="30" step="1" value="0">
+                                    <button id="plus" class="click">+</button>
                                 </div>
-                            </div>
-                            <div>
-                                <button class="mobile">
-                                    <a href="#cart">View Cart</a>
-                                </button>
-                                <button>
-                                    <a href="./checkout.html">Checkout</a>
-                                </button>
+                                <a class="action-btn" href="#">Order Now</a>
                             </div>
                         </div>
                         <div class="food-item-card" align="center">
-                            <div>
-                                <img src="./images/food/swallow/semo.jpg" alt="semo">
-                                <h4>Semo</h4>
-                            </div>
-                            <div>
-                                <span>&#8358;70</span>
+                            <img src="./images/food/swallow/eba.jpg" alt="eba">
+                            <h4>Eba</h4>
+                            <span>&#8358;100</span>
+                            <div class="action">
                                 <div class="add-cart">
-                                    <span id="minus" class="click">-</span>
-                                    <span id="item-value">0</span>
-                                    <span id="plus" class="click">+</span>
+                                    <button id="minus" class="click">-</button>
+                                    <input type="number" min="0" max="30" step="1" value="0">
+                                    <button id="plus" class="click">+</button>
                                 </div>
+                                <a class="action-btn" href="#">Order Now</a>
                             </div>
-                            <div>
-                                <button class="mobile">
-                                    <a href="#cart">View Cart</a>
-                                </button>
-                                <button>
-                                    <a href="./checkout.html">Checkout</a>
-                                </button>
+                        </div>
+                        <div class="food-item-card" align="center">
+                            <img src="./images/food/swallow/semo.jpg" alt="semo">
+                            <h4>Semo</h4>
+                            <span>&#8358;70</span>
+                            <div class="action">
+                                <div class="add-cart">
+                                    <button id="minus" class="click">-</button>
+                                    <input type="number" min="0" max="30" step="1" value="0">
+                                    <button id="plus" class="click">+</button>
+                                </div>
+                                <a class="action-btn" href="#">Order Now</a>
                             </div>
                         </div>
                     </div>
                     <h4>Soup</h4>
                     <div id="soup" class="food-items">
                         <div class="food-item-card" align="center">
-                            <div>
-                                <img src="./images/food/soups/edikaikong soup.jpg" alt="edikaikong">
-                                <h4>Edikaikong</h4>
-                            </div>
-                            <div>
-                                <span>&#8358;100</span>
+                            <img src="./images/food/soups/edikaikong soup.jpg" alt="edikaikong">
+                            <h4>Edikaikong</h4>
+                            <span>&#8358;100</span>
+                            <div class="action">
                                 <div class="add-cart">
-                                    <span id="minus" class="click">-</span>
-                                    <span id="item-value">0</span>
-                                    <span id="plus" class="click">+</span>
+                                    <button id="minus" class="click">-</button>
+                                    <input type="number" min="0" max="30" step="1" value="0">
+                                    <button id="plus" class="click">+</button>
                                 </div>
-                            </div>
-                            <div>
-                                <button class="mobile">
-                                    <a href="#cart">View Cart</a>
-                                </button>
-                                <button>
-                                    <a href="./checkout.html">Checkout</a>
-                                </button>
+                                <a class="action-btn" href="#">Order Now</a>
                             </div>
                         </div>
                         <div class="food-item-card" align="center">
-                            <div>
-                                <img src="./images/food/soups/efororo.jpg" alt="efororo">
-                                <h4>Eforiro</h4>
-                            </div>
-                            <div>
-                                <span>&#8358;70</span>
+                            <img src="./images/food/soups/efororo.jpg" alt="efororo">
+                            <h4>Eforiro</h4>
+                            <span>&#8358;70</span>
+                            <div class="action">
                                 <div class="add-cart">
-                                    <span id="minus" class="click">-</span>
-                                    <span id="item-value">0</span>
-                                    <span id="plus" class="click">+</span>
+                                    <button id="minus" class="click">-</button>
+                                    <input type="number" min="0" max="30" step="1" value="0">
+                                    <button id="plus" class="click">+</button>
                                 </div>
-                            </div>
-                            <div>
-                                <button class="mobile">
-                                    <a href="#cart">View Cart</a>
-                                </button>
-                                <button>
-                                    <a href="./checkout.html">Checkout</a>
-                                </button>
+                                <a class="action-btn" href="#">Order Now</a>
                             </div>
                         </div>
                         <div class="food-item-card" align="center">
-                            <div>
-                                <img src="./images/food/soups/native-soup.jpg" alt="native-soup">
-                                <h4>Native soup</h4>
-                            </div>
-                            <div>
-                                <span>&#8358;80</span>
+                            <img src="./images/food/soups/native-soup.jpg" alt="native-soup">
+                            <h4>Native soup</h4>
+                            <span>&#8358;80</span>
+                            <div class="action">
                                 <div class="add-cart">
-                                    <span id="minus" class="click">-</span>
-                                    <span id="item-value">0</span>
-                                    <span id="plus" class="click">+</span>
+                                    <button id="minus" class="click">-</button>
+                                    <input type="number" min="0" max="30" step="1" value="0">
+                                    <button id="plus" class="click">+</button>
                                 </div>
-                            </div>
-                            <div>
-                                <button class="mobile">
-                                    <a href="#cart">View Cart</a>
-                                </button>
-                                <button>
-                                    <a href="./checkout.html">Checkout</a>
-                                </button>
+                                <a class="action-btn" href="#">Order Now</a>
                             </div>
                         </div>
                     </div>
                     <h4>Drinks</h4>
                     <div id="drinks" class="food-items">
                         <div class="food-item-card" align="center">
-                            <div>
-                                <img src="./images/food/drinks/can-sodas.jpg" alt="can-sodas">
-                                <h4>Fanta</h4>
-                            </div>
-                            <div>
-                                <span>&#8358;150</span>
+                            <img src="./images/food/drinks/can-sodas.jpg" alt="can-sodas">
+                            <h4>Fanta</h4>
+                            <span>&#8358;150</span>
+                            <div class="action">
                                 <div class="add-cart">
-                                    <span id="minus" class="click">-</span>
-                                    <span id="item-value">0</span>
-                                    <span id="plus" class="click">+</span>
+                                    <button id="minus" class="click">-</button>
+                                    <input type="number" min="0" max="30" step="1" value="0">
+                                    <button id="plus" class="click">+</button>
                                 </div>
-                            </div>
-                            <div>
-                                <button class="mobile">
-                                    <a href="#cart">View Cart</a>
-                                </button>
-                                <button>
-                                    <a href="./checkout.html">Checkout</a>
-                                </button>
+                                <a class="action-btn" href="#">Order Now</a>
                             </div>
                         </div>
                         <div class="food-item-card" align="center">
-                            <div>
-                                <img src="./images/food/drinks/eva-water.jpg" alt="eva-water">
-                                <h4>Eva Water</h4>
-                            </div>
-                            <div>
-                                <span>&#8358;100</span>
+                            <img src="./images/food/drinks/eva-water.jpg" alt="eva-water">
+                            <h4>Eva Water</h4>
+                            <span>&#8358;150</span>
+                            <div class="action">
                                 <div class="add-cart">
-                                    <span id="minus" class="click">-</span>
-                                    <span id="item-value">0</span>
-                                    <span id="plus" class="click">+</span>
+                                    <button id="minus" class="click">-</button>
+                                    <input type="number" min="0" max="30" step="1" value="0">
+                                    <button id="plus" class="click">+</button>
                                 </div>
-                            </div>
-                            <div>
-                                <button class="mobile">
-                                    <a href="#cart">View Cart</a>
-                                </button>
-                                <button>
-                                    <a href="./checkout.html">Checkout</a>
-                                </button>
+                                <a class="action-btn" href="#">Order Now</a>
                             </div>
                         </div>
                         <div class="food-item-card" align="center">
-                            <div>
-                                <img src="./images/food/drinks/5alive.jpg" alt="edikaikong">
-                                <h4>5alive</h4>
-                            </div>
-                            <div>
-                                <span>&#8358;300</span>
+                            <img src="./images/food/drinks/5alive.jpg" alt="edikaikong">
+                            <h4>5alive</h4>
+                            <span>&#8358;300</span>
+                            <div class="action">
                                 <div class="add-cart">
-                                    <span id="minus" class="click">-</span>
-                                    <span id="item-value">0</span>
-                                    <span id="plus" class="click">+</span>
+                                    <button id="minus" class="click">-</button>
+                                    <input type="number" min="0" max="30" step="1" value="0">
+                                    <button id="plus" class="click">+</button>
                                 </div>
-                            </div>
-                            <div>
-                                <button class="mobile">
-                                    <a href="#cart">View Cart</a>
-                                </button>
-                                <button>
-                                    <a href="./checkout.html">Checkout</a>
-                                </button>
+                                <a class="action-btn" href="#">Order Now</a>
                             </div>
                         </div>
                     </div>
                     <h4>Protein</h4>
-                    <div id="protein" class="food-items">                     
+                    <div id="protein" class="food-items">
                         <div class="food-item-card" align="center">
-                            <div>
-                                <img src="./images/food/proteins/goat-meat.jpg" alt="goat-meat">
-                                <h4>Goat Meat</h4>
-                            </div>
-                            <div>
-                                <span>&#8358;150</span>
+                            <img src="./images/food/proteins/goat-meat.jpg" alt="goat-meat">
+                            <h4>Goat Meat</h4>
+                            <span>&#8358;150</span>
+                            <div class="action">
                                 <div class="add-cart">
-                                    <span id="minus" class="click">-</span>
-                                    <span id="item-value">0</span>
-                                    <span id="plus" class="click">+</span>
+                                    <button id="minus" class="click">-</button>
+                                    <input type="number" min="0" max="30" step="1" value="0">
+                                    <button id="plus" class="click">+</button>
                                 </div>
-                            </div>
-                            <div>
-                                <button class="mobile">
-                                    <a href="#cart">View Cart</a>
-                                </button>
-                                <button>
-                                    <a href="./checkout.html">Checkout</a>
-                                </button>
+                                <a class="action-btn" href="#">Order Now</a>
                             </div>
                         </div>
                         <div class="food-item-card" align="center">
-                            <div>
-                                <img src="./images/food/proteins/dried-cat-fish.jpg" alt="dried-cat-fish">
-                                <h4>Dried Cat Fish</h4>
-                            </div>
-                            <div>
-                                <span>&#8358;120</span>
+                            <img src="./images/food/proteins/dried-cat-fish.jpg" alt="dried-cat-fish">
+                            <h4>Dried Cat Fish</h4>
+                            <span>&#8358;150</span>
+                            <div class="action">
                                 <div class="add-cart">
-                                    <span id="minus" class="click">-</span>
-                                    <span id="item-value">0</span>
-                                    <span id="plus" class="click">+</span>
+                                    <button id="minus" class="click">-</button>
+                                    <input type="number" min="0" max="30" step="1" value="0">
+                                    <button id="plus" class="click">+</button>
                                 </div>
-                            </div>
-                            <div>
-                                <button class="mobile">
-                                    <a href="#cart">View Cart</a>
-                                </button>
-                                <button>
-                                    <a href="./checkout.html">Checkout</a>
-                                </button>
+                                <a class="action-btn" href="#">Order Now</a>
                             </div>
                         </div>
                         <div class="food-item-card" align="center">
-                            <div>
-                                <img src="./images/food/proteins/beef.jpg" alt="beef">
-                                <h4>Beef</h4>
-                            </div>
-                            <div>
-                                <span>&#8358;50</span>
+                            <img src="./images/food/proteins/beef.jpg" alt="beef">
+                            <h4>Beef</h4>
+                            <span>&#8358;150</span>
+                            <div class="action">
                                 <div class="add-cart">
-                                    <span id="minus" class="click">-</span>
-                                    <span id="item-value">0</span>
-                                    <span id="plus" class="click">+</span>
+                                    <button id="minus" class="click">-</button>
+                                    <input type="number" min="0" max="30" step="1" value="0">
+                                    <button id="plus" class="click">+</button>
                                 </div>
-                            </div>
-                            <div>
-                                <button class="mobile">
-                                    <a href="#cart">View Cart</a>
-                                </button>
-                                <button>
-                                    <a href="./checkout.html">Checkout</a>
-                                </button>
+                                <a class="action-btn" href="#">Order Now</a>
                             </div>
                         </div>
                     </div>
                     <h4>Pastries</h4>
                     <div id="pastries" class="food-items">
                         <div class="food-item-card" align="center">
-                            <div>
-                                <img src="./images/food/pastries/scotch egg.jpg" alt="scotch-egg">
-                                <h4>Scotch Egg</h4>
-                            </div>
-                            <div>
-                                <span>&#8358;140</span>
+                            <img src="./images/food/pastries/scotch egg.jpg" alt="scotch-egg">
+                            <h4>Scotch Egg</h4>
+                            <span>&#8358;150</span>
+                            <div class="action">
                                 <div class="add-cart">
-                                    <span id="minus" class="click">-</span>
-                                    <span id="item-value">0</span>
-                                    <span id="plus" class="click">+</span>
+                                    <button id="minus" class="click">-</button>
+                                    <input type="number" min="0" max="30" step="1" value="0">
+                                    <button id="plus" class="click">+</button>
                                 </div>
-                            </div>
-                            <div>
-                                <button class="mobile">
-                                    <a href="#cart">View Cart</a>
-                                </button>
-                                <button>
-                                    <a href="./checkout.html">Checkout</a>
-                                </button>
+                                <a class="action-btn" href="#">Order Now</a>
                             </div>
                         </div>
                         <div class="food-item-card" align="center">
-                            <div>
-                                <img src="./images/food/pastries/springrolls.jpg" alt="springrolls">
-                                <h4>Spring rolls</h4>
-                            </div>
-                            <div>
-                                <span>&#8358;80</span>
+                            <img src="./images/food/pastries/springrolls.jpg" alt="springrolls">
+                            <h4>Spring rolls</h4>
+                            <span>&#8358;150</span>
+                            <div class="action">
                                 <div class="add-cart">
-                                    <span id="minus" class="click">-</span>
-                                    <span id="item-value">0</span>
-                                    <span id="plus" class="click">+</span>
+                                    <button id="minus" class="click">-</button>
+                                    <input type="number" min="0" max="30" step="1" value="0">
+                                    <button id="plus" class="click">+</button>
                                 </div>
-                            </div>
-                            <div>
-                                <button class="mobile">
-                                    <a href="#cart">View Cart</a>
-                                </button>
-                                <button>
-                                    <a href="./checkout.html">Checkout</a>
-                                </button>
+                                <a class="action-btn" href="#">Order Now</a>
                             </div>
                         </div>
                         <div class="food-item-card" align="center">
-                            <div>
-                                <img src="./images/food/pastries/meatpie.jpg" alt="meatpie">
-                                <h4>Meat Pie</h4>
-                            </div>
-                            <div>
-                                <span>&#8358;100</span>
+                            <img src="./images/food/pastries/meatpie.jpg" alt="meatpie">
+                            <h4>Meat Pie</h4>
+                            <span>&#8358;100</span>
+                            <div class="action">
                                 <div class="add-cart">
-                                    <span id="minus" class="click">-</span>
-                                    <span id="item-value">0</span>
-                                    <span id="plus" class="click">+</span>
+                                    <button id="minus" class="click">-</button>
+                                    <input type="number" min="0" max="30" step="1" value="0">
+                                    <button id="plus" class="click">+</button>
                                 </div>
-                            </div>
-                            <div>
-                                <button class="mobile">
-                                    <a href="#cart">View Cart</a>
-                                </button>
-                                <button>
-                                    <a href="./checkout.html">Checkout</a>
-                                </button>
+                                <a class="action-btn" href="#">Order Now</a>
                             </div>
                         </div>
                     </div>
                     <h4>Traditional</h4>
                     <div id="traditional" class="food-items">
                         <div class="food-item-card" align="center">
-                            <div>
-                                <img src="./images/food/traditional/egg-sauce.jpg" alt="egg-sauce">
-                                <h4>Egg Sauce</h4>
-                            </div>
-                            <div>
-                                <span>&#8358;100</span>
+                            <img src="./images/food/traditional/egg-sauce.jpg" alt="egg-sauce">
+                            <h4>Egg Sauce</h4>
+                            <span>&#8358;100</span>
+                            <div class="action">
                                 <div class="add-cart">
-                                    <span id="minus" class="click">-</span>
-                                    <span id="item-value">0</span>
-                                    <span id="plus" class="click">+</span>
+                                    <button id="minus" class="click">-</button>
+                                    <input type="number" min="0" max="30" step="1" value="0">
+                                    <button id="plus" class="click">+</button>
                                 </div>
-                            </div>
-                            <div>
-                                <button class="mobile">
-                                    <a href="#cart">View Cart</a>
-                                </button>
-                                <button>
-                                    <a href="./checkout.html">Checkout</a>
-                                </button>
+                                <a class="action-btn" href="#">Order Now</a>
                             </div>
                         </div>
                         <div class="food-item-card" align="center">
-                            <div>
-                                <img src="./images/food/traditional/jollof rice.png" alt="jollof rice">
-                                <h4>Jollof Rice</h4>
-                            </div>
-                            <div>
-                                <span>&#8358;100</span>
+                            <img src="./images/food/traditional/white-rice-stew.jpg" alt="white-rice-stew">
+                            <h4>White Rice and Stew</h4>
+                            <span>&#8358;100</span>
+                            <div class="action">
                                 <div class="add-cart">
-                                    <span id="minus" class="click">-</span>
-                                    <span id="item-value">0</span>
-                                    <span id="plus" class="click">+</span>
+                                    <button id="minus" class="click">-</button>
+                                    <input type="number" min="0" max="30" step="1" value="0">
+                                    <button id="plus" class="click">+</button>
                                 </div>
-                            </div>
-                            <div>
-                                <button class="mobile">
-                                    <a href="#cart">View Cart</a>
-                                </button>
-                                <button>
-                                    <a href="./checkout.html">Checkout</a>
-                                </button>
+                                <a class="action-btn" href="#">Order Now</a>
                             </div>
                         </div>
                         <div class="food-item-card" align="center">
-                            <div>
-                                <img src="./images/food/traditional/white-rice-stew.jpg" alt="white-rice-stew">
-                                <h4>White Rice and Stew</h4>
-                            </div>
-                            <div>
-                                <span>&#8358;100</span>
+                            <img src="./images/food/traditional/white-rice-stew.jpg" alt="white-rice-stew">
+                            <h4>White Rice and Stew</h4>
+                            <span>&#8358;100</span>
+                            <div class="action">
                                 <div class="add-cart">
-                                    <span id="minus" class="click">-</span>
-                                    <span id="item-value">0</span>
-                                    <span id="plus" class="click">+</span>
+                                    <button id="minus" class="click">-</button>
+                                    <input type="number" min="0" max="30" step="1" value="0">
+                                    <button id="plus" class="click">+</button>
                                 </div>
-                            </div>
-                            <div>
-                                <button class="mobile">
-                                    <a href="#cart">View Cart</a>
-                                </button>
-                                <button>
-                                    <a href="./checkout.html">Checkout</a>
-                                </button>
+                                <a class="action-btn" href="#">Order Now</a>
                             </div>
                         </div>
                     </div>

@@ -1,7 +1,9 @@
 body {
     max-height: 100vh;
 }
-
+.text-center {
+    text-align: center;
+}
 /** Form **/
 form {
     margin: 0 auto;
@@ -18,16 +20,20 @@ form {
     width: 100%;
 }
 .form-btn {
+    background-color: yellowgreen;
     width: 50%;
-    margin:auto;
+    border: none;
+    font-size: 17px;
+    font-weight: 400;
+    border-radius: 5px;
+    padding: 14px 14px;
+    width: 150px;    
+    cursor: pointer;
 }
-.text-center {
-    text-align: left;
+.form-btn:hover {
+    background-color: rgb(52, 141, 52);
 }
-/** Header **/
-header {
-    min-height: 20%;
-}
+
 
 /** Signup and Login **/
 #signup, #login {
@@ -35,27 +41,23 @@ header {
 }
 #signup .container, #login .container {
     max-width: 800px;
-    margin-top: 40px;
-    margin-bottom: 20px;
+    margin-top: 60px;
     background-color: #FFFFFF;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.5);
 }
 
 /** Footer **/
-header {
-    min-height: 20%;
+footer {
+    position: fixed;
+    width: 100%;
 }
+#signup-footer {
+    position: relative;
+    width: auto;
+}
+
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
-    body {
-        background-image: url('../images/bg.jpg');
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-    }
-    header {
-        max-height: auto;
-    }
     #signup, #login {
         min-height: 66.9vh;
     }
@@ -63,14 +65,11 @@ header {
         min-height: 70vh;
     }
     #signup .container, #login .container {
-        max-width: 600px;
-        margin-top: 60px;
+        width: 400px;
+        margin-top: 85px;
     }
     #signup .container {
         margin-top: 20px;
         margin-bottom:  20px;
-    }
-    footer {
-        max-height: auto;
     }
 }

@@ -31,17 +31,11 @@ a {
     color:inherit;
     text-decoration-line: none;
 }
-.btn-action {
-    background-color: red;
-    border: none;
-    padding: 15px 32px;
-    text-align:center; 
-    color: #fff;
-    font-size: 16px;
-    cursor: pointer;
+.orange {
+    color: #fe8e07;
 }
 input:focus {
-    outline-color: yellow;
+    outline-color: #fe8e07;
 }
 .hide {
     display:none;
@@ -72,7 +66,7 @@ input:focus {
 .food-item-card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.6), 0 0px 0px 0 rgba(0, 0, 0, 0.19);
     border-radius: 5px;
-    width: 100%;
+    max-width: 250px;
     margin-top: 20px;
     padding-bottom: 10px;
 }
@@ -86,7 +80,9 @@ input:focus {
     border-top-right-radius: 5px;
     border-top-left-radius: 5px;
     padding: 0;
-    width: 100%;
+    border-bottom: 1px solid rgb(235, 233, 233);
+    width: 250px;
+    height: 245px;
 }
 .food-item-card .action a { 
     display: inline-block;
@@ -284,7 +280,7 @@ footer {
         flex-direction: row;
     }
     .food-item-card {
-        width: 250px;
+       max-width: 250px;
     }
     header #brand h1{
         margin: 0;
