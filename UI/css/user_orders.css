@@ -3,6 +3,32 @@ footer {
     width: 100%;
     bottom: 0;
 }
+/** Modals **/
+#itemsModal .close {
+    position: fixed;
+    top: 0;
+    right: 0;
+    border-bottom: 1px solid #fff;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+#ordered-food-items {
+    padding: 20px;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    width: 90%;
+    margin: 20px auto;
+}
+
+#ordered-food-items .food-item-card {
+    background-color: #fff;
+}
+#ordered-food-items .food-item-card h4 {
+    margin: 0;
+    padding-top: 10px;
+}
+
 .status {
     width: 100px;
     height: 100px;
@@ -74,3 +100,32 @@ footer {
 .text-right {
     text-align: right;
 }
+
+/**======================= MEDIA QUERIES ==========================**/
+
+@media only screen and (max-width: 600px) {
+    #ordered-food-items {
+        grid-template-columns: auto;
+    }
+    #ordered-food-items .food-item-card {
+        margin: 20px auto;
+    }
+} 
+
+@media only screen and (min-width: 600px) {
+    #ordered-food-items {
+        grid-template-columns: auto auto;
+    }
+} 
+
+@media only screen and (min-width: 768px) {
+    #ordered-food-items {
+        grid-template-columns: auto auto auto;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    #ordered-food-items {
+        grid-template-columns: auto auto auto auto;
+    }
+} 

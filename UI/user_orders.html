@@ -30,6 +30,55 @@
                 </li>
             </ul>
         </nav>
+        <div id="itemsModal" class="modal hide">
+            <div class="close text-right">
+                <span class="click" onclick="toggleModal('itemsModal')">X</span>
+            </div>
+            <div id="ordered-food-items">
+                <div class="food-item-card" align="center">
+                    <img src="./images/food/swallow/semo.jpg" alt="semo">
+                    <h4>Semo</h4>
+                    <span>&#8358;70</span>
+                    <div class="action">
+                    </div>
+                </div>
+                <div class="food-item-card" align="center">
+                    <img src="./images/food/soups/edikaikong soup.jpg" alt="edikaikong">
+                    <h4>Edikaikong</h4>
+                    <span>&#8358;100</span>
+                    <div class="action">
+                    </div>
+                </div>
+                <div class="food-item-card" align="center">
+                    <img src="./images/food/drinks/can-sodas.jpg" alt="can-sodas">
+                    <h4>Fanta</h4>
+                    <span>&#8358;150</span>
+                    <div class="action">
+                    </div>
+                </div>
+                <div class="food-item-card" align="center">
+                    <img src="./images/food/swallow/semo.jpg" alt="semo">
+                    <h4>Semo</h4>
+                    <span>&#8358;70</span>
+                    <div class="action">
+                    </div>
+                </div>
+                <div class="food-item-card" align="center">
+                    <img src="./images/food/soups/edikaikong soup.jpg" alt="edikaikong">
+                    <h4>Edikaikong</h4>
+                    <span>&#8358;100</span>
+                    <div class="action">
+                    </div>
+                </div>
+                <div class="food-item-card" align="center">
+                    <img src="./images/food/drinks/can-sodas.jpg" alt="can-sodas">
+                    <h4>Fanta</h4>
+                    <span>&#8358;150</span>
+                    <div class="action">
+                    </div>
+                </div>
+
+            </div>
     </section>
     <header>
         <div class="container">
@@ -84,7 +133,7 @@
                 <div class="top">
                     <img src="./images/food/pastries-food.jpg">
                     <div class="overlay">
-                        <button>view</button>
+                        <button onclick="toggleModal('itemsModal')">view</button>
                     </div>
                 </div>
                 <div class="bottom">
@@ -93,7 +142,7 @@
                         <span>3 items</span>
                     </div>
                     <div class="section text-right">
-                        <div class"text-right">
+                        <div class "text-right">
                             <span class="status status-complete">&#9899;</span>Completed
                         </div>
                         <span>3 days ago</span>
