@@ -1,88 +1,146 @@
-h3 {
-    background-color: #555;
-    color: #fff;
-    padding: 10px;
-    text-align: center;
-}
-/** Table **/
-.mobile table {
+footer {
+    position: fixed;
     width: 100%;
-    table-layout: fixed;
-    border-collapse: collapse;
+    bottom: 0;
 }
-.mobile td:nth-child(2) {
+/** Modals **/
+#itemsModal .close {
+    position: fixed;
+    top: 0;
+    right: 0;
+    border-bottom: 1px solid #fff;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+#ordered-food-items {
+    padding: 20px;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    width: 90%;
+    margin: 20px auto;
+}
+
+#ordered-food-items .food-item-card {
+    background-color: #fff;
+}
+#ordered-food-items .food-item-card h4 {
+    margin: 0;
+    padding-top: 10px;
+}
+/** Status **/
+.status {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+.status-complete {
+   color:green;
+}
+.status-approve {
+    color: #c5cd32;
+}
+.status-decline {
+    color: #da4848;
+}
+
+/** Main **/
+#main {
+    background-color: #fff;
+}
+#main .container {
+    min-height: 100vh;
+}
+#user_orders {
+    display:grid;
+    height: 296px;
+    margin: auto;
+    width: 95%;
+}
+#user_orders .order-card {
+    margin: 40px auto;
+}
+/** Order-card **/
+.order-card img {
+    display: block;
+}
+.text-left span {
+    display: block;
+}
+.order-card .top {
+    position: relative;
+}
+.order-card .overlay {
+    position: absolute;
+    bottom: 0;
+    left: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    overflow: hidden;
+    width: 0;
+    height: 100%;
+    transition: .5s ease;
+}
+.order-card .overlay button {
+    padding: 7px 15px;
+    border-radius: 5px;
+}
+.top:hover .overlay {
+    width: 100%;
+    left: 0;
+  }
+.top button{ 
+    white-space: nowrap;
+    font-size: 20px;
+    position: absolute;
+    overflow: hidden;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+  }
+.bottom {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px 10px 0 10px;
+}
+.bottom .section {
+    width: 50%;
+}
+.text-left {
+    text-align: left;
+}
+.text-right {
     text-align: right;
 }
-.mobile tr {
-    height: 30px;
-}
-.mobile tr:nth-of-type(odd) {
-    background: #efefef;
-    font-size: 14px;
-} 
-.mobile table table tr {
-    background: #efefef;
-    border-top: 1px solid #fff;
-}
 
-/** Order History-mobile **/
-#order-history-mobile {
-    background-color: #fff;
-    margin: 10px 10px;
-}
-#order-history-mobile .order-card {
-    border-top: 1px solid #000;
-    padding: 20px 0;
-}
+/**======================= MEDIA QUERIES ==========================**/
 
-/* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px) {
-    h3 {
-        background-color:inherit;
-        color: #555;
-        padding: 0px;
-        text-align: center;
+@media only screen and (max-width: 600px) {
+    #ordered-food-items, #user_orders {
+        grid-template-columns: auto;
     }
-    /**  table **/
-    table {
-        width: 100%;
-        table-layout: fixed;
-        border-collapse: collapse;
-        background-color: #fff;
-        color: #000000;
-      }
-      tr .orderid {
-          width: 120px;
-      }
-      tr .orderstat {
-        width: 120px;
-      }
-      tr .fooditem {
-        width: 220px;
-     }
-     tr .date {
-        width: 120px;
-     }
-     tr .total {
-        width: 120px;
-     }    
-      tr:nth-of-type(odd) {
-        background: #eee;
-        font-size: 14px;
-      }
-      
-      th {
-        background-color:#555;
-        color: white;
-        font-weight: bold;
-        font-size: 14px;
-        height: 40px;
-      }
-      
-      td, th {
-        padding: 10px;
-        border: 1px solid #ccc;
-        text-align: left;
-        font-size: 14px;
-      }
+    #ordered-food-items .food-item-card {
+        margin: 20px auto;
+    }
+} 
+
+@media only screen and (min-width: 600px) {
+    #ordered-food-items, #user_orders {
+        grid-template-columns: auto auto;
+    }
+} 
+
+@media only screen and (min-width: 768px) {
+    #ordered-food-items, #user_orders {
+        grid-template-columns: auto auto auto;
+    }
 }
+
+@media only screen and (min-width: 1200px) {
+    #ordered-food-items, #user_orders {
+        grid-template-columns: auto auto auto auto;
+    }
+} 
