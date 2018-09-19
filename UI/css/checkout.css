@@ -1,17 +1,32 @@
-/** Cart **/
-#cart {
-    min-height: 300px;
-    background-color: #fff;
-    margin: 10px 10px;
-}
-#cart .container {
-    padding: 0px 5px;
+.text-right {
+    text-align: right;
 }
 
-/** Order Info **/
+/** Modals **/
+#checkoutModal .close {
+    position: fixed;
+    top: 0;
+    right: 0;
+    padding-right: 40px;
+    border-bottom: 1px solid #fff;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+/** Checkout Modal **/
+
+#main-checkout {
+    margin-top: 40px;
+}
+    /** Order Info **/
+#total-amount {
+    color: #fff;
+    font-size: 24px;
+    margin-top: 20px;
+}
 #order-info {
     min-height: 300px;
-    background-color: #fff;
+    background-color: rgba(0, 0, 0, 0.6);
     margin: 10px 10px;
 }
 #order-info .container {
@@ -20,8 +35,23 @@
 #order-info fieldset {
     margin-top: 20px;
 }
+    /** ordered food items **/
+#ordered-food-items {
+    display: grid;
+    margin: 20px auto;
+}
 
-/** Form **/
+#ordered-food-items .food-item-card {
+    background-color: #fff;
+}
+#ordered-food-items .food-item-card h4 {
+    margin: 0;
+    padding-top: 10px;
+}
+    /** Form **/
+legend, label {
+    color: #fff;
+}
 form {
     margin: 0;
     padding: 0px;
@@ -35,54 +65,38 @@ form {
     padding: 8px;
     width: 80%;
 }
-
+.form-item-submit {
+    margin: 20px auto;
+    width: 100%;
+    padding-left: 10px;
+}
+form .submit-btn {
+    background-color: yellowgreen;
+    border: none;
+    font-size: 17px;
+    font-weight: 400;
+    border-radius: 5px;
+    padding: 14px 14px;
+    cursor: pointer;
+}
 .text-center {
     text-align: center;
 }
 
-/** Table **/
-table {
-    width: 100%;
-    table-layout: fixed;
-    border-collapse: collapse;
-    color: #000000;
+    /** Cart **/
+#cart {
+    min-height: 300px;
+    background-color: rgba(0, 0, 0, 0.6);
+    margin: 10px 10px;
 }
-td:nth-child(2) {
-    text-align: right;
+#cart .container {
+    padding: 0px 5px;
 }
-tr {
-    height: 60px;
-}
-/** cart-items **/
-#cart-items {
-    border-bottom: 1px solid #efefef;
-    margin-bottom: 20px;
-}
-#cart-items tr {
-      height: 60px;
-}
-
-#cart-items tr:nth-of-type(odd) {
-    background: #efefef;
-    font-size: 14px;
-} 
-#cart-items td {
-    padding: 10px;
-    text-align: left;
-    font-size: 14px;
-}
-#cart-items td:first-child {
-    width: 30%;
-}
-#cart-items td:nth-child(2) {
-    text-align: right;
-}
-
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
     /**  main **/
-    #main {
+    #main-checkout {
         display: grid;
         grid-template-areas: 'order-info order-info order-info cart cart cart';
     }
@@ -95,10 +109,24 @@ tr {
     #order-info, #cart {
         padding-bottom: 20px;
     }
-    table {
-        width: inherit;
+}
+@media only screen and (max-width: 600px) {
+    #ordered-food-items {
+        grid-template-columns: auto;
     }
-    .container {
-       width: inherit;
+    #ordered-food-items .food-item-card {
+        margin: 20px auto;
+    }
+} 
+
+@media only screen and (min-width: 600px) {
+    #ordered-food-items {
+        grid-template-columns: auto auto;
+    }
+} 
+
+@media only screen and (min-width: 768px) {
+    #ordered-food-items {
+        grid-template-columns: auto auto auto;
     }
 }
