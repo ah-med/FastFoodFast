@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="./css/main.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="./css/user_food_items.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="./css/checkout.css" />
     <script src="./js/main.js"></script>
 </head>
 
@@ -30,6 +31,85 @@
                 </li>
             </ul>
         </nav>
+        <div id="checkoutModal" class="modal hide">
+            <div class="close text-right">
+                <span class="click" onclick="toggleModal('checkoutModal')">X</span>
+            </div>
+            <div id="main-checkout">
+                <div id="order-info">
+                    <div class="container">
+                        <div id="total-amount">Total amount: &#8358;250</div>
+                        <form>
+                            <fieldset>
+                                <legend>Delivery Address</legend>
+                                <div class="form-item">
+                                    <label>Street Address</label>
+                                    <br>
+                                    <input class="form-input" type="email" placeholder="No 1, abc street" required>
+                                </div>
+                                <div class="form-item">
+                                    <label>City</label>
+                                    <br>
+                                    <input class="form-input" type="email" placeholder="city" required>
+                                </div>
+                                <div class="form-item">
+                                    <label>State</label>
+                                    <br>
+                                    <input class="form-input" type="email" placeholder="state" required>
+                                </div>
+                                <div class="form-item">
+                                    <label>Zip</label>
+                                    <br>
+                                    <input class="form-input" type="email" placeholder="zip code" required>
+                                </div>
+                                <div class="form-item">
+                                    <label>Phone No</label>
+                                    <br>
+                                    <input class="form-input" type="tel" placeholder="+234-XX-XX-XX-XX-XX" required>
+                                </div>
+                                <div class="form-item-submit">
+                                    <input class="form-input action-btn submit-btn" type="submit" value="Place Order Now">
+                                </div>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+                <div id="cart">
+                    <div class="container">
+                        <div id="ordered-food-items">
+                            <div class="food-item-card" align="center">
+                                <img src="./images/food/swallow/semo.jpg" alt="semo">
+                                <h4>Semo</h4>
+                                <span>&#8358;70</span>
+                                <div class="action">
+                                </div>
+                            </div>
+                            <div class="food-item-card" align="center">
+                                <img src="./images/food/soups/edikaikong soup.jpg" alt="edikaikong">
+                                <h4>Edikaikong</h4>
+                                <span>&#8358;100</span>
+                                <div class="action">
+                                </div>
+                            </div>
+                            <div class="food-item-card" align="center">
+                                <img src="./images/food/drinks/can-sodas.jpg" alt="can-sodas">
+                                <h4>Fanta</h4>
+                                <span>&#8358;150</span>
+                                <div class="action">
+                                </div>
+                            </div>
+                            <div class="food-item-card" align="center">
+                                <img src="./images/food/soups/edikaikong soup.jpg" alt="edikaikong">
+                                <h4>Edikaikong</h4>
+                                <span>&#8358;100</span>
+                                <div class="action">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
     <header id="header">
         <div class="container">
@@ -80,7 +160,7 @@
     </header>
     <section id="main">
         <section id="menu">
-                <h4 class="text-center">Menu</h4>
+            <h4 class="text-center">Menu</h4>
             <div class="container">
                 <nav id="menu-header">
                     <ul>
@@ -124,7 +204,7 @@
                                     <input type="number" min="0" max="30" step="1" value="0">
                                     <button id="plus" class="click">+</button>
                                 </div>
-                                <a class="action-btn" href="#">Order Now</a>
+                                <a class="action-btn" href="Javascript:void(0);" onclick="toggleModal('checkoutModal')">Order Now</a>
                             </div>
                         </div>
                         <div class="food-item-card" align="center">
