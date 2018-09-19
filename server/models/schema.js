@@ -87,8 +87,8 @@ const tableSchema = `
     ALTER TABLE "orders" ADD CONSTRAINT "orders_fk0" FOREIGN KEY ("user_id") REFERENCES "users"("user_id");
 
 
-    ALTER TABLE "order_Items" ADD CONSTRAINT "order_Items_fk0" FOREIGN KEY ("order_id") REFERENCES "orders"("order_id");
-    ALTER TABLE "order_Items" ADD CONSTRAINT "order_Items_fk1" FOREIGN KEY ("food_id") REFERENCES "menu"("food_id");
+    ALTER TABLE "order_items" ADD CONSTRAINT "order_items_fk0" FOREIGN KEY ("order_id") REFERENCES "orders"("order_id");
+    ALTER TABLE "order_items" ADD CONSTRAINT "order_items_fk1" FOREIGN KEY ("food_id") REFERENCES "menu"("food_id");
 
     ALTER TABLE "delivery_address" ADD CONSTRAINT "delivery_address_fk0" FOREIGN KEY ("order_id") REFERENCES "orders"("order_id");
 
