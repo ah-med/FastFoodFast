@@ -28,6 +28,13 @@ const errors = {
       description,
     },
   }),
+  wrongPassword: res => res.status(400).json({
+    error: {
+      status: 400,
+      title: 'WRONG PASSWORD',
+      description: 'password doesn\'t match'
+    }
+  })
 };
 
 export default errors;

@@ -34,6 +34,28 @@ class AuthController {
       });
     });
   }
+
+  /**
+    * Login a user
+    *@param {*} req The request *.
+    *@param {*} res The response *.
+    *@returns {undefined} The return *
+    */
+  static login(req, res) {
+    // extract token from req.locals
+    const { token } = req;
+    const { role } = req.userData;
+    const d = new Date();
+    return res.status(200).json({
+      message: 'Log in successfull',
+      data: {
+        token,
+        role,
+        createdAt: d,
+        expiresIn: '6hrs'
+      }
+    });
+  }
 }
 
 export default AuthController;
