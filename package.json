@@ -9,7 +9,7 @@
     "start": "node ./client/index.js",
     "prestart": "npm run-script build",
     "prod-start": "nodemon server/index.js --exec babel-node",
-    "test": "mocha server/ --recursive --compilers js:babel-register --exit",
+    "test": "set NODE_ENV=test&& npm run migrate && mocha --timeout 10000 server/ --recursive --compilers js:babel-register --exit",
     "coverage": "nyc npm test && nyc report --reporter=text-lcov | coveralls",
     "migrate": "babel-node server/models/schema.js"
   },

@@ -3,6 +3,7 @@ import bodyParser from 'body-parser';
 import trimmer from 'trim-request-body';
 
 import index from './routes/index';
+import auth from './routes/auth';
 
 const fastfoodApp = express();
 const port = process.env.PORT || 9000;
@@ -20,6 +21,7 @@ fastfoodApp.listen(port);
 
 // create version1 of api
 fastfoodApp.use('/api/v1', index);
+fastfoodApp.use('/api/v1/auth', auth);
 
 fastfoodApp.use('*', (req, res) => {
   res.status(200).json({
