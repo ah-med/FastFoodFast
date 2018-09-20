@@ -10,7 +10,8 @@
     "prestart": "npm run-script build",
     "prod-start": "nodemon server/index.js --exec babel-node",
     "test": "mocha server/ --recursive --compilers js:babel-register --exit",
-    "coverage": "nyc npm test && nyc report --reporter=text-lcov | coveralls"
+    "coverage": "nyc npm test && nyc report --reporter=text-lcov | coveralls",
+    "migrate": "babel-node server/models/schema.js"
   },
   "repository": {
     "type": "git",
@@ -30,16 +31,19 @@
   },
   "homepage": "https://github.com/ah-med/FastFoodFast#readme",
   "dependencies": {
-    "body-parser": "^1.18.3",
-    "express": "^4.16.3",
-    "joi": "^13.6.0",
-    "joi-phone-number": "^2.0.12",
-    "trim-request-body": "^1.0.1",
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.7.0",
     "babel-register": "^6.26.0",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.18.3",
     "chai": "^4.1.2",
-    "chai-http": "^4.2.0"
+    "chai-http": "^4.2.0",
+    "dotenv": "^6.0.0",
+    "express": "^4.16.3",
+    "joi": "^13.6.0",
+    "joi-phone-number": "^2.0.12",
+    "pg": "^7.4.3",
+    "trim-request-body": "^1.0.1"
   },
   "devDependencies": {
     "coveralls": "^3.0.2",
