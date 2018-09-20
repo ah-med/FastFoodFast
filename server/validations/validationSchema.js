@@ -9,6 +9,7 @@ const foodItemObj = Joi.object().keys({
     .required(),
 }).required();
 
+
 const Schema = {
   placeOrderSchema: {
     name: Joi.string().min(4).max(20).required(),
@@ -28,6 +29,16 @@ const Schema = {
       .required(),
     email: Joi.string().email().required(),
     password: Joi.string().min(8).max(10).required()
+  },
+
+  mealSchema: {
+    itemName: Joi.string().min(3).max(15)
+      .required(),
+    quantity: Joi.number().positive().required(),
+    price: Joi.number().positive().required(),
+    category: Joi.string().min(8).max(15).required(),
+    imageUrl: Joi.string().uri().min(11)
+      .required()
   },
 };
 
