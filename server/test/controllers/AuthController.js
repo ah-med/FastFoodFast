@@ -24,4 +24,20 @@ describe('Authentication controller methods', () => {
         done();
       });
   });
+  it('should log in a registered user', (done) => {
+    chai.request(app)
+      .post('/api/v1/auth/login')
+      .send({
+        email: 'newUser@mail.com', password: '12345678'
+      })
+      .end((err, res) => {
+        expect(res.body).to.have.property('message');
+        expect(res.body).to.have.property('data');
+        expect(res.body.data).to.have.property('token');
+        expect(res.body.data).to.have.property('createdAt');
+        expect(res.body.data).to.have.property('expiresIn');
+        expect(res.status).to.equal(200);
+        done();
+      });
+  });
 });
