@@ -39,19 +39,18 @@ class AuthController {
     * Login a user
     *@param {*} req The request *.
     *@param {*} res The response *.
-    *@returns {undefined} The return *
+    *@returns {object} returns response *
     */
   static login(req, res) {
-    // extract token from req.locals
     const { token } = req;
     const { role } = req.userData;
-    const d = new Date();
+    const timeLoggedIn = new Date();
     return res.status(200).json({
       message: 'Log in successfull',
       data: {
         token,
         role,
-        createdAt: d,
+        timeLoggedIn,
         expiresIn: '6hrs'
       }
     });
