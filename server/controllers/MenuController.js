@@ -36,6 +36,23 @@ class MenuController {
       });
     });
   }
+
+  /**
+        * Add meal to a menu
+        *@param {object} req The request *.
+        *@param {object} res The response *.
+        *@returns {object} returns response *
+        */
+  static fetchMenu(req, res) {
+    const text = 'SELECT * from menu';
+    db.query(text, (err, menu) => {
+      if (err) return errors.serverError(res);
+      return res.status(200).json({
+        status: 200,
+        data: menu.rows
+      });
+    });
+  }
 }
 
 export default MenuController;

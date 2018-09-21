@@ -10,4 +10,7 @@ const router = express.Router();
 // Add a meal option to the menu
 router.post('/', verifyToken, verifyRole.admin, validateMeal, MenuController.addMeal);
 
+// Get available menu
+router.get('/', MenuController.fetchMenu);
+
 export default router;
