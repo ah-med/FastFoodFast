@@ -4,9 +4,9 @@ import dotenv from 'dotenv';
 
 dotenv.config();
 
-const signToken = (data, expTime) => {
+const signToken = (data, expiredTime) => {
   // user user data to sign JWT with expiration time
-  const token = jwt.sign(data, process.env.SECRET_KEY, { expiresIn: expTime });
+  const token = jwt.sign(data, process.env.SECRET_KEY, { expiresIn: expiredTime });
   return token;
 };
 
