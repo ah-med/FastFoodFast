@@ -21,6 +21,14 @@ const Schema = {
     orderId: Joi.number().positive().required(),
     status: Joi.string().valid('Pending Approval', 'Complete', 'Accept', 'Decline').required()
   },
+  authSchema: {
+    firstName: Joi.string().alphanum().min(3).max(15)
+      .required(),
+    lastName: Joi.string().alphanum().min(3).max(15)
+      .required(),
+    email: Joi.string().email().required(),
+    password: Joi.string().min(8).max(10).required()
+  },
 };
 
 export default Schema;
