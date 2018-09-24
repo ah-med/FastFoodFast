@@ -47,4 +47,13 @@ describe('Menu controller methods', () => {
           });
       });
   });
+  it('should get all available menu', (done) => {
+    chai.request(app)
+      .get('/api/v1/menu')
+      .end((err, res) => {
+        expect(res.status).to.equal(200);
+
+        done();
+      });
+  });
 });
