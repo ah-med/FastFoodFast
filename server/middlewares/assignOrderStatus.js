@@ -1,61 +1,64 @@
-import ordersList from '../models/index';
+import db from '../models/db';
 import errors from '../controllers/errors';
 
 const newOrder = (req, res, next) => {
-  req.orderStatus = 'Pending Approval';
+  req.orderStatus = 'New';
   next();
 };
 
 const processUpdate = (prevStatus, newStatus) => {
-  let errMess;
+  let errorMessage;
   let orderStatus;
   switch (prevStatus) {
-    case 'Pending Approval':
-      // you can only Accept or Decline an order that is Pending Approval
-      if (newStatus === 'Accept' || newStatus === 'Decline') {
-        orderStatus = (newStatus === 'Accept') ? 'Accepted' : 'Declined';
+    case 'New':
+      // you can only Process or Cancel an order that is New
+      if (newStatus === 'Process' || newStatus === 'Cancel') {
+        orderStatus = (newStatus === 'Process') ? 'Processing' : 'Cancelled';
       } else {
-        errMess = 'You can only Accept/Decline an order that is Pending Approval';
+        errorMessage = 'you can only Process/Cancel an order that is New';
       }
       break;
     case 'Completed':
       //  you cannot update a completed order
-      errMess = 'you cannot update a completed order';
+      errorMessage = 'you cannot update a completed order';
       break;
-    case 'Accepted':
-      // you can only Decline or Complete an accepted order
-      if (newStatus === 'Complete' || newStatus === 'Decline') {
-        orderStatus = (newStatus === 'Complete') ? 'Completed' : 'Declined';
+    case 'Processing':
+      // you can only Cancel or Complete a Processing order status
+      if (newStatus === 'Complete' || newStatus === 'Cancel') {
+        orderStatus = (newStatus === 'Complete') ? 'Completed' : 'Cancelled';
         break;
       }
-      errMess = 'you can only Complete/Decline an Approved order';
+      errorMessage = 'you can only Complete/Cancel a Processing order';
       break;
-    case 'Declined':
-      //  you cannot update a declined order
-      errMess = 'you cannot update a declined order';
+    case 'Cancelled':
+      //  you cannot update a Cancelled order
+      errorMessage = 'you cannot update a Cancelled order';
       break;
     default:
       //  this should not be happening
-      errMess = 'This should not be happening';
+      errorMessage = 'This should not be happening';
       break;
   }
-  return { errMess, orderStatus };
+  return { errorMessage, orderStatus };
 };
 
 const update = (req, res, next) => {
   // get the status from req.body
   const { status } = req.body;
-  // get the order
-  const order = ordersList.find(val => val.orderId === req.params.orderId);
-  // process the update
-  const processStatus = processUpdate(order.orderStatus, status);
-  const { errMess, orderStatus } = processStatus;
-  req.orderStatus = orderStatus;
-  if (errMess) {
-    return errors.forbidden(res, errMess);
-  }
-  req.orderStatus = orderStatus;
-  next();
+  const { orderId } = req.params;
+  const query = 'select status from orders where order_id=$1';
+  db.query(query, [orderId], (err, data) => {
+    if (err) return errors.serverError(res);
+    const previousStatus = data.rows[0].status;
+    const processStatus = processUpdate(previousStatus, status);
+    const { errorMessage, orderStatus } = processStatus;
+    req.orderStatus = orderStatus;
+    if (errorMessage) {
+      return errors.forbidden(res, errorMessage);
+    }
+    req.orderStatus = orderStatus;
+    next();
+  });
 };
 
 export default { newOrder, update };
