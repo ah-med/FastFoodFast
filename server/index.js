@@ -5,6 +5,7 @@ import trimmer from 'trim-request-body';
 import orders from './routes/orders';
 import auth from './routes/auth';
 import menu from './routes/menu';
+import users from './routes/users';
 
 const fastfoodApp = express();
 const port = process.env.PORT || 9000;
@@ -24,6 +25,7 @@ fastfoodApp.listen(port);
 fastfoodApp.use('/api/v1/orders', orders);
 fastfoodApp.use('/api/v1/auth', auth);
 fastfoodApp.use('/api/v1/menu', menu);
+fastfoodApp.use('/api/v1/users', users);
 
 fastfoodApp.use('*', (req, res) => {
   res.status(200).json({
