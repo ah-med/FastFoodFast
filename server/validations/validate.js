@@ -6,7 +6,7 @@ const { placeOrderSchema, updateStatusSchema } = Schema;
 const { validationError } = Errors;
 
 const validateOrder = (req, res, next) => {
-  const data = ['name', 'phoneNo', 'address', 'foodItems'];
+  const data = ['phoneNo', 'address', 'foodItems'];
   const errors = Validator(data, req.body, placeOrderSchema);
   return (errors !== null) ? validationError(res, errors) : next();
 };

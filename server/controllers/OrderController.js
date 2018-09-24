@@ -1,3 +1,5 @@
+import db from '../models/db';
+import errors from './errors';
 import ordersList from '../models/index';
 
 /**
@@ -11,39 +13,31 @@ class OrderController {
     *@returns {undefined} returns undefined *
     */
   static create(req, res) {
-    // get user data
     const {
-      name, phoneNo, address, foodItems,
+      phoneNo, address
     } = req.body;
-
-    // create order Id
-    const orderId = `${ordersList.length + 1}`;
-
-    // get date
-    const dateCreated = new Date().toString();
-
-    // create new order
-    const order = {
-      orderId,
-      name,
-      phoneNo,
+    let { foodItems } = req.body;
+    foodItems = (typeof foodItems === 'object') ? JSON.stringify(foodItems) : foodItems;
+    const { userData, totalAmount, orderStatus } = req;
+    const dateCreated = new Date().toDateString();
+    const query = 'INSERT INTO orders(user_id, status, address, phone_number, date_created, last_updated, total_amount, order_items) VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING *';
+    const parameters = [
+      userData.userId,
+      orderStatus,
       address,
-      foodItems,
-      orderStatus: req.orderStatus,
+      phoneNo,
       dateCreated,
-      lastModified: null,
-    };
-
-    // add new order to the list of orders
-    ordersList.push(order);
-
-    // send response
-    res.status(201).json({
-      status: 201,
-      message: 'Order placed successfully!',
-      data: [
-        ordersList[ordersList.length - 1],
-      ],
+      dateCreated,
+      totalAmount,
+      foodItems
+    ];
+    db.query(query, parameters, (err, data) => {
+      if (err) return errors.serverError(res);
+      res.status(201).json({
+        status: 201,
+        message: 'Order placed successfully!',
+        data: data.rows
+      });
     });
   }
 

@@ -2,7 +2,7 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import trimmer from 'trim-request-body';
 
-import index from './routes/index';
+import orders from './routes/orders';
 import auth from './routes/auth';
 import menu from './routes/menu';
 
@@ -21,7 +21,7 @@ fastfoodApp.use(trimmer);
 fastfoodApp.listen(port);
 
 // create version1 of api
-fastfoodApp.use('/api/v1', index);
+fastfoodApp.use('/api/v1/orders', orders);
 fastfoodApp.use('/api/v1/auth', auth);
 fastfoodApp.use('/api/v1/menu', menu);
 
