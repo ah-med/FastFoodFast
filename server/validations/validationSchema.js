@@ -32,9 +32,8 @@ const Schema = {
   },
 
   mealSchema: {
-    itemName: Joi.string().min(3).max(15)
+    foodName: Joi.string().min(3).max(30)
       .required(),
-    quantity: Joi.number().positive().required(),
     price: Joi.number().positive().required(),
     category: Joi.string().min(8).max(15).required(),
     imageUrl: Joi.string().uri().min(11)

@@ -13,11 +13,11 @@ class MenuController {
         */
   static addMeal(req, res) {
     const {
-      itemName, quantity, price, imageUrl, category
+      foodName, price, imageUrl, category
     } = req.body;
 
-    const text = 'INSERT INTO menu(item_name, quantity, price, image_url, category) values($1, $2, $3, $4, $5) RETURNING food_id, no_of_times_ordered';
-    const param = [itemName, quantity, price, imageUrl, category];
+    const text = 'INSERT INTO menu(food_name, price, image_url, category) values($1, $2, $3, $4) RETURNING food_id';
+    const param = [foodName, price, imageUrl, category];
     db.query(text, param, (err, menu) => {
       if (err) return errors.serverError(res);
       return res.status(201).json({
@@ -25,9 +25,7 @@ class MenuController {
         data: [
           {
             foodId: menu.rows[0].food_id,
-            timesOrdered: menu.rows[0].no_of_times_ordered,
-            itemName,
-            quantity,
+            foodName,
             price,
             imageUrl,
             category
