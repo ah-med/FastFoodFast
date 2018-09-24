@@ -7,7 +7,7 @@ const { validationError } = Errors;
 
 
 const validateMeal = (req, res, next) => {
-  const data = ['itemName', 'quantity', 'price', 'imageUrl', 'category'];
+  const data = ['foodName', 'price', 'imageUrl', 'category'];
   const errors = Validator(data, req.body, mealSchema);
   return (errors !== null) ? validationError(res, errors) : next();
 };
