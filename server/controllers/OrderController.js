@@ -1,6 +1,5 @@
 import db from '../models/db';
 import errors from './errors';
-import ordersList from '../models/index';
 
 /**
  * @class OrderController
@@ -87,9 +86,12 @@ class OrderController {
   *@returns {undefined} returns undefined *
   */
   static getAllOrders(req, res) {
-    res.status(200).json({
-      status: 200,
-      data: ordersList
+    const query = 'select * from orders';
+    db.query(query, (err, data) => {
+      res.status(200).json({
+        status: 200,
+        data: data.rows
+      });
     });
   }
 }
