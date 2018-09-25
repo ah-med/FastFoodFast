@@ -1,17 +1,16 @@
-import ordersList from '../models/index';
+import db from '../models/db';
 import errors from '../controllers/errors';
 
 const verifyOrderId = (req, res, next) => {
   // get the orderId
   const { orderId } = req.params;
-  // check the Id
-  const check = ordersList.find(val => val.orderId === orderId);
-  if (!check) {
-    // send error 404
-    return errors.errorNotFound(res);
-  }
-  req.checkedOrder = check;
-  next();
+  const query = 'select exists(select * from orders where order_id=$1)';
+  db.query(query, [orderId], (err, data) => {
+    if (!data.rows[0].exists) {
+      return errors.errorNotFound(res);
+    }
+    next();
+  });
 };
 
 export default { verifyOrderId };

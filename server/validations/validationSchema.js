@@ -18,8 +18,10 @@ const Schema = {
     foodItems: Joi.array().items(foodItemObj).required(),
   },
   updateStatusSchema: {
-    orderId: Joi.number().positive().required(),
-    status: Joi.string().valid('Pending Approval', 'Complete', 'Accept', 'Decline').required()
+    status: Joi.string().valid('Complete', 'Process', 'Cancel').required()
+  },
+  idSchema: {
+    id: Joi.number().positive().required()
   },
   authSchema: {
     firstName: Joi.string().alphanum().min(3).max(15)

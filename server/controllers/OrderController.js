@@ -49,22 +49,16 @@ class OrderController {
     */
   static updateStatus(req, res) {
     const { orderId } = req.params;
-
-    // for each of the orders in the ordersList
-    // look for the order with a matching orderId
-    // assign the status of the order
-    // send the whole order back as response to the user
-    ordersList.forEach((val) => {
-      if (val.orderId === orderId) {
-        val.orderStatus = req.orderStatus;
-        return res.status(200).json({
-          status: 200,
-          message: 'Order update successful',
-          data: [
-            val
-          ]
-        });
-      }
+    const status = req.orderStatus;
+    db.query('UPDATE orders SET status=$1 WHERE order_id=$2 RETURNING *', [status, orderId], (error, data) => {
+      if (error) return errors.serverError(res);
+      const returnData = data.rows[0];
+      return res.status(200).json({
+        message: 'order updated successfully',
+        data: [
+          returnData
+        ]
+      });
     });
   }
 
