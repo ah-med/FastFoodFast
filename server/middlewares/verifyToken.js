@@ -1,5 +1,8 @@
 import jwt from 'jsonwebtoken';
+import dotenv from 'dotenv';
 import errors from '../controllers/errors';
+
+dotenv.config();
 
 // Secret key
 const secret = process.env.SECRET_KEY;
