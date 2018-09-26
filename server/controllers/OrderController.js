@@ -70,10 +70,13 @@ class OrderController {
     */
   static getOrder(req, res) {
     const { orderId } = req.params;
-    const order = ordersList.find(val => val.orderId === orderId);
-    res.status(200).json({
-      status: 200,
-      data: [order]
+    const query = 'select * from orders where order_id=$1';
+    db.query(query, [orderId], (err, data) => {
+      if (err) return errors.serverError(res);
+      res.status(200).json({
+        status: 200,
+        data: data.rows
+      });
     });
   }
 

@@ -17,6 +17,9 @@ const { verifyOrderId } = verify;
 // place an order
 router.post('/', verifyToken, verifyRole.user, validateOrder, verifyFoodItem, assignOrderStatus.newOrder, getTotalAmount, OrderController.create);
 
+// Get a specific order
+router.get('/:orderId', verifyToken, verifyRole.admin, validateOrderId, verifyOrderId, OrderController.getOrder);
+
 // update order
 router.put('/:orderId', verifyToken, verifyRole.admin, validateOrderStatus, validateOrderId, verifyOrderId, assignOrderStatus.update, OrderController.updateStatus);
 
