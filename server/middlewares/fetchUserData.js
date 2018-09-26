@@ -10,6 +10,7 @@ const fetchUserData = (req, res, next) => {
   db.query('select * from users where email =$1', [email], (err, data) => {
     if (err) return errors.serverError(res);
     if (data.rows[0] === undefined) return errors.errorNotFound(res);
+    // const userData = data.rows[0];
     const userData = {
       userId: data.rows[0].user_id,
       email: data.rows[0].email,
