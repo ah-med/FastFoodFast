@@ -41,7 +41,6 @@
     "dotenv": "^6.0.0",
     "express": "^4.16.3",
     "joi": "^13.6.0",
-    "joi-phone-number": "^2.0.12",
     "jsonwebtoken": "^8.3.0",
     "pg": "^7.4.3",
     "trim-request-body": "^1.0.1"
