@@ -11,7 +11,8 @@
     "prod-start": "nodemon server/index.js --exec babel-node",
     "test": "set NODE_ENV=test&& npm run migrate && mocha --timeout 10000 server/ --recursive --compilers js:babel-register --exit",
     "coverage": "nyc npm test && nyc report --reporter=text-lcov | coveralls",
-    "migrate": "babel-node server/models/schema.js"
+    "migrate": "babel-node server/models/schema.js",
+    "heroku-postbuild": "npm run migrate"
   },
   "repository": {
     "type": "git",
