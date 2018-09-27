@@ -7,7 +7,7 @@ const verifyOrderId = (req, res, next) => {
   const query = 'select exists(select * from orders where order_id=$1)';
   db.query(query, [orderId], (err, data) => {
     if (!data.rows[0].exists) {
-      return errors.errorNotFound(res);
+      return errors.errorNotFound(res, 'an order with the provided id does not exist');
     }
     next();
   });

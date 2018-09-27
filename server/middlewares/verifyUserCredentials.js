@@ -6,7 +6,7 @@ const verifyUserCredentials = (req, res, next) => {
   const { password } = req.body;
 
   const match = bcrypt.compareSync(password.trim(), req.userData.password);
-  if (!match) return errors.wrongPassword(res);
+  if (!match) return errors.badRequestError(res, 'incorrect login details');
   next();
 };
 

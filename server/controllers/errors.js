@@ -1,46 +1,36 @@
+const errorData = (status, title, description, fields) => ({
+  status,
+  title,
+  description,
+  fields,
+});
+
 const errors = {
   serverError: res => res.status(500).json({
-    error: {
-      status: 500,
-      title: 'INTERNAL_SERVER_ERROR',
-      description: 'something unexpected occured. try again later'
-    }
+    error: errorData(500, 'INTERNAL_SERVER_ERROR', 'something unexpected occured. try again later')
   }),
+
   validationError: (res, errObj) => res.status(422).json({
-    error: {
-      status: 422,
-      title: 'FIELDS_VALIDATION_ERROR',
-      description: 'one or more field raised validation error',
-      fields: errObj,
-    },
+    error: errorData(422, 'FIELDS_VALIDATION_ERROR', 'one or more fields raised validation error', errObj)
   }),
-  errorNotFound: res => res.status(404).json({
-    error: {
-      status: 404,
-      title: 'ERROR_NOT_FOUND',
-      description: 'resource does not exist',
-    },
+
+  errorNotFound: (res, description) => res.status(404).json({
+    error: errorData(404, 'ERROR_NOT_FOUND', description)
   }),
+
   forbidden: (res, description) => res.status(403).json({
-    error: {
-      status: 403,
-      title: 'ACTION_NOT_ALLOWED',
-      description,
-    },
+    error: errorData(403, 'ACTION_NOT_ALLOWED', description)
   }),
+
   unauthorizedError: res => res.status(401).json({
-    error: {
-      status: 401,
-      title: 'UNAUTHOURIZED_ACCESS',
-      description: 'an access token or other authorization credential is required'
-    }
+    error: errorData(401, 'UNAUTHOURIZED_ACCESS', 'an access token or other authorization credential is required')
   }),
-  wrongPassword: res => res.status(400).json({
-    error: {
-      status: 400,
-      title: 'WRONG PASSWORD',
-      description: 'password doesn\'t match'
-    }
+
+  badRequestError: (res, description) => res.status(400).json({
+    error: errorData(400, 'BAD_REQUEST', description)
+  }),
+  confictError: (res, description) => res.status(409).json({
+    error: errorData(409, 'CONFLICT_ERROR', description)
   })
 };
 

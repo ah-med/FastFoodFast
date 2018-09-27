@@ -9,13 +9,7 @@ const checkExistingAccount = (req, res, next) => {
   db.query(text, [email], (err, user) => {
     if (err) return errors.serverError(res);
     if (user.rows[0].exists) {
-      return res.status(409).json({
-        error: {
-          status: 409,
-          title: 'ACCOUNT_AREADY_EXISTS',
-          description: 'An account with the provided email already exist'
-        }
-      });
+      return errors.confictError(res, 'An account with the provided email already exist');
     }
     next();
   });

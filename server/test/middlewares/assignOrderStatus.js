@@ -61,12 +61,12 @@ describe('assignOrderStatus', () => {
                             status: 'Complete'
                           })
                           .end((err, res) => {
-                            expect(res.status).to.equal(403);
+                            expect(res.status).to.equal(400);
                             expect(res.body).to.have.property('error');
                             expect(res.body.error).to.have.property('status');
-                            expect(res.body.error.status).to.equal(403);
+                            expect(res.body.error.status).to.equal(400);
                             expect(res.body.error).to.have.property('title');
-                            expect(res.body.error.title).to.equal('ACTION_NOT_ALLOWED');
+                            expect(res.body.error.title).to.equal('BAD_REQUEST');
                             expect(res.body.error).to.have.property('description');
                             expect(res.body.error.description).to.equal('you can only Process/Cancel an order that is New');
                             done();
@@ -144,12 +144,12 @@ describe('assignOrderStatus', () => {
                                     status: 'Process'
                                   })
                                   .end((err, res) => {
-                                    expect(res.status).to.equal(403);
+                                    expect(res.status).to.equal(400);
                                     expect(res.body).to.have.property('error');
                                     expect(res.body.error).to.have.property('status');
-                                    expect(res.body.error.status).to.equal(403);
+                                    expect(res.body.error.status).to.equal(400);
                                     expect(res.body.error).to.have.property('title');
-                                    expect(res.body.error.title).to.equal('ACTION_NOT_ALLOWED');
+                                    expect(res.body.error.title).to.equal('BAD_REQUEST');
                                     expect(res.body.error).to.have.property('description');
                                     expect(res.body.error.description).to.equal('you cannot update a completed order');
                                     done();
@@ -229,12 +229,12 @@ describe('assignOrderStatus', () => {
                                     status: 'Process'
                                   })
                                   .end((err, res) => {
-                                    expect(res.status).to.equal(403);
+                                    expect(res.status).to.equal(400);
                                     expect(res.body).to.have.property('error');
                                     expect(res.body.error).to.have.property('status');
-                                    expect(res.body.error.status).to.equal(403);
+                                    expect(res.body.error.status).to.equal(400);
                                     expect(res.body.error).to.have.property('title');
-                                    expect(res.body.error.title).to.equal('ACTION_NOT_ALLOWED');
+                                    expect(res.body.error.title).to.equal('BAD_REQUEST');
                                     expect(res.body.error).to.have.property('description');
                                     expect(res.body.error.description).to.equal('you cannot update a Cancelled order');
                                     done();
@@ -306,12 +306,12 @@ describe('assignOrderStatus', () => {
                                 status: 'Process'
                               })
                               .end((err, res) => {
-                                expect(res.status).to.equal(403);
+                                expect(res.status).to.equal(400);
                                 expect(res.body).to.have.property('error');
                                 expect(res.body.error).to.have.property('status');
-                                expect(res.body.error.status).to.equal(403);
+                                expect(res.body.error.status).to.equal(400);
                                 expect(res.body.error).to.have.property('title');
-                                expect(res.body.error.title).to.equal('ACTION_NOT_ALLOWED');
+                                expect(res.body.error.title).to.equal('BAD_REQUEST');
                                 expect(res.body.error).to.have.property('description');
                                 expect(res.body.error.description).to.equal('you can only Complete/Cancel a Processing order');
                                 done();
