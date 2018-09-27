@@ -23,7 +23,7 @@ describe('assignOrderStatus', () => {
           .post('/api/v1/menu')
           .set('Authorization', adminToken)
           .send({
-            foodName: 'Chicken Burger4',
+            foodName: 'Chicken Burgerf',
             price: 1200,
             imageUrl: 'https://res.cloudinary.com/ah-med/image/upload/v1537442340/fastfoodImage/continental/burger-chicken.jpg',
             category: 'Continental'
@@ -34,7 +34,7 @@ describe('assignOrderStatus', () => {
             chai.request(app)
               .post('/api/v1/auth/signup')
               .send({
-                firstName: 'afirstname3', lastName: 'alastname3', email: 'newUser3@mail.com', password: '12345678'
+                firstName: 'afirstname', lastName: 'alastname', email: 'newUser3@mail.com', password: '12345678'
               })
               .end((err, res) => {
                 expect(res.status).to.equal(201);
@@ -90,7 +90,7 @@ describe('assignOrderStatus', () => {
           .post('/api/v1/menu')
           .set('Authorization', adminToken)
           .send({
-            foodName: 'Chicken Burger5',
+            foodName: 'Chicken Burgerj',
             price: 1200,
             imageUrl: 'https://res.cloudinary.com/ah-med/image/upload/v1537442340/fastfoodImage/continental/burger-chicken.jpg',
             category: 'Continental'
@@ -101,7 +101,7 @@ describe('assignOrderStatus', () => {
             chai.request(app)
               .post('/api/v1/auth/signup')
               .send({
-                firstName: 'afirstname4', lastName: 'alastname4', email: 'newUser4@mail.com', password: '12345678'
+                firstName: 'afirstname', lastName: 'alastname', email: 'newUser4@mail.com', password: '12345678'
               })
               .end((err, res) => {
                 expect(res.status).to.equal(201);
@@ -175,7 +175,7 @@ describe('assignOrderStatus', () => {
           .post('/api/v1/menu')
           .set('Authorization', adminToken)
           .send({
-            foodName: 'Chicken Burger6',
+            foodName: 'Chicken Burgern',
             price: 1200,
             imageUrl: 'https://res.cloudinary.com/ah-med/image/upload/v1537442340/fastfoodImage/continental/burger-chicken.jpg',
             category: 'Continental'
@@ -186,7 +186,7 @@ describe('assignOrderStatus', () => {
             chai.request(app)
               .post('/api/v1/auth/signup')
               .send({
-                firstName: 'afirstname5', lastName: 'alastname5', email: 'newUser5@mail.com', password: '12345678'
+                firstName: 'afirstname', lastName: 'alastname', email: 'newUser5@mail.com', password: '12345678'
               })
               .end((err, res) => {
                 expect(res.status).to.equal(201);
@@ -260,7 +260,7 @@ describe('assignOrderStatus', () => {
           .post('/api/v1/menu')
           .set('Authorization', adminToken)
           .send({
-            foodName: 'Chicken Burger7',
+            foodName: 'Chicken Burgeri',
             price: 1200,
             imageUrl: 'https://res.cloudinary.com/ah-med/image/upload/v1537442340/fastfoodImage/continental/burger-chicken.jpg',
             category: 'Continental'
@@ -271,7 +271,7 @@ describe('assignOrderStatus', () => {
             chai.request(app)
               .post('/api/v1/auth/signup')
               .send({
-                firstName: 'afirstname6', lastName: 'alastname6', email: 'newUser6@mail.com', password: '12345678'
+                firstName: 'afirstname', lastName: 'alastname', email: 'newUser6@mail.com', password: '12345678'
               })
               .end((err, res) => {
                 expect(res.status).to.equal(201);

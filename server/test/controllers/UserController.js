@@ -23,7 +23,7 @@ describe('UserController.fetchOrders', () => {
           .post('/api/v1/menu')
           .set('Authorization', adminToken)
           .send({
-            foodName: 'Chicken Burger10',
+            foodName: 'Chicken Burgert',
             price: 1200,
             imageUrl: 'https://res.cloudinary.com/ah-med/image/upload/v1537442340/fastfoodImage/continental/burger-chicken.jpg',
             category: 'Continental'
@@ -34,7 +34,7 @@ describe('UserController.fetchOrders', () => {
             chai.request(app)
               .post('/api/v1/auth/signup')
               .send({
-                firstName: 'afirstname10', lastName: 'alastname10', email: 'newUser10@mail.com', password: '12345678'
+                firstName: 'afirstnamet', lastName: 'alastnamet', email: 'newUser10@mail.com', password: '12345678'
               })
               .end((err, res) => {
                 expect(res.status).to.equal(201);
