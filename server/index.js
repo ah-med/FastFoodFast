@@ -12,7 +12,6 @@ const port = process.env.PORT || 9000;
 
 // serve static files
 fastfoodApp.use(express.static('./public'));
-fastfoodApp.use('/client', express.static('./client'));
 
 // allow cross origin access
 fastfoodApp.use(cors());
