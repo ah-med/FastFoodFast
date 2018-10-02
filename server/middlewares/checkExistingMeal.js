@@ -10,13 +10,7 @@ const checkExistingMeal = (req, res, next) => {
     if (err) errors.serverError(res);
     const findName = food.rows.find(val => val.food_name.toLowerCase() === foodName);
     if (findName) {
-      return res.status(409).json({
-        error: {
-          status: 409,
-          title: 'MEAL_AREADY_EXISTS',
-          description: 'the meal you want to add already exists'
-        }
-      });
+      return errors.confictError(res, 'the meal you want to add already exists');
     }
     next();
   });

@@ -21,7 +21,7 @@ const verifyFoodItem = (req, res, next) => {
       }
     });
     if (errorArray.length > 0) {
-      return errors.forbidden(res, errorArray);
+      return errors.badRequestError(res, errorArray);
     }
     next();
   });

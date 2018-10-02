@@ -9,30 +9,22 @@ class OrderController {
     * Place an order
     *@param {object} req The request *.
     *@param {object} res The response *.
-    *@returns {undefined} returns undefined *
+    *@returns {undefined} returns res *
     */
   static create(req, res) {
-    const {
-      phoneNo, address
-    } = req.body;
+    const { phoneNo, address } = req.body;
     let { foodItems } = req.body;
     foodItems = (typeof foodItems === 'object') ? JSON.stringify(foodItems) : foodItems;
     const { userData, totalAmount, orderStatus } = req;
     const dateCreated = new Date().toDateString();
     const query = 'INSERT INTO orders(user_id, status, address, phone_number, date_created, last_updated, total_amount, order_items) VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING *';
     const parameters = [
-      userData.userId,
-      orderStatus,
-      address,
-      phoneNo,
-      dateCreated,
-      dateCreated,
-      totalAmount,
-      foodItems
+      userData.userId, orderStatus, address,
+      phoneNo, dateCreated, dateCreated, totalAmount, foodItems
     ];
     db.query(query, parameters, (err, data) => {
       if (err) return errors.serverError(res);
-      res.status(201).json({
+      return res.status(201).json({
         status: 201,
         message: 'Order placed successfully!',
         data: data.rows
@@ -44,7 +36,7 @@ class OrderController {
     * Update the status of an order
     *@param {object} req The request *.
     *@param {object} res The response *.
-    *@returns {undefined} returns undefined *
+    *@returns {undefined} returns res *
     */
   static updateStatus(req, res) {
     const { orderId } = req.params;
@@ -65,14 +57,14 @@ class OrderController {
     * Get order
     *@param {object} req The request *.
     *@param {object} res The response *.
-    *@returns {undefined} returns undefined *
+    *@returns {undefined} returns res *
     */
   static getOrder(req, res) {
     const { orderId } = req.params;
     const query = 'select * from orders where order_id=$1';
     db.query(query, [orderId], (err, data) => {
       if (err) return errors.serverError(res);
-      res.status(200).json({
+      return res.status(200).json({
         status: 200,
         data: data.rows
       });
@@ -83,16 +75,14 @@ class OrderController {
   * Get all orders
   *@param {object} req The request *.
   *@param {object} res The response *.
-  *@returns {undefined} returns undefined *
+  *@returns {undefined} returns res *
   */
   static getAllOrders(req, res) {
     const query = 'select * from orders';
-    db.query(query, (err, data) => {
-      res.status(200).json({
-        status: 200,
-        data: data.rows
-      });
-    });
+    db.query(query, (err, data) => res.status(200).json({
+      status: 200,
+      data: data.rows
+    }));
   }
 }
 

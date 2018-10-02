@@ -6,6 +6,12 @@ const foodItemObj = Joi.object().keys({
     .required(),
 }).required();
 
+const textRegex = /^[a-zA-Z]+$/i;
+const textSpaceRegex = /^[a-zA-Z ]+$/i;
+
+const nameObject = name => ({
+  name,
+});
 
 const Schema = {
   placeOrderSchema: {
@@ -20,19 +26,18 @@ const Schema = {
     id: Joi.number().integer().positive().required()
   },
   authSchema: {
-    firstName: Joi.string().regex(/^[a-zA-Z]+$/i, { name: 'a-z and A-Z without space' }).min(3).max(15)
+    firstName: Joi.string().regex(textRegex, nameObject('a-z and A-Z without space')).min(3).max(15)
       .required(),
-    lastName: Joi.string().regex(/^[a-zA-Z]+$/i, { name: 'a-z and A-Z without space' }).min(3).max(15)
+    lastName: Joi.string().regex(textRegex, nameObject('a-z and A-Z without space')).min(3).max(15)
       .required(),
     email: Joi.string().email().required(),
     password: Joi.string().min(8).max(10).required()
   },
-
   mealSchema: {
-    foodName: Joi.string().regex(/^[a-zA-Z ]+$/i, { name: 'a-z and A-Z' }).min(3).max(18)
+    foodName: Joi.string().regex(textSpaceRegex, nameObject('a-z and A-Z')).min(3).max(18)
       .required(),
     price: Joi.number().positive().max(999999).required(),
-    category: Joi.string().regex(/^[a-zA-Z ]+$/i, { name: 'a-z and A-Z' }).min(8).max(15)
+    category: Joi.string().regex(textSpaceRegex, nameObject('a-z and A-Z')).min(8).max(15)
       .required(),
     imageUrl: Joi.string().uri().min(11)
       .required()

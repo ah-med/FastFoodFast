@@ -1,20 +1,11 @@
 import Schema from './validationSchema';
 import Validator from './validator';
-import Errors from '../controllers/errors';
 
 const { authSchema } = Schema;
-const { validationError } = Errors;
+const { getValidation } = Validator;
 
-const validateSignup = (req, res, next) => {
-  const data = ['firstName', 'lastName', 'email', 'password'];
-  const errors = Validator(data, req.body, authSchema);
-  return (errors !== null) ? validationError(res, errors) : next();
-};
+const validateSignup = (req, res, next) => getValidation(req, res, next, ['firstName', 'lastName', 'email', 'password'], authSchema);
 
-const validateLogin = (req, res, next) => {
-  const data = ['email', 'password'];
-  const errors = Validator(data, req.body, authSchema);
-  return (errors !== null) ? validationError(res, errors) : next();
-};
+const validateLogin = (req, res, next) => getValidation(req, res, next, ['email', 'password'], authSchema);
 
 export default { validateSignup, validateLogin };

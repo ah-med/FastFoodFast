@@ -1,6 +1,12 @@
 import Joi from 'joi';
+import Errors from '../controllers/errors';
 
-const Validator = (data, obj, schema) => {
+const { validationError } = Errors;
+
+const sendError = (req, res, next, errors) => ((errors !== null)
+  ? validationError(res, errors) : next());
+
+const validator = (data, obj, schema) => {
   const errObj = {};
   let isError = false;
   data.forEach((val) => {
@@ -18,4 +24,9 @@ const Validator = (data, obj, schema) => {
   return null;
 };
 
-export default Validator;
+const getValidation = (req, res, next, fieldsArray, schema) => {
+  const errors = validator(fieldsArray, req.body, schema);
+  sendError(req, res, next, errors);
+};
+
+export default { validator, getValidation, sendError };

@@ -12,11 +12,8 @@ const processUpdate = (prevStatus, newStatus) => {
   switch (prevStatus) {
     case 'New':
       // you can only Process or Cancel an order that is New
-      if (newStatus === 'Process' || newStatus === 'Cancel') {
-        orderStatus = (newStatus === 'Process') ? 'Processing' : 'Cancelled';
-      } else {
-        errorMessage = 'you can only Process/Cancel an order that is New';
-      }
+      errorMessage = (newStatus === 'Complete') ? 'you can only Process/Cancel an order that is New' : undefined;
+      orderStatus = (newStatus === 'Process') ? 'Processing' : 'Cancelled';
       break;
     case 'Completed':
       //  you cannot update a completed order
@@ -24,11 +21,8 @@ const processUpdate = (prevStatus, newStatus) => {
       break;
     case 'Processing':
       // you can only Cancel or Complete a Processing order status
-      if (newStatus === 'Complete' || newStatus === 'Cancel') {
-        orderStatus = (newStatus === 'Complete') ? 'Completed' : 'Cancelled';
-        break;
-      }
-      errorMessage = 'you can only Complete/Cancel a Processing order';
+      errorMessage = (newStatus === 'Process') ? 'you can only Complete/Cancel a Processing order' : undefined;
+      orderStatus = (newStatus === 'Complete') ? 'Completed' : 'Cancelled';
       break;
     case 'Cancelled':
       //  you cannot update a Cancelled order
@@ -54,7 +48,7 @@ const update = (req, res, next) => {
     const { errorMessage, orderStatus } = processStatus;
     req.orderStatus = orderStatus;
     if (errorMessage) {
-      return errors.forbidden(res, errorMessage);
+      return errors.badRequestError(res, errorMessage);
     }
     req.orderStatus = orderStatus;
     next();
