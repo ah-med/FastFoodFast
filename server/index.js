@@ -1,7 +1,7 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 import trimmer from 'trim-request-body';
-
+import cors from 'cors';
 import orders from './routes/orders';
 import auth from './routes/auth';
 import menu from './routes/menu';
@@ -9,6 +9,12 @@ import users from './routes/users';
 
 const fastfoodApp = express();
 const port = process.env.PORT || 9000;
+
+// serve static files
+fastfoodApp.use(express.static('./public'));
+
+// allow cross origin access
+fastfoodApp.use(cors());
 
 // parsing application/json
 fastfoodApp.use(bodyParser.json());
