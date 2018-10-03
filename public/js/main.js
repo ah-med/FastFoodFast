@@ -92,6 +92,19 @@ const displayWarningAlert = (text) => {
   removeFromClassList('alert-element', 'success-alert');
 };
 
+const filterValidationError = (errorObject) => {
+  const ul = createNode('ul');
+  const errorFields = Object.values(errorObject);
+  const errorList = errorFields.map((element) => {
+    const li = createNode('li'),
+      textNode = createText(element);
+    append(li, textNode);
+    return li;
+  });
+  appendManyNodes(ul, errorList);
+  return ul;
+};
+
 const createManyNodes = (val, noOfNodes) => {
   const nodesArray = [];
   if (Array.isArray(val)) {

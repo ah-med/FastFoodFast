@@ -1,26 +1,37 @@
 /* eslint-env browser */
 
 /* global
+
   filterValidationError,
   readResponseAsJSON,
   displayErrorAlert,
   displayElement,
-  setCartIcon,
   insertHTML,
   appendDOM,
+  reDirect,
   baseUrl,
-  login,
-  cart
 
 */
 
-const signupUrl = `${baseUrl}/api/v1/auth/signup`;
 
-const processSignup = (obj) => {
+const loginUrl = `${baseUrl}/api/v1/auth/login`;
+
+const reDirectLogin = role => (
+  (role === 'user')
+    ? reDirect('./user_food_items.html')
+    : reDirect('./add_meal.html')
+);
+
+const processLogin = (obj) => {
+  displayElement('alert', 'none');
+  displayElement('loadingModal', 'none');
   if (obj.data) {
-    displayElement('loadingModal', 'none');
-    login();
+    localStorage.setItem('userToken', obj.data.token);
+    localStorage.setItem('login', true);
+    localStorage.setItem('role', obj.data.role);
+    reDirectLogin(obj.data.role);
   } else {
+    // get status
     const { status } = obj.error;
     let errMess;
     let fieldsError;
@@ -31,7 +42,8 @@ const processSignup = (obj) => {
         appendDOM('error-fields', fieldsError);
         errMess = 'Error';
         break;
-      case 409:
+      case 404:
+      case 400:
         errMess = obj.error.description;
         break;
       default:
@@ -41,16 +53,13 @@ const processSignup = (obj) => {
   }
 };
 
-
-const signup = (event) => {
-  event.preventDefault();
+const login = (event) => { // eslint-disable-line no-unused-vars
+  if (event) { event.preventDefault(); }
+  // get user data
   const userData = {
-    firstName: document.getElementById('signup-firstname').value,
-    lastName: document.getElementById('signup-lastname').value,
     email: document.getElementById('email').value,
     password: document.getElementById('password').value
   };
-
   const postData = {
     method: 'POST',
     headers: {
@@ -62,17 +71,11 @@ const signup = (event) => {
   displayElement('loadingModal', 'block');
   displayElement('alert', 'none');
   // fetch request
-  fetch(signupUrl, postData)
+  fetch(loginUrl, postData)
     .then(readResponseAsJSON)
-    .then(processSignup)
+    .then(processLogin)
     .catch((error) => {
       displayElement('loadingModal', 'none');
       displayErrorAlert(error);
     });
 };
-
-
-window.addEventListener('load', () => {
-  setCartIcon(cart);
-  document.getElementById('signup-form').addEventListener('submit', signup);
-});

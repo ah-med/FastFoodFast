@@ -349,10 +349,15 @@ footer {
       min-width: 300px;
       min-height: 60px;
       position: fixed;
-      bottom: 10px;
+      top: 10px;
+      right: 30%;
       left:30%;
-      right:30%;
       color: #fff;
+  }
+  .alert li {
+      padding: 0;
+      margin: 0;
+      text-align: left;
   }
   .warning-alert {
       background-color: #fff700;
