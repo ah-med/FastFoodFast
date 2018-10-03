@@ -1,0 +1,202 @@
+/** Global **/
+.container h2 {
+    margin: 60px 0;
+}
+#how-it-works, #popular, #categories {
+    min-height: 600px;
+}
+.grid a {
+    margin-top: 20px;
+}
+/** Intro **/
+#intro {
+    background-image: url('../images/bg2.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#intro .container {
+    color: #fff;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.3);
+    min-height: 560px;
+    width: 100%;
+}
+#intro .content {
+    margin: 170px auto;
+}
+#intro h1 {
+    color: #fff;
+    font-family: cursive;    
+    font-size: 50px;
+    margin: 0;
+}
+
+#intro .action-btn {
+    border-radius: 5px;
+    padding: 14px 14px;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 20px;
+    width: 150px;
+}
+#intro a {
+    display: inline-block;
+    margin:0;
+}
+#intro .button:hover {
+    opacity: 0.9;
+}
+#intro span {
+    display: block;
+    margin: 20px 0;
+    font-weight: 400;
+    line-height: 30px;
+}
+
+/** How It Works **/
+#how-it-works {
+    text-align: center;
+}
+#how-it-works h2 {
+    color: #000;
+}
+#how-it-works img {
+    max-height: 100px;
+}
+#how-it-works h3 {
+    color: #000;
+}
+
+/** Popular **/ 
+#popular {
+    background-color: #fff;
+}
+#popular h2{
+    color: #000;
+    text-align: center;
+}
+#popular p{
+    text-align: center;
+}
+#food-item {
+    margin: 0 auto;
+    width: 80%;
+}
+
+#view-order-div {
+    text-align:center; 
+    margin: 5px;
+}
+#view-order-div a {
+    display: inline-block;
+    border-radius: 3px;
+    border: none;
+    padding: 12px 32px;
+    color: #fff;
+    font-weight: 700;
+    font-size: 16px;
+    margin: 30px auto;
+}
+
+#popular h4 {
+    margin: 0;
+}
+
+
+/** Categories **/
+#categories .grid{
+    display: grid;
+	grid-template-columns:auto auto;
+}
+#categories h2{
+    color: #000;
+    text-align: center;
+}
+#categories p{
+    text-align: center;
+}
+#categories a{
+    text-align: center;
+}
+#categories img{
+    width: 100px;
+    height: 100px;
+    border: 5px solid #fff;
+    border-radius: 50%;
+}
+#categories img:hover{
+    box-shadow: 0 0px 8px 0 rgba(0, 0, 0, 0.5), 0 0px 20px 0 rgba(0, 0, 0, 0.5);
+}
+#categories span{
+    color: #000;
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+/** How It Works **/
+#how-it-works {
+    min-height: 300px;
+    margin: 0 0 30px 0;
+
+}
+#how-it-works img {
+    height: 100px;
+}
+#how-it-work-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin: 30px 0;
+}
+#how-it-works .deliver {
+    min-width: 300px;
+}
+
+#how-it-work-list div {
+    min-width: 200px;
+    padding: 10px;
+    margin-bottom: 60px;
+}
+
+/** Popular **/ 
+#food-item {
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 20px;
+    margin: 30px 0;
+    width: 100%;
+}
+
+#popular h4 {
+    margin: 0;
+}
+
+/** Categories **/
+#categories .grid{
+    display: grid;
+    grid-template-columns:auto auto auto auto;
+    margin: 30px 0;
+}
+#categories h2{
+    color: #000;
+    text-align: center;
+}
+#categories p{
+    text-align: center;
+}
+#categories a{
+    text-align: center;
+}
+#categories img{
+    width: 150px;
+    height: 150px;
+    border: 5px solid #fff;
+    border-radius: 50%;
+}
+
+#categories span{
+    color: #000;
+}
+
+}

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>DeLite | Food Items</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="./css/main.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="./css/user_food_items.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="./css/checkout.css" />
+</head>
+
+<body>
+    <section id="modals">
+        <nav id="navModal" class="mobile modal hide">
+            <ul>
+                <span class="click" onclick="toggleModal('navModal')">X</span>
+                <li>
+                    <a href="./index.html">Home</a>
+                </li>
+                <li>
+                    <a href="./about.html">About Us</a>
+                </li>
+                <li>
+                    <a href="./user_orders.html">My Orders</a>
+                </li>
+                <li>
+
+                </li>
+            </ul>
+        </nav>
+        <div id="checkoutModal" class="modal hide">
+            <div class="close text-right">
+                <span class="click" onclick="toggleModal('checkoutModal')">X</span>
+            </div>
+            <div id="main-checkout">
+                <div id="order-info">
+                    <div class="container">
+                        <div id="total-amount">Total amount: &#8358;250</div>
+                        <form>
+                            <fieldset>
+                                <legend>Delivery Address</legend>
+                                <div class="form-item">
+                                    <label>Street Address</label>
+                                    <br>
+                                    <input class="form-input" type="email" placeholder="No 1, abc street" required>
+                                </div>
+                                <div class="form-item">
+                                    <label>City</label>
+                                    <br>
+                                    <input class="form-input" type="email" placeholder="city" required>
+                                </div>
+                                <div class="form-item">
+                                    <label>State</label>
+                                    <br>
+                                    <input class="form-input" type="email" placeholder="state" required>
+                                </div>
+                                <div class="form-item">
+                                    <label>Zip</label>
+                                    <br>
+                                    <input class="form-input" type="email" placeholder="zip code" required>
+                                </div>
+                                <div class="form-item">
+                                    <label>Phone No</label>
+                                    <br>
+                                    <input class="form-input" type="tel" placeholder="+234-XX-XX-XX-XX-XX" required>
+                                </div>
+                                <div class="form-item-submit">
+                                    <input class="form-input action-btn submit-btn" type="submit" value="Place Order Now">
+                                </div>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+                <div id="cart-section">
+                    <div class="container">
+                        <div id="ordered-food-items">
+                            <div class="food-item-card" align="center">
+                                <img src="./images/food/swallow/semo.jpg" alt="semo">
+                                <h4>Semo</h4>
+                                <span>&#8358;70</span>
+                                <div class="action">
+                                </div>
+                            </div>
+                            <div class="food-item-card" align="center">
+                                <img src="./images/food/soups/edikaikong soup.jpg" alt="edikaikong">
+                                <h4>Edikaikong</h4>
+                                <span>&#8358;100</span>
+                                <div class="action">
+                                </div>
+                            </div>
+                            <div class="food-item-card" align="center">
+                                <img src="./images/food/drinks/can-sodas.jpg" alt="can-sodas">
+                                <h4>Fanta</h4>
+                                <span>&#8358;150</span>
+                                <div class="action">
+                                </div>
+                            </div>
+                            <div class="food-item-card" align="center">
+                                <img src="./images/food/soups/edikaikong soup.jpg" alt="edikaikong">
+                                <h4>Edikaikong</h4>
+                                <span>&#8358;100</span>
+                                <div class="action">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="loadingModal" class="modal hide">
+            <div id="loader" class="spinner">
+                <div class="bounce1"></div>
+                <div class="bounce2"></div>
+                <div class="bounce3"></div>
+                <span>LOADING</span>
+            </div>
+        </div>
+    </section>
+    <header id="header">
+        <div class="container">
+            <div class="left">
+                <div id="menu" class="mobile">
+                    <img src="./images/icons/menu.PNG" alt="menu" onclick="toggleModal('navModal')">
+                </div>
+                <div id="brand">
+                    <h1>
+                        <a href="./index.html">DeLite Fast Food</a>
+                    </h1>
+                </div>
+            </div>
+            <div class="right">
+                <nav class="desktop">
+                    <ul>
+                        <li>
+                            <a href="./index.html">Home</a>
+                        </li>
+                        <li>
+                            <a href="./about.html">About Us</a>
+                        </li>
+                        <li>
+                            <a href="./user_orders.html">My Orders</a>
+                        </li>
+                        <li>
+
+                        </li>
+                    </ul>
+                </nav>
+                <div id="auth">
+                    <span class="desktop">
+                        <a href="./login.html">Login</a> |
+                        <a href="./signup.html">Signup</a>
+                    </span>
+                    <a href="./signup.html">
+                        <img class="mobile" src="./images/icons/account.png" alt="account">
+                    </a>
+                </div>
+                <div id="cart-menu">
+                    <a href="./checkout.html">
+                        <img src="./images/icons/cart.png" alt="cart">
+                        <span id="cart">0</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section id="main">
+        <section id="menu">
+            <h4 class="text-center">Menu</h4>
+            <div class="container">
+                <nav id="menu-header">
+                    <ul id="menu-list">
+                    </ul>
+                </nav>
+            </div>
+        </section>
+        <section id="food-menu">
+            <div class="container">
+                <div id="menu-body">
+                </div>
+            </div>
+        </section>
+    </section>
+    <footer>
+        DeLite Fast Food copyright &copy; 2018
+    </footer>
+    <div id="alert" class=" hide">
+        <div id="alert-element" class="alert">
+            <span class="close" onclick="displayElement('alert', 'none')">X</span>
+            <div id="error-text"></div>
+        </div>
+    </div>
+    <script src="./js/main.js"></script>
+    <script src="./js/cart.js"></script> 
+    <script src="./js/user_food_items.js"></script>
+</body>
+
+</html>
