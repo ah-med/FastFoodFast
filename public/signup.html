@@ -101,12 +101,12 @@
                 <div class="form-item">
                     <label>Email</label>
                     <br>
-                    <input id="signup-email" class="form-input" type="email" placeholder="email" required>
+                    <input id="email" class="form-input" type="email" placeholder="email" required>
                 </div>
                 <div class="form-item">
                     <label>Password</label>
                     <br>
-                    <input id="signup-password" class="form-input" type="password" placeholder="password" required>
+                    <input id="password" class="form-input" type="password" placeholder="password" required>
                 </div>
                 <div class="form-item text-center">
                     <input class="form-btn action-btn" type="submit" value="Sign Up">
@@ -126,10 +126,12 @@
         <div id="alert-element" class="alert">
             <span class="close" onclick="displayElement('alert', 'none')">X</span>
             <div id="error-text"></div>
+            <div id="error-fields" align="left"></div>
         </div>
     </div>
     <script src="./js/cart.js"></script>
     <script src="./js/main.js"></script>
+    <script src="./js/auth.js"></script>
     <script src="./js/signup.js"></script>
 </body>
 
