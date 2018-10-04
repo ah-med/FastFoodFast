@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>DeLite | Add Meal</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="./css/main.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="./css/add_meal.css" />
+</head>
+
+<body>
+    <section id="modals">
+        <nav id="navModal" class="mobile modal hide">
+            <ul>
+                <span class="click" onclick="toggleModal('navModal')">X</span>
+                <li>
+                    <a href="./orders.html">Orders</a>
+                </li>
+                <li>
+                    <a href="./add_meal.html">Add Meal</a>
+                </li>
+            </ul>
+        </nav>
+        <div id="itemsModal" class="modal hide">
+            <div class="close text-right">
+                <span class="click" onclick="toggleModal('itemsModal')">X</span>
+            </div>
+            <div id="ordered-food-items">
+                <div class="food-item-card" align="center">
+                    <img src="./images/food/swallow/semo.jpg" alt="semo">
+                    <h4>Semo</h4>
+                    <span>&#8358;70</span>
+                    <div class="action">
+                    </div>
+                </div>
+                <div class="food-item-card" align="center">
+                    <img src="./images/food/soups/edikaikong soup.jpg" alt="edikaikong">
+                    <h4>Edikaikong</h4>
+                    <span>&#8358;100</span>
+                    <div class="action">
+                    </div>
+                </div>
+                <div class="food-item-card" align="center">
+                    <img src="./images/food/drinks/can-sodas.jpg" alt="can-sodas">
+                    <h4>Fanta</h4>
+                    <span>&#8358;150</span>
+                    <div class="action">
+                    </div>
+                </div>
+                <div class="food-item-card" align="center">
+                    <img src="./images/food/swallow/semo.jpg" alt="semo">
+                    <h4>Semo</h4>
+                    <span>&#8358;70</span>
+                    <div class="action">
+                    </div>
+                </div>
+                <div class="food-item-card" align="center">
+                    <img src="./images/food/soups/edikaikong soup.jpg" alt="edikaikong">
+                    <h4>Edikaikong</h4>
+                    <span>&#8358;100</span>
+                    <div class="action">
+                    </div>
+                </div>
+                <div class="food-item-card" align="center">
+                    <img src="./images/food/drinks/can-sodas.jpg" alt="can-sodas">
+                    <h4>Fanta</h4>
+                    <span>&#8358;150</span>
+                    <div class="action">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="loadingModal" class="modal hide">
+            <div id="loader" class="spinner">
+                <div class="bounce1"></div>
+                <div class="bounce2"></div>
+                <div class="bounce3"></div>
+                <span>LOADING</span>
+            </div>
+        </div>
+    </section>
+    <header>
+        <div class="container">
+            <div class="left">
+                <div id="menu" class="mobile">
+                    <img src="./images/icons/menu.PNG" alt="menu" onclick="toggleModal('navModal')">
+                </div>
+                <div id="brand">
+                    <h1>
+                        <a href="./index.html">DeLite Fast Food</a>
+                    </h1>
+                </div>
+            </div>
+            <div class="right">
+                <nav class="desktop">
+                    <ul>
+                        <li>
+                            <a href="./orders.html">Orders</a>
+                        </li>
+                        <li>
+                            <a href="./add_meal.html">Add Meal</a>
+                        </li>
+                        <li>
+
+                        </li>
+                    </ul>
+                </nav>
+                <div id="auth">
+                    <span class="desktop">
+                        <a id="logout" href="./login.html">Logout</a>
+                    </span>
+                    <a href="./login.html">
+                        <img class="mobile" src="./images/icons/account.png" alt="account">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section id="main">
+        <div class="container">
+            <div id="add-details">
+                <h3 class="text-center">Add a Meal</h3>
+                <form id="menu-form">
+                    <div class="form-right">
+                        <div class="image-item">
+                            <label>Upload Image</label>
+                            <br>
+                            <input id="upload-image" class="form-input" type="file" name="file" accept="image/*" required>
+                        </div>
+                        <div>
+                            <img id="uploaded">
+                        </div>
+                    </div>
+                    <div class="form-left">
+                        <div class="form-item">
+                            <label>Food Name</label>
+                            <br>
+                            <input id="food-name" class="form-input" type="text" placeholder="foodName" required>
+                        </div>
+                        <div class="form-item">
+                            <label>Price</label>
+                            <br>
+                            <input id="price" class="form-input" type="number" placeholder="Price" required>
+                        </div>
+                        <div class="form-item">
+                            <label>Category</label>
+                            <br>
+                            <select id="category" class="form-input" required>
+                                <option value="Continental">Continental</option>
+                                <option value="Swallow">Swallow</option>
+                                <option value="Protein">Protein</option>
+                                <option value="Soup">Soup</option>
+                                <option value="Drinks">Drinks</option>
+                                <option value="Pastries">Pastries</option>
+                              </select>
+                        </div>
+                        <div class="form-item text-center">
+                            <input class="form-btn action-btn" type="submit" value="Add Meal">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+    <footer>
+        DeLite Fast Food copyright &copy; 2018
+    </footer>
+    <div id="alert" class=" hide">
+        <div id="alert-element" class="alert">
+            <span class="close" onclick="displayElement('alert', 'none')">X</span>
+            <div id="error-text"></div>
+            <div id="error-fields" align="left"></div>
+        </div>
+    </div>
+    <script src="./js/main.js"></script>
+    <script src="./js/add_meal.js"></script>
+</body>
+
+</html>
