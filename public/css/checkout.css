@@ -1,0 +1,132 @@
+.text-right {
+    text-align: right;
+}
+
+/** Modals **/
+#checkoutModal .close {
+    position: fixed;
+    top: 0;
+    right: 0;
+    padding-right: 40px;
+    border-bottom: 1px solid #fff;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+/** Checkout Modal **/
+
+#main-checkout {
+    margin-top: 40px;
+}
+    /** Order Info **/
+#total-amount {
+    color: #fff;
+    font-size: 24px;
+    margin-top: 20px;
+}
+#order-info {
+    min-height: 300px;
+    background-color: rgba(0, 0, 0, 0.6);
+    margin: 10px 10px;
+}
+#order-info .container {
+    padding: 0px 5px;
+}
+#order-info fieldset {
+    margin-top: 20px;
+}
+    /** ordered food items **/
+#ordered-food-items {
+    display: grid;
+    margin: 20px auto;
+}
+
+#ordered-food-items .food-item-card {
+    background-color: #fff;
+}
+#ordered-food-items .food-item-card h4 {
+    margin: 0;
+    padding-top: 10px;
+}
+    /** Form **/
+legend, label {
+    color: #fff;
+}
+form {
+    margin: 0;
+    padding: 0px;
+}
+.form-item {
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+.form-input {
+    margin-top: 12px;
+    padding: 8px;
+    width: 80%;
+}
+.form-item-submit {
+    margin: 20px auto;
+    width: 100%;
+    padding-left: 10px;
+}
+form .submit-btn {
+    background-color: yellowgreen;
+    border: none;
+    font-size: 17px;
+    font-weight: 400;
+    border-radius: 5px;
+    padding: 14px 14px;
+    cursor: pointer;
+}
+.text-center {
+    text-align: center;
+}
+
+    /** Cart **/
+#cart {
+    min-height: 300px;
+    background-color: rgba(0, 0, 0, 0.6);
+    margin: 10px 10px;
+}
+#cart .container {
+    padding: 0px 5px;
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    /**  main **/
+    #main-checkout {
+        display: grid;
+        grid-template-areas: 'order-info order-info order-info cart cart cart';
+    }
+    #cart {
+        grid-area: cart;
+    }
+    #order-info {
+        grid-area: order-info;
+    }
+    #order-info, #cart {
+        padding-bottom: 20px;
+    }
+}
+@media only screen and (max-width: 600px) {
+    #ordered-food-items {
+        grid-template-columns: auto;
+    }
+    #ordered-food-items .food-item-card {
+        margin: 20px auto;
+    }
+} 
+
+@media only screen and (min-width: 600px) {
+    #ordered-food-items {
+        grid-template-columns: auto auto;
+    }
+} 
+
+@media only screen and (min-width: 768px) {
+    #ordered-food-items {
+        grid-template-columns: auto auto auto;
+    }
+}

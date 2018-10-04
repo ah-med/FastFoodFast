@@ -12,6 +12,7 @@ const port = process.env.PORT || 9000;
 
 // serve static files
 fastfoodApp.use(express.static('./public'));
+fastfoodApp.use('*', express.static('./public/notfound.html'));
 
 // allow cross origin access
 fastfoodApp.use(cors());
@@ -33,11 +34,5 @@ fastfoodApp.use('/api/v1/auth', auth);
 fastfoodApp.use('/api/v1/menu', menu);
 fastfoodApp.use('/api/v1/users', users);
 
-fastfoodApp.use('*', (req, res) => {
-  res.status(200).json({
-    status: 200,
-    message: 'Welcome to edited FastFoodFast Application',
-  });
-});
 
 export default fastfoodApp;
