@@ -7,6 +7,7 @@
   readResponseAsJSON,
   displayErrorAlert,
   displayElement,
+  confirmAdmin,
   insertHTML,
   appendDOM,
   reDirect,
@@ -14,13 +15,6 @@
   token
 
 */
-
-const confirmAdmin = () => {
-  const login = localStorage.getItem('login');
-  const userToken = localStorage.getItem('userToken');
-  const role = localStorage.getItem('role');
-  return (login && userToken && role === 'admin');
-};
 
 const processResponse = (response) => {
   if (!response.error) {

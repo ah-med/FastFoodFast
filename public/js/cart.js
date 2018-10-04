@@ -53,7 +53,7 @@ class Cart {
     const { items } = this;
     const cartArray = Object.keys(this.items).map((key) => {
       const foodObj = {};
-      foodObj.foodId = key;
+      foodObj.foodId = Number(key);
       foodObj.quantity = items[key];
       return foodObj;
     });

@@ -23,55 +23,6 @@
                 </li>
             </ul>
         </nav>
-        <div id="itemsModal" class="modal hide">
-            <div class="close text-right">
-                <span class="click" onclick="toggleModal('itemsModal')">X</span>
-            </div>
-            <div id="ordered-food-items">
-                <div class="food-item-card" align="center">
-                    <img src="./images/food/swallow/semo.jpg" alt="semo">
-                    <h4>Semo</h4>
-                    <span>&#8358;70</span>
-                    <div class="action">
-                    </div>
-                </div>
-                <div class="food-item-card" align="center">
-                    <img src="./images/food/soups/edikaikong soup.jpg" alt="edikaikong">
-                    <h4>Edikaikong</h4>
-                    <span>&#8358;100</span>
-                    <div class="action">
-                    </div>
-                </div>
-                <div class="food-item-card" align="center">
-                    <img src="./images/food/drinks/can-sodas.jpg" alt="can-sodas">
-                    <h4>Fanta</h4>
-                    <span>&#8358;150</span>
-                    <div class="action">
-                    </div>
-                </div>
-                <div class="food-item-card" align="center">
-                    <img src="./images/food/swallow/semo.jpg" alt="semo">
-                    <h4>Semo</h4>
-                    <span>&#8358;70</span>
-                    <div class="action">
-                    </div>
-                </div>
-                <div class="food-item-card" align="center">
-                    <img src="./images/food/soups/edikaikong soup.jpg" alt="edikaikong">
-                    <h4>Edikaikong</h4>
-                    <span>&#8358;100</span>
-                    <div class="action">
-                    </div>
-                </div>
-                <div class="food-item-card" align="center">
-                    <img src="./images/food/drinks/can-sodas.jpg" alt="can-sodas">
-                    <h4>Fanta</h4>
-                    <span>&#8358;150</span>
-                    <div class="action">
-                    </div>
-                </div>
-            </div>
-        </div>
         <div id="loadingModal" class="modal hide">
             <div id="loader" class="spinner">
                 <div class="bounce1"></div>
@@ -109,7 +60,7 @@
                 </nav>
                 <div id="auth">
                     <span class="desktop">
-                        <a id="logout" href="./login.html">Logout</a>
+                        <a id="logout" href="Javascript:void(0);" onclick="logout()" >Logout</a>
                     </span>
                     <a href="./login.html">
                         <img class="mobile" src="./images/icons/account.png" alt="account">

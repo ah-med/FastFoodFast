@@ -20,9 +20,6 @@
                     <a href="./index.html">Home</a>
                 </li>
                 <li>
-                    <a href="./about.html">About Us</a>
-                </li>
-                <li>
                     <a href="./user_orders.html">My Orders</a>
                 </li>
                 <li>
@@ -79,6 +76,14 @@
                 </div>
 
             </div>
+            <div id="loadingModal" class="modal hide">
+                <div id="loader" class="spinner">
+                    <div class="bounce1"></div>
+                    <div class="bounce2"></div>
+                    <div class="bounce3"></div>
+                    <span>LOADING</span>
+                </div>
+            </div>
     </section>
     <header>
         <div class="container">
@@ -99,9 +104,6 @@
                             <a href="./index.html">Home</a>
                         </li>
                         <li>
-                            <a href="./about.html">About Us</a>
-                        </li>
-                        <li>
                             <a href="./user_orders.html">My Orders</a>
                         </li>
                         <li>
@@ -111,8 +113,7 @@
                 </nav>
                 <div id="auth">
                     <span class="desktop">
-                        <a href="./login.html">Login</a> |
-                        <a href="./signup.html">Signup</a>
+                        <a id="logout" href="Javascript:void(0);" onclick="logout()" >Logout</a>
                     </span>
                     <a href="./signup.html">
                         <img class="mobile" src="./images/icons/account.png" alt="account">
@@ -130,99 +131,21 @@
     <section id="main">
         <div class="container">
             <div id="user_orders">
-                <div class="order-card food-item-card">
-                    <div class="top">
-                        <img src="./images/food/pastries-food.jpg">
-                        <div class="overlay">
-                            <button class="action click" onclick="toggleModal('itemsModal')">view</button>
-                        </div>
-                    </div>
-                    <div class="bottom">
-                        <div class="section text-left">
-                            <span>&#8358;1,200</span>
-                            <span>3 items</span>
-                        </div>
-                        <div class="section text-right">
-                            <div class "text-right">
-                                <span class="status status-new">&#9899;</span>New Order
-                            </div>
-                            <span>3 days ago</span>
-                        </div>
-                    </div>
-                    <div class="action">
-                        <button class="action-btn btn-approve click" onclick="">Approve</button>
-                        <button class="action-btn btn-decline click" onclick="">Decline</button>
-                    </div>
-                </div>
-                <div class="order-card food-item-card">
-                    <div class="top">
-                        <img src="./images/food/drinks-food.PNG">
-                        <div class="overlay">
-                            <button class="action click" onclick="toggleModal('itemsModal')">view</button>
-                        </div>
-                    </div>
-                    <div class="bottom">
-                        <div class="section text-left">
-                            <span>&#8358;1,200</span>
-                            <span>3 items</span>
-                        </div>
-                        <div class="section text-right">
-                            <div class "text-right">
-                                <span class="status status-complete">&#9899;</span> Completed
-                            </div>
-                            <span>8 hours ago</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="order-card food-item-card">
-                    <div class="top">
-                        <img src="./images/food/pastries-food.jpg">
-                        <div class="overlay">
-                            <button class="action click" onclick="toggleModal('itemsModal')">view</button>
-                        </div>
-                    </div>
-                    <div class="bottom">
-                        <div class="section text-left">
-                            <span>&#8358;1,200</span>
-                            <span>3 items</span>
-                        </div>
-                        <div class="section text-right">
-                            <div class "text-right">
-                                <span class="status status-decline">&#9899;</span> Declined
-                            </div>
-                            <span>2 days ago</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="order-card food-item-card">
-                    <div class="top">
-                        <img src="./images/food/protein-food.jpg">
-                        <div class="overlay">
-                            <button class="action click" onclick="toggleModal('itemsModal')">view</button>
-                        </div>
-                    </div>
-                    <div class="bottom">
-                        <div class="section text-left">
-                            <span>&#8358;1,200</span>
-                            <span>3 items</span>
-                        </div>
-                        <div class="section text-right">
-                            <div class "text-right">
-                                <span class="status status-approve">&#9899;</span> Approved
-                            </div>
-                            <span>3 days ago</span>
-                        </div>
-                    </div>
-                    <div class="action">
-                        <button class="action-btn click" onclick="">Complete</button>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
     <footer>
         DeLite Fast Food copyright &copy; 2018
     </footer>
+    <div id="alert" class=" hide">
+        <div id="alert-element" class="alert">
+            <span class="close" onclick="displayElement('alert', 'none')">X</span>
+            <div id="error-text"></div>
+            <div id="error-fields" align="left"></div>
+        </div>
+    </div>
+    <script src="./js/main.js"></script>
+    <script src="./js/orders.js"></script>
 </body>
 
 </html>
