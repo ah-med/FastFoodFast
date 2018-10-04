@@ -2,12 +2,11 @@
 
 /* global
 
-  removeFromClassList,
   readResponseAsJSON,
   displayErrorAlert,
   createFoodItem,
-  addToClassList,
   displayElement,
+   fixOnScroll,
   setCartIcon,
   appendDOM,
   baseUrl,
@@ -15,22 +14,11 @@
 
 */
 
-const fixOnScroll = (id) => {
-  const element = document.getElementById(id);
-  const elementOffsetTop = element.offsetTop;
-
-  if (window.pageYOffset > elementOffsetTop) {
-    addToClassList(id, 'fixed');
-  } else {
-    removeFromClassList(id, 'fixed');
-  }
-};
-
 window.onscroll = () => { fixOnScroll('header'); };
 
 const renderPopularSection = (response) => {
   const { data } = response;
-  displayElement('loadingModal', 'none');
+  displayElement('no-orders', 'none');
   // display four food items
   for (let i = 0; i < 4; i += 1) {
     const foodItem = createFoodItem(data[i]);

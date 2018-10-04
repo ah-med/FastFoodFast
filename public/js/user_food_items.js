@@ -7,6 +7,7 @@
   createFoodItem,
   displayElement,
   setCartIcon,
+  fixOnScroll,
   insertHTML,
   createText,
   createNode,
@@ -17,6 +18,7 @@
 
 */
 
+window.onscroll = () => { fixOnScroll('header'); };
 
 const setAuthStatus = () => {
   const loginStatus = localStorage.getItem('login');
@@ -79,6 +81,7 @@ const renderFoodItems = (data) => {
 const processResponse = (response) => {
   displayElement('loadingModal', 'none');
   const categories = getCategories(response.data);
+  displayElement('no-orders', 'none');
   renderMenu(categories);
   renderFoodItems(response.data);
 };
