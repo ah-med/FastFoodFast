@@ -1,0 +1,117 @@
+/** global **/
+.text-center {
+    text-align: center;
+}
+
+/** Menu **/
+#menu {
+    background-color: #fff;
+}
+#menu h4 {
+    background-color: yellowgreen;
+    color: #fff;
+    padding: 8px;
+    margin: 0; 
+}
+#menu .container {
+    padding: 0px 5px;
+}
+#menu a {
+    display: inline-block;
+    text-transform: capitalize;
+    font-size: 16px;
+    width: 100%;
+    padding: 6px;
+    
+}
+#menu ul {
+    margin: 5px 0;
+    padding: 0;
+}
+#menu li:hover { 
+    color: #fe8e07;
+}
+#menu li {
+    padding: 0;
+    list-style-type: none;
+    border-top: 1px solid rgb(240, 236, 236);
+}
+#menu li:last-child {
+    border-bottom: 1px solid rgb(240, 236, 236);
+}
+#menu li:first-child {
+    border-top: none;
+}
+.food-items {
+    padding-bottom: 30px;
+}
+/** food-menu **/
+#food-menu {
+    min-height: 300px;
+    background-color: #fff;
+}
+#food-menu .container {
+    padding: 0px 5px;
+}
+
+.food-item-card h4 {
+    margin: 0;
+}
+
+
+/**======================= MEDIA QUERIES ==========================**/
+
+@media only screen and (max-width: 600px) {
+    #menu {
+
+    }
+    #menu-body .food-items{
+        margin: 0 auto;
+        width: 50%;
+        display: grid;
+        grid-template-columns: auto;
+    }
+} 
+
+@media only screen and (min-width: 600px) {
+    #menu-body .food-items{
+        display: grid;
+        grid-template-columns: auto auto;
+    }
+} 
+
+@media only screen and (min-width: 768px) {
+    .food-item-card img, .food-item-card { 
+        width: 190px;
+    }
+
+    #main {
+        width: 100%;
+        margin-top: 0; 
+        min-height: 100vh;
+    }
+    #menu {
+        max-height: 300px;
+        width:20%;
+        right: 0;
+        top:90px;
+        position: fixed;
+    }
+    #food-menu {
+        width: 77%;
+    }
+    #menu-body .food-items{
+        display: grid;
+        grid-template-columns: auto auto auto;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .food-item-card img, .food-item-card { 
+        width: 230px;
+    }
+    #menu-body .food-items{
+        display: grid;
+        grid-template-columns: auto auto auto auto;
+    }
+} 
