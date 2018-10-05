@@ -20,9 +20,6 @@
                     <a href="./index.html">Home</a>
                 </li>
                 <li>
-                    <a href="./user_orders.html">My Orders</a>
-                </li>
-                <li>
                     <a href="./user_food_items.html">Food Items</a>
                 </li>
             </ul>
@@ -96,17 +93,13 @@
                             <a href="./index.html">Home</a>
                         </li>
                         <li>
-                            <a href="./user_orders.html">My Orders</a>
-                        </li>
-                        <li>
                             <a href="./user_food_items.html">Food Items</a>
                         </li>
                     </ul>
                 </nav>
                 <div id="auth">
                     <span class="desktop">
-                        <a href="./login.html">Login</a> |
-                        <a href="./signup.html">Signup</a>
+                        <a id="logout" href="Javascript:void(0);" onclick="logout()" >Logout</a>
                     </span>
                     <a href="./signup.html">
                         <img class="mobile" src="./images/icons/account.png" alt="account">
@@ -210,6 +203,15 @@
     <footer>
         DeLite Fast Food copyright &copy; 2018
     </footer>
+    <div id="alert" class=" hide">
+        <div id="alert-element" class="alert">
+            <span class="close" onclick="displayElement('alert', 'none')">X</span>
+            <div id="error-text"></div>
+            <div id="error-fields" align="left"></div>
+        </div>
+    </div>
+    <script src="./js/main.js"></script>
+    <script src="./js/user_orders.js"></script>
 </body>
 
 </html>

@@ -48,19 +48,22 @@
                 <nav class="desktop">
                     <ul>
                         <li>
+                            <a href="./index.html">Home</a>
+                        </li>
+                        <li>
+                            <a href="./user_food_items.html">Food Items</a>
+                        </li>
+                        <li>
                             <a href="./orders.html">Orders</a>
                         </li>
                         <li>
-                            <a href="./add_meal.html">Add Meal</a>
-                        </li>
-                        <li>
-
+                            <a id="logout" href="Javascript:void(0);" onclick="logout()">Logout</a>
                         </li>
                     </ul>
                 </nav>
                 <div id="auth">
                     <span class="desktop">
-                        <a id="logout" href="Javascript:void(0);" onclick="logout()" >Logout</a>
+                        <a id="logout" href="Javascript:void(0);" onclick="logout()">Logout</a>
                     </span>
                     <a href="./login.html">
                         <img class="mobile" src="./images/icons/account.png" alt="account">
@@ -106,7 +109,7 @@
                                 <option value="Drinks">Drinks</option>
                                 <option value="Pastries">Pastries</option>
                                 <option value="Traditional">Traditional</option>
-                              </select>
+                            </select>
                         </div>
                         <div class="form-item text-center">
                             <input class="form-btn action-btn" type="submit" value="Add Meal">

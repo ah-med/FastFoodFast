@@ -223,7 +223,7 @@ const appendTextRight = (status, textRight) => {
   return textRight;
 };
 
-const createOrderItems = (item) => {
+const createOrderItems = (item, role) => {
   const view = '<button class="action click" onclick="toggleModal(\'itemsModal\')">view</button>';
   const img = createNode('img'),
     [
@@ -239,18 +239,23 @@ const createOrderItems = (item) => {
   top.setAttribute('class', 'top');
   bottom.setAttribute('class', 'bottom');
   action.setAttribute('class', 'action');
-
+  if (role === 'user') {
+    action.setAttribute('class', 'action hide');
+  }
   overlay.setAttribute('class', 'overlay');
   overlay.innerHTML = view;
 
   process.setAttribute('class', 'action-btn btn-approve click');
   process.setAttribute('onclick', 'updateOrder(event)');
+  process.setAttribute('order_id', item.order_id);
   process.innerText = 'Process';
   cancel.setAttribute('class', 'action-btn btn-decline click');
   cancel.setAttribute('onclick', 'updateOrder(event)');
+  cancel.setAttribute('order_id', item.order_id);
   cancel.innerText = 'Cancel';
   complete.setAttribute('class', 'action-btn btn-decline click');
   complete.setAttribute('onclick', 'updateOrder(event)');
+  complete.setAttribute('order_id', item.order_id);
   complete.innerText = 'Complete';
   const appendAction = appendUpdateAction(item.status, action, { complete, process, cancel });
 
