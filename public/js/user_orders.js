@@ -1,13 +1,3 @@
-/*
-
-[]check if you are logged in and that you are a normal user
-[]if you are not a normal user user or your token expires
-            []you are redirected back to login page
-[]fetch the history of that user
-            []renderOrderHistory
-
-*/
-
 const isUser = confirmUser();
 
 if (!isUser) {
@@ -15,13 +5,19 @@ if (!isUser) {
 }
 
 const renderUserOrders = (data) => {
-  data.forEach((element) => {
-    const order = createOrderItems(element, role);
-    appendDOM('user_orders', order);
-  });
+  if (data.length === 0) {
+    displayElement('no-orders', 'block');
+  } else {
+    displayElement('no-orders', 'none')
+    data.forEach((element) => {
+      const order = createOrderItems(element, 'user');
+      appendDOM('user_orders', order);
+    });
+  }
 };
 
 const processUserOrdersResponse = (response) => {
+  displayElement('loadingModal', 'none');
   if (!response.error) {
     renderUserOrders(response.data);
   } else {
@@ -50,7 +46,7 @@ const processUserOrdersResponse = (response) => {
 window.addEventListener('load', () => {
   displayElement('loadingModal', 'block');
   const userId = localStorage.getItem('userId');
-  const pathToResource = `${baseUrl}/api/v1/users/${userId}/order`;
+  const pathToResource = `${baseUrl}/api/v1/users/${userId}/orders`;
   fetch(pathToResource, {
     method: 'GET',
     headers: {

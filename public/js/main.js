@@ -239,9 +239,6 @@ const createOrderItems = (item, role) => {
   top.setAttribute('class', 'top');
   bottom.setAttribute('class', 'bottom');
   action.setAttribute('class', 'action');
-  if (role === 'user') {
-    action.setAttribute('class', 'action hide');
-  }
   overlay.setAttribute('class', 'overlay');
   overlay.innerHTML = view;
 
@@ -279,7 +276,10 @@ const createOrderItems = (item, role) => {
 
   appendManyNodes(bottom, [bottomLeft, bottomRight]);
 
-  appendManyNodes(orderCard, [top, bottom, action]);
-
+  if (role === 'user') {
+    appendManyNodes(orderCard, [top, bottom]);
+  } else {
+    appendManyNodes(orderCard, [top, bottom, action]);
+  }
   return orderCard;
 };

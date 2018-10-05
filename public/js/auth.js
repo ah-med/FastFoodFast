@@ -29,6 +29,7 @@ const processLogin = (obj) => {
     localStorage.setItem('userToken', obj.data.token);
     localStorage.setItem('login', true);
     localStorage.setItem('role', obj.data.role);
+    localStorage.setItem('userId', obj.data.userId);
     reDirectLogin(obj.data.role);
   } else {
     // get status
