@@ -224,7 +224,7 @@ const appendTextRight = (status, textRight) => {
 };
 
 const createOrderItems = (item, role) => {
-  const view = '<button class="action click" onclick="toggleModal(\'itemsModal\')">view</button>';
+  const view = '<button class="action click" onclick="viewOrder(event)">view</button>';
   const img = createNode('img'),
     [
       orderCard, top,
@@ -240,6 +240,7 @@ const createOrderItems = (item, role) => {
   bottom.setAttribute('class', 'bottom');
   action.setAttribute('class', 'action');
   overlay.setAttribute('class', 'overlay');
+  overlay.setAttribute('order_id', item.order_id);
   overlay.innerHTML = view;
 
   process.setAttribute('class', 'action-btn btn-approve click');
@@ -250,7 +251,7 @@ const createOrderItems = (item, role) => {
   cancel.setAttribute('onclick', 'updateOrder(event)');
   cancel.setAttribute('order_id', item.order_id);
   cancel.innerText = 'Cancel';
-  complete.setAttribute('class', 'action-btn btn-decline click');
+  complete.setAttribute('class', 'action-btn click');
   complete.setAttribute('onclick', 'updateOrder(event)');
   complete.setAttribute('order_id', item.order_id);
   complete.innerText = 'Complete';

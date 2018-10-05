@@ -23,7 +23,7 @@
                     <a href="./user_orders.html">My Orders</a>
                 </li>
                 <li>
-                    
+
                 </li>
             </ul>
         </nav>
@@ -31,60 +31,73 @@
             <div class="close text-right">
                 <span class="click" onclick="toggleModal('itemsModal')">X</span>
             </div>
-            <div id="ordered-food-items">
-                <div class="food-item-card" align="center">
-                    <img src="./images/food/swallow/semo.jpg" alt="semo">
-                    <h4>Semo</h4>
-                    <span>&#8358;70</span>
-                    <div class="action">
-                    </div>
+            <div id="view-order">
+                <div id="order-info">
+                    <h4>Address:
+                        <span id="address"></span>
+                    </h4>
+                    <h4>Phone Number:
+                        <span id="phone-no"></span>
+                    </h4>
+                    <h4>Total Amount:
+                        <span id="amount"></span>
+                    </h4>
+                    <span id="status"></span>
                 </div>
-                <div class="food-item-card" align="center">
-                    <img src="./images/food/soups/edikaikong soup.jpg" alt="edikaikong">
-                    <h4>Edikaikong</h4>
-                    <span>&#8358;100</span>
-                    <div class="action">
+                <div id="ordered-food-items">
+                    <div class="food-item-card" align="center">
+                        <img src="./images/food/swallow/semo.jpg" alt="semo">
+                        <h4>Semo</h4>
+                        <span>&#8358;70</span>
+                        <div class="action">
+                        </div>
                     </div>
-                </div>
-                <div class="food-item-card" align="center">
-                    <img src="./images/food/drinks/can-sodas.jpg" alt="can-sodas">
-                    <h4>Fanta</h4>
-                    <span>&#8358;150</span>
-                    <div class="action">
+                    <div class="food-item-card" align="center">
+                        <img src="./images/food/soups/edikaikong soup.jpg" alt="edikaikong">
+                        <h4>Edikaikong</h4>
+                        <span>&#8358;100</span>
+                        <div class="action">
+                        </div>
                     </div>
-                </div>
-                <div class="food-item-card" align="center">
-                    <img src="./images/food/swallow/semo.jpg" alt="semo">
-                    <h4>Semo</h4>
-                    <span>&#8358;70</span>
-                    <div class="action">
+                    <div class="food-item-card" align="center">
+                        <img src="./images/food/drinks/can-sodas.jpg" alt="can-sodas">
+                        <h4>Fanta</h4>
+                        <span>&#8358;150</span>
+                        <div class="action">
+                        </div>
                     </div>
-                </div>
-                <div class="food-item-card" align="center">
-                    <img src="./images/food/soups/edikaikong soup.jpg" alt="edikaikong">
-                    <h4>Edikaikong</h4>
-                    <span>&#8358;100</span>
-                    <div class="action">
+                    <div class="food-item-card" align="center">
+                        <img src="./images/food/swallow/semo.jpg" alt="semo">
+                        <h4>Semo</h4>
+                        <span>&#8358;70</span>
+                        <div class="action">
+                        </div>
                     </div>
-                </div>
-                <div class="food-item-card" align="center">
-                    <img src="./images/food/drinks/can-sodas.jpg" alt="can-sodas">
-                    <h4>Fanta</h4>
-                    <span>&#8358;150</span>
-                    <div class="action">
+                    <div class="food-item-card" align="center">
+                        <img src="./images/food/soups/edikaikong soup.jpg" alt="edikaikong">
+                        <h4>Edikaikong</h4>
+                        <span>&#8358;100</span>
+                        <div class="action">
+                        </div>
                     </div>
-                </div>
-
-            </div>
-            <div id="loadingModal" class="modal hide">
-                <div id="loader" class="spinner">
-                    <div class="bounce1"></div>
-                    <div class="bounce2"></div>
-                    <div class="bounce3"></div>
-                    <span>LOADING</span>
+                    <div class="food-item-card" align="center">
+                        <img src="./images/food/drinks/can-sodas.jpg" alt="can-sodas">
+                        <h4>Fanta</h4>
+                        <span>&#8358;150</span>
+                        <div class="action">
+                        </div>
+                    </div>
                 </div>
             </div>
     </section>
+    <div id="loadingModal" class="modal hide">
+        <div id="loader" class="spinner">
+            <div class="bounce1"></div>
+            <div class="bounce2"></div>
+            <div class="bounce3"></div>
+            <span>LOADING</span>
+        </div>
+    </div>
     <header>
         <div class="container">
             <div class="left">
@@ -105,12 +118,12 @@
                         </li>
                         <li>
                             <a href="./user_food_items.html">Food Items</a>
-                        </li>         
+                        </li>
                     </ul>
                 </nav>
                 <div id="auth">
                     <span class="desktop">
-                        <a id="logout" href="Javascript:void(0);" onclick="logout()" >Logout</a>
+                        <a id="logout" href="Javascript:void(0);" onclick="logout()">Logout</a>
                     </span>
                     <a href="./signup.html">
                         <img class="mobile" src="./images/icons/account.png" alt="account">

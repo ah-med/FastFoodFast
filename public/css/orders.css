@@ -14,12 +14,18 @@ footer {
     background-color: rgba(0, 0, 0, 0.6);
 }
 
-#ordered-food-items {
+#view-order {
     padding: 20px;
+    margin: 50px 0;
+    background-color: #fff;
+    margin: 20px auto;
+    width: 90%;
+    border-radius: 10px;
+}
+
+#ordered-food-items {
     display: grid;
     grid-template-columns: auto auto auto auto;
-    width: 90%;
-    margin: 20px auto;
 }
 
 #ordered-food-items .food-item-card {
