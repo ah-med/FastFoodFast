@@ -45,6 +45,8 @@ const processUserOrdersResponse = (response) => {
 
 window.addEventListener('load', () => {
   displayElement('loadingModal', 'block');
+  fetchFoodItems();
+  console.log(localStorage.getItem('foodItems'))
   const userId = localStorage.getItem('userId');
   const pathToResource = `${baseUrl}/api/v1/users/${userId}/orders`;
   fetch(pathToResource, {

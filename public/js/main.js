@@ -152,6 +152,24 @@ const fixOnScroll = (id) => {
   }
 };
 
+const fetchFoodItems = () => {
+  const pathToResource = `${baseUrl}/api/v1/menu`;
+  fetch(pathToResource, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
+    .then(readResponseAsJSON)
+    .then((response) => {
+      localStorage.setItem('foodItems', JSON.stringify(response.data));
+    })
+    .catch((error) => {
+      displayElement('loadingModal', 'none');
+      displayErrorAlert(error);
+    });
+};
+
 const createFoodItem = (item) => {
   const addCart = '<div class="add-cart"><button id="minus" onclick="removeItemFromCart(event)" class="minus click">-</button><input type="number" min="0" max="30" step="1" value="0"> <button id="plus" onclick="addItemToCart(event)" class="plus click">+</button></div>';
   const a = '<a class="action-btn" href="Javascript:void(0);" onclick="orderNow(event)">Order Now</a>';

@@ -24,8 +24,8 @@ footer {
 }
 
 #ordered-food-items {
-    display: grid;
-    grid-template-columns: auto auto auto auto;
+    display: flex;
+    flex-direction: row;
 }
 
 #ordered-food-items .food-item-card {

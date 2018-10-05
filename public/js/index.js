@@ -3,7 +3,6 @@
 /* global
 
   readResponseAsJSON,
-  displayErrorAlert,
   createFoodItem,
   displayElement,
    fixOnScroll,
@@ -42,6 +41,6 @@ window.addEventListener('load', () => {
     .then(readResponseAsJSON)
     .then(renderPopularSection)
     .catch(() => {
-      displayErrorAlert('something is not right, check your connection');
+      displayElement('alert', 'something is not right, check your connection');
     });
 });

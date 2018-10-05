@@ -6,31 +6,58 @@
   displayErrorAlert,
   displayElement,
   confirmAdmin,
+  createNode,
+  createManyNodes,
+  appendManyNodes,
+  insertHTML,
   appendDOM,
   reDirect,
-  baseUrl,
   token
 
 */
+const createOrderItem = (item) => {
+  const div = createNode('div'),
+    img = createNode('img'),
+    h4 = createNode('h4'),
+    [price, quantity] = createManyNodes('div', 2);
+
+  div.setAttribute('class', 'food-item-card');
+  div.setAttribute('align', 'center');
+  img.setAttribute('src', item.image_url);
+  h4.innerHTML = item.food_name;
+  price.innerHTML = `&#8358; ${item.price}`;
+  quantity.innerHTML = `Quantity: ${item.quantity}`;
+  appendManyNodes(div, [img, h4, price, quantity]);
+  return div;
+};
+
+const renderOrderedItems = (item) => {
+  const orderedFood = createOrderItem(item);
+  appendDOM('view-order', orderedFood);
+};
 
 const setOrderInfo = (data) => {
   insertHTML('address', data.address);
   insertHTML('phone-no', data.phone_number);
   insertHTML('status', data.status);
-  insertHTML('amount', data.total_amount);
-}
-const renderSpecificOrder = (data) => {
-  console.log(data);
-  //displayDeliveryDetails(data);
-  //displayItemDetails(data);
-  toggleModal('itemsModal');
+  insertHTML('amount', `&#8358; ${data.total_amount}`);
+};
 
-  // get address info
-  // get phone number
-  // get status
-  setOrderInfo(data[0])
-  // addOrderItems()
-}
+const addOrderItems = (data) => {
+  const foodItems = JSON.parse(localStorage.getItem('foodItems'));
+  const orderItems = data.order_items;
+  orderItems.forEach((element) => {
+    const item = foodItems.find(val => val.food_id === element.foodId);
+    item.quantity = element.quantity;
+    renderOrderedItems(item);
+  });
+};
+
+const renderSpecificOrder = (data) => {
+  toggleModal('itemsModal');
+  setOrderInfo(data[0]);
+  addOrderItems(data[0]);
+};
 
 const processgetOrderResponse = (response) => {
   displayElement('loadingModal', 'none');
@@ -62,7 +89,6 @@ const processgetOrderResponse = (response) => {
 
 const viewOrder = (event) => {
   displayElement('loadingModal', 'block');
-  console.log(event)
   const orderId = event.path[1].attributes[1].value,
     pathToResource = `${baseUrl}/api/v1/orders/${orderId}`;
   fetch(pathToResource, {
@@ -173,6 +199,7 @@ if (!isAdmin) {
 
 window.addEventListener('load', () => {
   displayElement('loadingModal', 'block');
+  fetchFoodItems();
   const pathToResource = `${baseUrl}/api/v1/orders`;
   fetch(pathToResource, {
     method: 'GET',
