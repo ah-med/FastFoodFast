@@ -34,45 +34,27 @@
             <div id="main-checkout">
                 <div id="order-info">
                     <div class="container">
-                        <div id="total-amount">Total amount: &#8358;250</div>
-                        <form>
+                        <div id="total-amount">Total amount: &#8358;
+                            <span id="amount"></span>
+                        </div>
+                        <form id="placeorder-form">
                             <fieldset>
                                 <legend>Delivery Address</legend>
                                 <div class="form-item">
-                                    <label>Street Address</label>
+                                    <label>Delivery Address</label>
                                     <br>
-                                    <input class="form-input" type="email" placeholder="No 1, abc street" required>
-                                </div>
-                                <div class="form-item">
-                                    <label>City</label>
-                                    <br>
-                                    <input class="form-input" type="email" placeholder="city" required>
-                                </div>
-                                <div class="form-item">
-                                    <label>State</label>
-                                    <br>
-                                    <input class="form-input" type="email" placeholder="state" required>
-                                </div>
-                                <div class="form-item">
-                                    <label>Zip</label>
-                                    <br>
-                                    <input class="form-input" type="email" placeholder="zip code" required>
+                                    <input id="address" class="form-input" type="text" placeholder="No 1, abc street, city " required>
                                 </div>
                                 <div class="form-item">
                                     <label>Phone No</label>
                                     <br>
-                                    <input class="form-input" type="tel" placeholder="+234-XX-XX-XX-XX-XX" required>
+                                    <input id="phone-no" class="form-input" type="tel" placeholder="+234-XX-XX-XX-XX-XX" required>
                                 </div>
                                 <div class="form-item-submit">
                                     <input class="form-input action-btn submit-btn" type="submit" value="Place Order Now">
                                 </div>
                             </fieldset>
                         </form>
-                    </div>
-                </div>
-                <div id="cart-section">
-                    <div class="container">
-
                     </div>
                 </div>
             </div>
@@ -83,6 +65,13 @@
                 <div class="bounce2"></div>
                 <div class="bounce3"></div>
                 <span>LOADING</span>
+            </div>
+        </div>
+        <div id="alertModal" class="modal hide">
+            <div id="place-order-alert-element" class="alert">
+                <span class="close" onclick="displayElement('alertModal', 'none')">X</span>
+                <div id="place-order-error-text"></div>
+                <div id="place-order-error"></div>
             </div>
         </div>
     </section>
@@ -158,11 +147,13 @@
         <div id="alert-element" class="alert">
             <span class="close" onclick="displayElement('alert', 'none')">X</span>
             <div id="error-text"></div>
+            <div id="error-fields"></div>
         </div>
     </div>
     <script src="./js/main.js"></script>
     <script src="./js/cart.js"></script>
     <script src="./js/user_food_items.js"></script>
+    <script src="./js/place_order.js"></script>
 </body>
 
 </html>
