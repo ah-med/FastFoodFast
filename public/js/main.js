@@ -2,7 +2,7 @@
 /* eslint-disable no-unused-vars */
 
 
-const baseUrl = 'http://localhost:9000';
+const baseUrl = 'https://afastfood-app.herokuapp.com';
 
 const token = localStorage.getItem('userToken');
 
@@ -121,6 +121,16 @@ const createManyNodes = (val, noOfNodes) => {
   }
 };
 
+const fixOnScroll = (id) => {
+  const element = document.getElementById(id);
+  const elementOffsetTop = element.offsetTop;
+
+  if (window.pageYOffset > elementOffsetTop) {
+    addToClassList(id, 'fixed');
+  } else {
+    removeFromClassList(id, 'fixed');
+  }
+};
 
 const createFoodItem = (item) => {
   const addCart = '<div class="add-cart"><button id="minus" class="click">-</button><input type="number" min="0" max="30" step="1" value="0"> <button id="plus" class="click">+</button></div>';
