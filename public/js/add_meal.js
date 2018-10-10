@@ -7,6 +7,7 @@
   readResponseAsJSON,
   displayErrorAlert,
   displayElement,
+  confirmAdmin,
   insertHTML,
   appendDOM,
   reDirect,
@@ -15,15 +16,13 @@
 
 */
 
-const confirmAdmin = () => {
-  const login = localStorage.getItem('login');
-  const userToken = localStorage.getItem('userToken');
-  const role = localStorage.getItem('role');
-  return (login && userToken && role === 'admin');
-};
-
 const processResponse = (response) => {
   if (!response.error) {
+    document.getElementById('food-name').value = '';
+    document.getElementById('price').value = '';
+    document.getElementById('category').value = '';
+    document.getElementById('upload-image').value = '';
+    document.getElementById('uploaded').setAttribute('src', '');
     displaySuccessAlert(response.message);
   } else {
     const { error } = response;
