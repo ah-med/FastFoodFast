@@ -1,33 +1,44 @@
 .text-right {
     text-align: right;
 }
-
+.text-left {
+    text-align: left;
+}
+.color-white {
+    color: white;
+}
 /** Modals **/
+#checkoutModal {
+    background-color: rgba(0, 0, 0, 0.4);
+}
 #checkoutModal .close {
     position: fixed;
     top: 0;
     right: 0;
-    padding-right: 40px;
+    padding-right: 10px;
     border-bottom: 1px solid #fff;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.6);
 }
 
 /** Checkout Modal **/
 
 #main-checkout {
-    margin-top: 40px;
+    display: flex;
+    flex-direction: row;
 }
-    /** Order Info **/
+
+/** Order Info **/
+#order-info {
+    min-height: 300px;
+    margin: 10px 10px;
+    margin-right: 20px;
+    width: 30%;
+    max-height: 400px;
+}
 #total-amount {
     color: #fff;
     font-size: 24px;
-    margin-top: 20px;
-}
-#order-info {
-    min-height: 300px;
-    background-color: rgba(0, 0, 0, 0.6);
-    margin: 10px 10px;
+    margin-top: 60px;
 }
 #order-info .container {
     padding: 0px 5px;
@@ -35,26 +46,38 @@
 #order-info fieldset {
     margin-top: 20px;
 }
-    /** ordered food items **/
-#ordered-food-items {
+
+/** cart items **/
+#cart-items {
     display: grid;
-    margin: 20px auto;
+    grid-template-columns: auto auto auto;
+    margin: 10px auto;
+    width: 70%;
 }
 
-#ordered-food-items .food-item-card {
+#cart-items .food-item-card {
     background-color: #fff;
+    max-height: 350px;
 }
-#ordered-food-items .food-item-card h4 {
+#cart-items .food-item-card h4 {
     margin: 0;
     padding-top: 10px;
 }
-    /** Form **/
+#cart-items .action-btn {
+    background-color:  orangered;
+    box-shadow: none;
+}
+.add-cart button {
+    cursor: pointer;
+}
+/** Form **/
 legend, label {
     color: #fff;
 }
 form {
     margin: 0;
     padding: 0px;
+    background-color: rgba(0, 0, 0, 0.6);
 }
 .form-item {
     margin-bottom: 20px;
@@ -83,50 +106,62 @@ form .submit-btn {
     text-align: center;
 }
 
-    /** Cart **/
-#cart {
-    min-height: 300px;
-    background-color: rgba(0, 0, 0, 0.6);
-    margin: 10px 10px;
-}
-#cart .container {
-    padding: 0px 5px;
+
+
+/*  926px and down */
+@media only screen and (max-width: 920px) {
+    #cart-items {
+        display: grid;
+        grid-template-columns: auto auto;
+        margin: 10px auto;
+        width: 70%;
+    }
+  
 }
 
-/* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px) {
-    /**  main **/
+/*  867px and down */
+@media only screen and (max-width: 867px) {
     #main-checkout {
+        display: block;
+    }
+    #cart-items {
         display: grid;
-        grid-template-areas: 'order-info order-info order-info cart cart cart';
+        grid-template-columns: auto auto auto;
+        margin: 80px auto;
+        width: 90%;
     }
-    #cart {
-        grid-area: cart;
-    }
-    #order-info {
-        grid-area: order-info;
-    }
-    #order-info, #cart {
-        padding-bottom: 20px;
-    }
-}
-@media only screen and (max-width: 600px) {
-    #ordered-food-items {
-        grid-template-columns: auto;
-    }
-    #ordered-food-items .food-item-card {
+    #cart-items .food-item-card{
         margin: 20px auto;
     }
-} 
-
-@media only screen and (min-width: 600px) {
-    #ordered-food-items {
-        grid-template-columns: auto auto;
+    #order-info {
+        margin: 10px auto;
+        width: 80%;
+        max-height: 400px;
     }
-} 
+}
 
-@media only screen and (min-width: 768px) {
-    #ordered-food-items {
-        grid-template-columns: auto auto auto;
+/*  768px and down */
+@media only screen and (max-width: 768px) {
+    #cart-items {
+        display: grid;
+        grid-template-columns: auto auto;
+        margin: 80px auto;
+        width: 100%;
+    }
+    #cart-items .food-item-card{
+        margin: 20px auto;
+    }
+}
+
+/*  593px and down */
+@media only screen and (max-width: 593px) {
+    #cart-items {
+        display: grid;
+        grid-template-columns: auto;
+        margin: 80px auto;
+        width: 100%;
+    }
+    #cart-items .food-item-card{
+        margin: 20px auto;
     }
 }

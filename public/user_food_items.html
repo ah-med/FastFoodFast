@@ -27,23 +27,27 @@
                 </li>
             </ul>
         </nav>
+        <!---->
         <div id="checkoutModal" class="modal hide">
             <div class="close text-right">
                 <span class="click" onclick="toggleModal('checkoutModal')">X</span>
             </div>
+            <div id="total-amount">
+                <div class="container">
+                        <span class="">Your Cart</span> | Total amount: &#8358;
+                        <span id="amount"></span>
+                </div>
+            </div>
             <div id="main-checkout">
                 <div id="order-info">
                     <div class="container">
-                        <div id="total-amount">Total amount: &#8358;
-                            <span id="amount"></span>
-                        </div>
                         <form id="placeorder-form">
                             <fieldset>
-                                <legend>Delivery Address</legend>
+                                <legend>Delivery Details</legend>
                                 <div class="form-item">
-                                    <label>Delivery Address</label>
+                                    <label>Address</label>
                                     <br>
-                                    <input id="address" class="form-input" type="text" placeholder="No 1, abc street, city " required>
+                                    <textarea id="address" class="form-input" type="text" placeholder="No 1, abc street, city " required cols="30" rows="5"></textarea>
                                 </div>
                                 <div class="form-item">
                                     <label>Phone No</label>
@@ -56,6 +60,8 @@
                             </fieldset>
                         </form>
                     </div>
+                </div>
+                <div id="cart-items">
                 </div>
             </div>
         </div>
@@ -121,8 +127,8 @@
     </header>
     <section id="main">
         <section id="menu">
-            <h4 class="text-center">Menu</h4>
-            <div class="container">
+            <h4 class="text-center" onclick="toggleDisplay('menu-container')">Menu</h4>
+            <div id="menu-container" class="container">
                 <nav id="menu-header">
                     <ul id="menu-list">
                     </ul>

@@ -64,7 +64,7 @@ const renderSpecificOrder = (data) => {
   addOrderItems(data[0]);
 };
 
-const processgetOrderResponse = (response) => {
+const processGetOrderResponse = (response) => {
   displayElement('loadingModal', 'none');
   if (!response.error) {
     renderSpecificOrder(response.data);
@@ -104,7 +104,7 @@ const viewOrder = (event) => { // eslint-disable-line no-unused-vars
     },
   })
     .then(readResponseAsJSON)
-    .then(processgetOrderResponse)
+    .then(processGetOrderResponse)
     .catch((error) => {
       displayElement('loadingModal', 'none');
       displayErrorAlert(error);

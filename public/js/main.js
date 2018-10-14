@@ -2,7 +2,8 @@
 /* eslint-disable no-unused-vars */
 
 
-const baseUrl = 'https://afastfood-app.herokuapp.com';
+// const baseUrl = 'https://afastfood-app.herokuapp.com';
+const baseUrl = 'http://localhost:9000';
 
 const token = localStorage.getItem('userToken');
 
@@ -63,6 +64,12 @@ const toggleModal = (id) => {
   modalClassName = (modalClassName.indexOf('show') === -1) ? modalClassName.replace(' hide', ' show')
     : modalClassName.replace(' show', ' hide');
   document.getElementById(id).className = modalClassName;
+};
+
+const toggleDisplay = (id) => {
+  const element = document.getElementById(id);
+  const { display } = element.style;
+  element.style.display = (display === 'block') ? 'none' : 'block';
 };
 
 const confirmUser = () => {
@@ -173,6 +180,28 @@ const fetchFoodItems = () => {
 const createFoodItem = (item) => {
   const addCart = '<div class="add-cart"><button id="minus" onclick="removeItemFromCart(event)" class="minus click">-</button><input type="number" min="0" max="30" step="1" value="0"> <button id="plus" onclick="addItemToCart(event)" class="plus click">+</button></div>';
   const a = '<a class="action-btn" href="Javascript:void(0);" onclick="orderNow(event)">Order Now</a>';
+
+  const nodes = ['img', 'h4', 'span', 'input'],
+    [img, h4, span] = createManyNodes(nodes),
+    [foodItemCard, action] = createManyNodes('div', 3);
+
+  action.innerHTML = addCart + a;
+  action.setAttribute('class', 'action');
+  action.setAttribute('id', item.food_id);
+  span.setAttribute('price', item.price);
+  span.innerHTML = `&#8358;${item.price}`;
+  h4.innerHTML = item.food_name;
+  img.setAttribute('src', item.image_url);
+  img.setAttribute('alt', item.food_name);
+  foodItemCard.setAttribute('class', 'food-item-card');
+  foodItemCard.setAttribute('align', 'center');
+  appendManyNodes(foodItemCard, [img, h4, span, action]);
+  return foodItemCard;
+};
+
+const createCartItem = (item) => {
+  const addCart = `<div class="add-cart"><button id="minus" onclick="removeItemFromCart(event)" class="minus">-</button><input type="number" min="0" max="30" step="1" value="${item.quantity}"> <button id="plus" onclick="addItemToCart(event)" class="plus">+</button></div>`;
+  const a = '<a class="action-btn" href="#">Remove</a>';
 
   const nodes = ['img', 'h4', 'span', 'input'],
     [img, h4, span] = createManyNodes(nodes),
