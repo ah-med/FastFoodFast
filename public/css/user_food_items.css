@@ -62,14 +62,12 @@
 /**======================= MEDIA QUERIES ==========================**/
 
 @media only screen and (max-width: 600px) {
-    #menu {
-
-    }
     #menu-body .food-items{
-        margin: 0 auto;
-        width: 50%;
         display: grid;
         grid-template-columns: auto;
+    }
+    .food-items .food-item-card {
+        margin: 20px auto;
     }
 } 
 
@@ -79,12 +77,30 @@
         grid-template-columns: auto auto;
     }
 } 
+@media only screen and (max-width: 760px) {
+    #main #menu-container {
+        display: none;
+    }
+    #main #menu {
+        position: fixed;
+        right: 0;
+        top: 80px;
+        cursor: pointer;
+    }
+    .alert {
+        min-width: 5px;
+        min-height: 60px;
+        position: fixed;
+        top: 10px;
+        left:30%;
+        color: #fff;
+    }
+}
 
 @media only screen and (min-width: 768px) {
     .food-item-card img, .food-item-card { 
         width: 190px;
     }
-
     #main {
         width: 100%;
         margin-top: 0; 

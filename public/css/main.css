@@ -34,9 +34,13 @@ a {
 .orange {
     color: #fe8e07;
 }
-input:focus {
+input:focus, textarea:focus {
     outline-color: #fe8e07;
 }
+textarea {
+    resize: none;
+}
+
 .hide {
     display:none;
 }
@@ -118,6 +122,11 @@ input:focus {
     margin:0;
     height: 20px;
 }
+
+.add-cart button:focus {
+    outline: #fe8e07;
+}
+
 #minus,  #plus {
     height: 26px;
     width: 20px;
@@ -350,7 +359,6 @@ footer {
       min-height: 60px;
       position: fixed;
       top: 10px;
-      right: 30%;
       left:30%;
       color: #fff;
   }
@@ -375,7 +383,6 @@ footer {
     .close {
       color: #fff;
       font-size: 18px;
-      margin-right: 10px;
       cursor: pointer;
       display: block;
       text-align: right;

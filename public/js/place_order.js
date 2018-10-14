@@ -9,6 +9,8 @@
   displayErrorAlert,
   displayElement,
   addToClassList,
+  fetchFoodItems,
+  createCartItem,
   toggleModal,
   setCartIcon,
   confirmUser,
@@ -21,12 +23,29 @@
 */
 
 const placeOrderUrl = `${baseUrl}/api/v1/orders`;
-/*
-const renderOrderdItems = () => {
-  // get the total amount and set it
-  //
-}
-*/
+
+const createCartItemElement = (cartItem, foodItems) => {
+  const foodItem = foodItems.find(val => val.food_id === cartItem.foodId);
+  foodItem.quantity = Number(cartItem.quantity);
+  const foodItemElement = createCartItem(foodItem);
+  return foodItemElement;
+};
+
+const renderOrderedItems = (cart) => {
+  const foodItems = JSON.parse(localStorage.getItem('foodItems'));
+  const cartItems = Object.keys(cart.items).map((key) => {
+    const foodObj = {};
+    foodObj.foodId = Number(key);
+    foodObj.quantity = cart.items[key];
+    return foodObj;
+  });
+  insertHTML('cart-items', '');
+  cartItems.forEach((cartItem) => {
+    const cartItemElement = createCartItemElement(cartItem, foodItems);
+    appendDOM('cart-items', cartItemElement);
+  });
+};
+
 
 const setTotalAmount = (cart) => {
   const amount = cart.total;
@@ -105,7 +124,7 @@ const placeOrderRequest = (event) => {
 const renderCheckoutModal = () => {
   toggleModal('checkoutModal');
   setTotalAmount(cart);
-  // renderOrderdItems();
+  renderOrderedItems(cart);
 };
 
 const displayCheckoutModal = () => {
@@ -148,6 +167,7 @@ const addItemToCart = (event) => { // eslint-disable-line no-unused-vars
   quantity = parseInt(quantity, 10);
   cart.addItem(foodId, quantity, price);
   setCartIcon(cart);
+  setTotalAmount(cart);
 };
 
 const removeItemFromCart = (event) => { // eslint-disable-line no-unused-vars
@@ -158,9 +178,11 @@ const removeItemFromCart = (event) => { // eslint-disable-line no-unused-vars
   quantity = parseInt(quantity, 10);
   price = parseInt(price, 10);
   cart.removeItem(foodId, quantity, price);
+  setTotalAmount(cart);
 };
 
 window.addEventListener('load', () => {
+  fetchFoodItems();
   document.getElementById('placeorder-form').addEventListener('submit', placeOrderRequest);
 });
 
