@@ -24,7 +24,9 @@ class Cart {
         *@returns {object} returns undefined *
         */
   addItem(foodId, quantity, price) {
-    this.total = this.total + price;
+    this.total = (this.items[foodId])
+      ? this.total - (this.items[foodId] * price) + (quantity * price)
+      : this.total + (quantity * price);
     this.items[foodId] = quantity;
   }
 
@@ -36,12 +38,10 @@ class Cart {
         *@returns {object} returns undefined *
         */
   removeItem(foodId, quantity, price) {
-    this.total = this.total - price;
-    if (this.items[foodId].quantity <= quantity) {
-      // delete all entry
+    this.addItem(foodId, quantity, price);
+    if (quantity === 0) {
+      // remove the item from cart
       delete this.items[foodId];
-    } else {
-      this.items[foodId] = this.items[foodId] - quantity;
     }
   }
 
@@ -69,7 +69,7 @@ class Cart {
 const createCart = () => {
   const storedCart = localStorage.getItem('cart');
   let cart;
-  if (storedCart === null) {
+  if (storedCart === 'null') {
     cart = new Cart();
   } else {
     const { total, items, cartArray } = JSON.parse(storedCart);
