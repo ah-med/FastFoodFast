@@ -48,6 +48,7 @@ const renderOrderedItems = (cart) => {
 
 
 const setTotalAmount = (cart) => {
+  setCartIcon(cart);
   const amount = cart.total;
   insertHTML('amount', amount);
 };
@@ -177,8 +178,33 @@ const removeItemFromCart = (event) => { // eslint-disable-line no-unused-vars
   let quantity = event.path[1].children[1].value;
   quantity = parseInt(quantity, 10);
   price = parseInt(price, 10);
+  // cart.addItem(foodId, quantity, price);
   cart.removeItem(foodId, quantity, price);
   setTotalAmount(cart);
+};
+
+const editCartItem = (event) => { // eslint-disable-line no-unused-vars
+  const foodId = event.path[3].children[3].attributes[1].value;
+  let price = event.path[3].children[2].attributes[0].value;
+  let quantity = event.path[1].children[1].value;
+  quantity = parseInt(quantity, 10);
+  price = parseInt(price, 10);
+  cart.removeItem(foodId, quantity, price);
+  setTotalAmount(cart);
+};
+
+const removeFoodItem = (event) => { // eslint-disable-line no-unused-vars
+  const foodItemCard = event.path[2];
+  foodItemCard.style.display = 'none';
+  const foodId = event.path[1].attributes[1].value;
+  let price = event.path[2].children[2].attributes[0].value;
+  const quantity = 0;
+  price = parseInt(price, 10);
+  cart.removeItem(foodId, quantity, price);
+  setTotalAmount(cart);
+  if (cart.total === 0) {
+    toggleModal('checkoutModal');
+  }
 };
 
 window.addEventListener('load', () => {

@@ -46,6 +46,7 @@ const logout = () => {
   localStorage.setItem('userToken', undefined);
   localStorage.setItem('login', false);
   localStorage.setItem('role', undefined);
+  localStorage.setItem('cart', null);
   reDirect('./login.html');
 };
 const setCartIcon = (cart) => {
@@ -178,7 +179,7 @@ const fetchFoodItems = () => {
 };
 
 const createFoodItem = (item) => {
-  const addCart = '<div class="add-cart"><button id="minus" onclick="removeItemFromCart(event)" class="minus click">-</button><input type="number" min="0" max="30" step="1" value="0"> <button id="plus" onclick="addItemToCart(event)" class="plus click">+</button></div>';
+  const addCart = '<div class="add-cart"><button id="minus" onclick="removeItemFromCart(event)" class="minus click">-</button><input type="number" onfocusout="editCartItem(event)" min="0" max="30" step="1" value="0"> <button id="plus" onclick="addItemToCart(event)" class="plus click">+</button></div>';
   const a = '<a class="action-btn" href="Javascript:void(0);" onclick="orderNow(event)">Order Now</a>';
 
   const nodes = ['img', 'h4', 'span', 'input'],
@@ -200,8 +201,8 @@ const createFoodItem = (item) => {
 };
 
 const createCartItem = (item) => {
-  const addCart = `<div class="add-cart"><button id="minus" onclick="removeItemFromCart(event)" class="minus">-</button><input type="number" min="0" max="30" step="1" value="${item.quantity}"> <button id="plus" onclick="addItemToCart(event)" class="plus">+</button></div>`;
-  const a = '<a class="action-btn" href="#">Remove</a>';
+  const addCart = `<div class="add-cart"><button id="minus" onclick="removeItemFromCart(event)" class="minus">-</button><input type="number" onfocusout="editCartItem(event)" min="0" max="30" step="1" value="${item.quantity}"> <button id="plus" onclick="addItemToCart(event)" class="plus">+</button></div>`;
+  const a = '<a class="action-btn" href="Javascript:void(0);" onclick="removeFoodItem(event)">Remove</a>';
 
   const nodes = ['img', 'h4', 'span', 'input'],
     [img, h4, span] = createManyNodes(nodes),
