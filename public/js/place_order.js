@@ -11,6 +11,7 @@
   addToClassList,
   fetchFoodItems,
   createCartItem,
+  toggleDisplay,
   toggleModal,
   setCartIcon,
   confirmUser,
@@ -144,6 +145,18 @@ const orderNow = (event) => { // eslint-disable-line no-unused-vars
   } else {
     displayCheckoutModal();
   }
+};
+
+const viewCart = (event) => { // eslint-disable-line no-unused-vars
+  displayCheckoutModal();
+  toggleDisplay('cart-options');
+};
+
+const clearCart = (event) => { // eslint-disable-line no-unused-vars
+  cart.clearCart();
+  setCartIcon(cart);
+  displaySuccessAlert('Cart items cleared');
+  toggleDisplay('cart-options');
 };
 
 const updateInputValue = (action, event) => {

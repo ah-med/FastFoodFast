@@ -63,6 +63,17 @@ class Cart {
     this.cartArray = cartArray;
     return cartArray;
   }
+
+  /**
+        * clears all the cart items
+        *@returns {undefined}  *
+        */
+  clearCart() {
+    // empty the cart
+    this.items = {};
+    this.total = 0;
+    this.cartArray = [];
+  }
 }
 
 

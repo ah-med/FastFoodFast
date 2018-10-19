@@ -64,10 +64,14 @@
                     </a>
                 </div>
                 <div id="cart-menu">
-                    <a href="./checkout.html">
+                    <a href="./checkout.html" onclick="toggleDisplay('cart-options')">
                         <img src="./images/icons/cart.png" alt="cart">
                         <span id="cart"></span>
                     </a>
+                    <div id="cart-options">
+                        <a href="Javascript:void(0);" onclick="viewCart(event)">view cart</a>
+                        <a href="Javascript:void(0);" onclick="clearCart(event)">clear cart</a>
+                    </div>
                 </div>
             </div>
         </div>
