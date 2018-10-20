@@ -23,7 +23,7 @@ window.onscroll = () => { fixOnScroll('header'); };
 const setAuthStatus = () => {
   const loginStatus = localStorage.getItem('login');
   const loginRole = localStorage.getItem('role');
-  const logoutHtml = '<span class="desktop"><a id="logout" href="./login.html">Logout</a></span><a href="./login.html"><img class="mobile" src="./images/icons/account.png" alt="account"></a>';
+  const logoutHtml = '<span class="desktop"><a id="logout" href="Javascript:void(0)" onclick="logout()">Logout</a></span><a href="Javascript:void(0)"><img class="mobile" src="./images/icons/account.png" alt="account"></a>';
   if (loginStatus && loginRole === 'user') { insertHTML('auth', logoutHtml); }
 };
 
@@ -36,6 +36,18 @@ const getCategories = (arr) => {
     }
   }
   return categories;
+};
+
+const addCartQuantity = (data) => {
+  const dataWithQuantity = data.map((item) => {
+    const foodId = item.food_id;
+    const quantityInCart = cart.items[foodId];
+    if (quantityInCart) {
+      item.quantity = quantityInCart;
+    }
+    return item;
+  });
+  return dataWithQuantity;
 };
 
 const createSection = (item) => {
@@ -86,7 +98,8 @@ const processResponse = (response) => {
     displayElement('no-orders', 'none');
     const categories = getCategories(response.data);
     renderMenu(categories);
-    renderFoodItems(response.data);
+    const data = addCartQuantity(response.data);
+    renderFoodItems(data);
   }
 };
 
