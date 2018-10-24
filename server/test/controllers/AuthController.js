@@ -34,8 +34,8 @@ describe('Authentication controller methods', () => {
         expect(res.body).to.have.property('message');
         expect(res.body).to.have.property('data');
         expect(res.body.data).to.have.property('token');
-        expect(res.body.data).to.have.property('timeLoggedIn');
-        expect(res.body.data).to.have.property('expiresIn');
+        expect(res.body.data).to.have.property('loginStatus');
+        expect(res.body.data.loginStatus).to.equal(true);
         expect(res.status).to.equal(200);
         done();
       });

@@ -43,15 +43,11 @@ class AuthController {
     */
   static login(req, res) {
     const { token } = req;
-    const { role } = req.userData;
-    const timeLoggedIn = new Date();
     return res.status(200).json({
       message: 'Log in successfull',
       data: {
         token,
-        role,
-        timeLoggedIn,
-        expiresIn: '6hrs'
+        loginStatus: true
       }
     });
   }
