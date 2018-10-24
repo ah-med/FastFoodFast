@@ -49,6 +49,12 @@ const logout = () => {
   localStorage.setItem('cart', null);
   reDirect('./login.html');
 };
+
+const parseJwt = (newToken) => {
+  const payLoadData = newToken.split('.')[1];
+  return JSON.parse(window.atob(payLoadData));
+};
+
 const setCartIcon = (cart) => {
   const noOfItems = Object.keys(cart.items).length;
   insertHTML('cart', noOfItems);

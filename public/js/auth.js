@@ -9,6 +9,7 @@
   insertHTML,
   appendDOM,
   reDirect,
+  parseJwt,
   baseUrl,
 
 */
@@ -22,15 +23,21 @@ const reDirectLogin = role => (
     : reDirect('./add_meal.html')
 );
 
+const setUserData = (token) => {
+  localStorage.setItem('userToken', token);
+  localStorage.setItem('login', true);
+  const { role, userId } = parseJwt(token);
+  localStorage.setItem('role', role);
+  localStorage.setItem('userId', userId);
+};
+
 const processLogin = (obj) => {
   displayElement('alert', 'none');
   displayElement('loadingModal', 'none');
   if (obj.data) {
-    localStorage.setItem('userToken', obj.data.token);
-    localStorage.setItem('login', true);
-    localStorage.setItem('role', obj.data.role);
-    localStorage.setItem('userId', obj.data.userId);
-    reDirectLogin(obj.data.role);
+    setUserData(obj.data.token);
+    const { role } = parseJwt(obj.data.token);
+    reDirectLogin(role);
   } else {
     // get status
     const { status } = obj.error;
