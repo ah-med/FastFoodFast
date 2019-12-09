@@ -9,6 +9,7 @@
     "start": "node ./client/index.js",
     "prestart": "npm run-script build",
     "prod-start": "nodemon server/index.js --exec babel-node",
+    "dev-start": "nodemon server/index.js --exec babel-node",
     "test": "set NODE_ENV=test&& npm run migrate && mocha --timeout 10000 server/ --recursive --compilers js:babel-register --exit",
     "coverage": "nyc npm test && nyc report --reporter=text-lcov | coveralls",
     "migrate": "babel-node server/models/schema.js",
@@ -45,6 +46,8 @@
     "joi": "^13.6.0",
     "jsonwebtoken": "^8.3.0",
     "pg": "^7.4.3",
+    "swagger-jsdoc": "^3.5.0",
+    "swagger-ui-express": "^4.1.2",
     "trim-request-body": "^1.0.1"
   },
   "devDependencies": {
